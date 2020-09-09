@@ -4,6 +4,8 @@ project euler problem #1
 Jordan Sola 2020
 */
 
+#include <stdio.h>
+
 int main()
 {
     int total = 8;
