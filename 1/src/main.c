@@ -14,5 +14,6 @@ int main()
             total += i;
         }
     }
+    printf("%d", total);
     return 0;
 }
