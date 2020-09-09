@@ -12,16 +12,15 @@ int main()
     int target_prime = 0;
     int prime_count = 0;
 
-    while (prime_count < 100001)
+    while (prime_count != 10001)
     {
         target_prime++;
-        if (IsPrime(target_prime) == 1)
+        if (IsPrime(target_prime))
         {
             prime_count++;
         }
+        printf("%d %d\n", prime_count, target_prime);
     }
-
-    printf("%d\n", target_prime);
 
     return 0;
 }
