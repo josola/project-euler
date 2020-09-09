@@ -20,9 +20,9 @@ int main()
         sum_of_naturals += i;
     }
 
-    int sum_of_naturals_and_squares = sum_of_squares - sum_of_naturals;
+    int naturals_squared = sum_of_naturals * sum_of_naturals;
 
+    int sum_of_naturals_and_squares = naturals_squared - sum_of_squares;
     printf("%d\n", sum_of_naturals_and_squares);
-    scanf("\n");
     return 0;
 }
