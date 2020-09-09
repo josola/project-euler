@@ -1,6 +1,6 @@
 /*
 main.c
-profect euler problem #1
+project euler problem #1
 Jordan Sola 2020
 */
 
