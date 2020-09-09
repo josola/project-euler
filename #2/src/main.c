@@ -6,17 +6,15 @@ Jordan Sola 2020
 
 int main()
 {
-    // value for next term
-    // value for term1 = 0
-    // value for term2 = 1
+    unsigned long int next_term;
+    unsigned long int term1 = 0;
+    unsigned long int term2 = 1;
     // value for total
-    // value for start iterator = 0;
     // loop that begins at 0 and goes up to term limit
         // next term = term1 + term2
         // term1 = term2
         // term2 = next term
-        // if current iterator = start iterator + 3
+        // if (next term & 1) == 0
             // total += next term
-            // start iterator = current iterator
     return 0;
 }
