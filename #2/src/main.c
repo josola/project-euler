@@ -8,10 +8,10 @@ Jordan Sola 2020
 
 int main()
 {
-    unsigned long int next_term;
-    unsigned long int term1 = 0;
-    unsigned long int term2 = 1;
-    unsigned long int total = 0;
+    int next_term;
+    int term1 = 0;
+    int term2 = 1;
+    int total = 0;
     while (total < 4000000)
     {
         next_term = term1 + term2;
@@ -22,6 +22,6 @@ int main()
             total += next_term;
         }
     }
-    printf("%lu\n", total);
+    printf("%d\n", total);
     return 0;
 }
