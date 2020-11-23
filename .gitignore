@@ -51,42 +51,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Misc
-.vscode/
-bin/
-.DS_Store
-/.vs
-/Project-Euler-Solutions.sln
-/Problem_011/Problem_011.vcxproj
-/Problem_011/Problem_011.vcxproj.filters
-/Problem_011/Problem_011.vcxproj.user
-/Problem_010/Problem_010.vcxproj.user
-/Problem_010/Problem_010.vcxproj.filters
-/Problem_010/Problem_010.vcxproj
-/Problem_009/Problem_009.vcxproj.user
-/Problem_009/Problem_009.vcxproj.filters
-/Problem_009/Problem_009.vcxproj
-/Problem_008/Problem_008.vcxproj.user
-/Problem_008/Problem_008.vcxproj.filters
-/Problem_008/Problem_008.vcxproj
-/Problem_007/Problem_007.vcxproj.user
-/Problem_007/Problem_007.vcxproj.filters
-/Problem_007/Problem_007.vcxproj
-/Problem_006/Problem_006.vcxproj.user
-/Problem_006/Problem_006.vcxproj.filters
-/Problem_006/Problem_006.vcxproj
-/Problem_005/Problem_005.vcxproj.user
-/Problem_005/Problem_005.vcxproj.filters
-/Problem_005/Problem_005.vcxproj
-/Problem_004/Problem_004.vcxproj.user
-/Problem_004/Problem_004.vcxproj.filters
-/Problem_004/Problem_004.vcxproj
-/Problem_003/Problem_003.vcxproj.user
-/Problem_003/Problem_003.vcxproj.filters
-/Problem_003/Problem_003.vcxproj
-/Problem_002/Problem_002.vcxproj.user
-/Problem_002/Problem_002.vcxproj.filters
-/Problem_002/Problem_002.vcxproj
-/Problem_001/Problem_001.vcxproj.user
-/Problem_001/Problem_001.vcxproj.filters
-/Problem_001/Problem_001.vcxproj
+# Directories
+.vscode
+bin
