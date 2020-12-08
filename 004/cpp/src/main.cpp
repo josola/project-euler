@@ -1,14 +1,21 @@
-/*
-main.c
-project euler #4
-Jordan Sola 2020
-*/
+//
+// main.cpp
+// Project Euler - Problem 4
+//
+// A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+//
+// Find the largest palindrome made from the product of two 3-digit numbers.
+//
+// Jordan Sola 2020 - MIT License
 
-#include <stdio.h>
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 int main()
 {
-    int palindrome = 0;
+    unsigned int palindrome = 0;
 
     for (int i = 100; i < 999; i++)
     {
@@ -16,9 +23,9 @@ int main()
         {
             if ((i * j) % 10 != 0)
             {
-                int product = i * j;
-                int temp_product = product;
-                int reverse = 0;
+                unsigned int product = i * j;
+                unsigned int temp_product = product;
+                unsigned int reverse = 0;
 
                 while (temp_product != 0)
                 {
@@ -34,7 +41,7 @@ int main()
         }
     }
 
-    printf("%d\n", palindrome);
+    cout << palindrome << endl;
 
     return 0;
 }
