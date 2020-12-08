@@ -1,22 +1,31 @@
-/*
-main.c
-euler problem #3
-Jordan Sola 2020
-*/
+//
+// main.cpp
+// Project Euler Problem 3
+//
+// The prime factors of 13195 are 5, 7, 13 and 29.
+//
+// What is the largest prime factor of the number 600851475143?
+//
+// Jordan Sola 2020 - MIT License
 
-#include <stdio.h>
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 int main()
 {
-    long long unsigned int n = 600851475143;
-    long long unsigned int i = 2;
-    for (; i < n; i++)
+    long long unsigned int num = 600851475143;
+
+    for (long unsigned int i = 2; i < num; i++)
     {
-        if (n % i == 0)
+        if (num % i == 0)
         {
-            n /= i;
+            num /= i;
         }
     }
-    printf("%llu\n", n);
+
+    cout << num << endl;
+
     return 0;
 }
