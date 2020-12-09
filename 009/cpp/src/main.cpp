@@ -1,8 +1,8 @@
-/*
-main.c
-project euler 9
-Jordan Sola 2020
-*/
+//
+// main.cpp
+// Project Euler - Problem 9
+//
+// Jordan Sola 2020 - MIT License
 
 #include <stdio.h>
 #include <math.h>

@@ -1,7 +1,8 @@
-/*
-Find the greatest product within four numbers in all directions within a grid of any even size.
-Jordan Sola 2020 - MIT License
-*/
+//
+// main.cpp
+// Project Euler - Problem 11
+//
+// Jordan Sola 2020 - MIT License
 
 #include <iostream>
 #include <vector>
@@ -20,7 +21,6 @@ int main()
     bool program_running = true;
     while (program_running)
     {
-        // Humans need friendly interactions with computer programs.
         cout << "Welcome\n"
              << '\n'
              << "This program calculates the highest product\n"
@@ -74,8 +74,6 @@ int main()
             }
         }
 
-        // Grid needs to be given by user.
-
         cout << "Please input your grid.\n"
              << '\n'
              << "Input:\n";
@@ -98,8 +96,6 @@ int main()
 
         cout << '\n';
 
-        // Calculate largest product within provided grid.
-
         vector<vector<int> > current_grid;
 
         vector<int> products;
@@ -108,8 +104,6 @@ int main()
         {
             for (int j = 0; j <= width - 4; j++)
             {
-                // Get four by four grid for calculation
-
                 for (int k = 0; k < 4; k++)
                 {
                     vector<int> row;
@@ -120,16 +114,12 @@ int main()
                     current_grid.push_back(row);
                 }
 
-                // Make calculations on grid.
-
-                // Horizontal product within current grid.
                 for (int i = 0; i < 4; i++)
                 {
                     int horizontal_product = accumulate(current_grid[i].begin(), current_grid[i].end(), 1, multiplies<int>());
                     products.push_back(horizontal_product);
                 }
 
-                // Vertical product within current grid.
                 for (int i = 0; i < 4; i++)
                 {
                     int vertical_product = 1;
@@ -142,9 +132,6 @@ int main()
                     products.push_back(vertical_product);
                 }
 
-                // Diagonal product within grid.
-
-                // Diagonal A
                 unsigned long int diagonal_a_product = 1;
 
                 for (int i = 0; i < 4; i++)
@@ -154,7 +141,6 @@ int main()
 
                 products.push_back(diagonal_a_product);
 
-                // Diagonal B
                 unsigned long int diagonal_b_product = 1;
 
                 int pos = 0;

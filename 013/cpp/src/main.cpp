@@ -1,12 +1,8 @@
 //
 // main.cpp
-// Project Euler #13
+// Project Euler - Problem 13
 //
-// Work out the first ten digits of the sum
-// of one-hundred 50-digit numbers.
-//
-// vALPHA - initial problem solution
-//
+// Jordan Sola 2020 - MIT License
 
 #include <iostream>
 #include <vector>

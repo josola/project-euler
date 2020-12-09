@@ -1,23 +1,40 @@
-n = 999999
+#
+# main.py
+# Project Euler Problem 14
+#
+# Which starting number, under one million, produces the
+# longest Collatz chain?
+#
+# Jordan Sola 2020 - MIT License
 
+# global variables
+num = 999999
 highest_term = 0
-highest_start = 0
+highest_starting_num = 0
 
-while n != 1:
-    o = n
-    terms = 0
+while num != 1:
+
+    # current term and starting number need to be seperate
+    term = num
     
-    while o != 1:
-        if o % 2 == 0:
-            o = o / 2
+    term_count = 0
+    
+    while term != 1:
+
+        # collatz formula
+        if term % 2 == 0:
+            term = term / 2
         else:
-            o = (3 * o + 1) / 2
-        terms += 1
+            term = (3 * term + 1) / 2
+
+        term_count += 1
     
-    if terms >= highest_term:
-        highest_term = terms
-        highest_start = n
-    n -= 1
+    # highest term and highest starting point need to be tracked
+    if term_count >= highest_term:
+        highest_term = term_count
+        highest_starting_num = num
+
+    num -= 1
 
 print(highest_term)
-print(highest_start)
+print(highest_starting_num)

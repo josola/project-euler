@@ -1,8 +1,8 @@
-/*
-main.c
-project euler problem #5
-Jordan sola 2020
-*/
+//
+// main.cpp
+// Project Euler Problem 5
+//
+// Jordan Sola - MIT License
 
 #include <stdio.h>
 

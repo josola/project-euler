@@ -1,9 +1,8 @@
 //
 // main.cpp
-// Project Euler #12
+// Project Euler - Problem 12
 //
-// Jordan Sola ®2020 - MIT License
-//
+// Jordan Sola 2020 - MIT License
 
 #include "divisor_count.h"
 #include "triangular_generator.h"

@@ -1,9 +1,8 @@
 //
 // divisor_count.h
-// Return number of divisors from input as an integer.
+// Project Euler - Problem 12
 //
-// Jordan Sola ®2020 - MIT License
-//
+// Jordan Sola 2020 - MIT License
 
 #ifndef DIVISOR_COUNT_H
 #define DIVISOR_COUNT_H

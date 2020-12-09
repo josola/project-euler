@@ -1,14 +1,13 @@
-/*
-main.c
-project euler 8
-Jordan Sola 2020
-*/
+//
+// main.cpp
+// Project Euler - Problem 8
+//
+// Jordan Sola 2020 - MIT License
 
 #include <stdio.h>
 
 int main()
 {
-    // original literal as an array
     int arr[1000] = {
         7,3,1,6,7,1,7,6,5,3,1,3,3,0,6,2,4,9,1,9,2,2,5,1,1,9,6,7,4,4,2,6,5,7,4,7,4,2,3,5,5,3,4,9,1,9,4,9,3,4,
         9,6,9,8,3,5,2,0,3,1,2,7,7,4,5,0,6,3,2,6,2,3,9,5,7,8,3,1,8,0,1,6,9,8,4,8,0,1,8,6,9,4,7,8,8,5,1,8,4,3,
@@ -32,29 +31,22 @@ int main()
         7,1,6,3,6,2,6,9,5,6,1,8,8,2,6,7,0,4,2,8,2,5,2,4,8,3,6,0,0,8,2,3,2,5,7,5,3,0,4,2,0,7,5,2,9,6,3,4,5,0
     };
 
-    // product needs to be at least a long int for size
     unsigned long int current_product = 0;
     unsigned long int highest_product = 0;
 
-    // current is for iterators, highest is target
     int current_equation[13];
     int highest_equation[13];
     int current_position = 0;
     int highest_position = 0;
 
-    // handles literal array, highest product, highest position, highest equation
     for (int i = 0; i < 988; i++)
     {
-        // track general position within array
         current_position++;
 
-        // perform calcuation of adjacent numbers
         for (int j = 0; j < 13; j++)
         {
-            // track current equation for comparison against highest
             current_equation[j] = arr[j + i];
 
-            // number remaining in product must be replaced
             if (j == 0)
             {
                 current_product = arr[j + i];
@@ -65,10 +57,8 @@ int main()
             }
         }
 
-        // keep only the highest product, position, equation
         if (current_product > highest_product)
         {
-            // keep highest equation
             for (int i = 0; i < 13; i++)
             {
                 highest_equation[i] = current_equation[i];
@@ -79,10 +69,8 @@ int main()
         }
     }
 
-    // print target product
     printf("Highest product: %lu\n", highest_product);
 
-    // print target equation
     printf("From equation: ");
     for (int i = 0; i < 13; i++)
     {
@@ -90,7 +78,6 @@ int main()
     }
     printf("\n");
 
-    // print target position
     printf("At position: %d\n", highest_position);
 
     return 0;

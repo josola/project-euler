@@ -1,9 +1,8 @@
 //
 // main.cpp
-// Project Euler #14
+// Project Euler - Problem 14
 //
-// Jordan Sola ®2020 - MIT License
-//
+// Jordan Sola 2020 - MIT License
 
 #include <iostream>
 #include "collatz.h"
