@@ -4,17 +4,14 @@
 #
 # Jordan Sola 2020 - MIT License
 
-# ----- global variables ----- #
-
+# ----- global variables
 rows = []
 grid = []
-
 size = 21
-
 total_paths = 0
+# -----
 
-# ----- build grid ----- #
-
+# Start with a grid full of zeros.
 for i in range(size):
 
     row = []
@@ -25,16 +22,15 @@ for i in range(size):
 
     grid.append(row)
 
-# ----- set ones in top row and first column ----- #
 
+# LT column and top row need to be ones.
 for i in range(len(grid[0])):
     grid[0][i] = 1
 
 for i in grid:
     i[0] = 1
 
-# ----- calculate grid points ----- #
-
+# This gets us the number of routes into each grid point.
 for i in range(size):
     for j in range(len(grid[i])):
         if i == 0:
@@ -44,8 +40,7 @@ for i in range(size):
         else:
             grid[i][j] = grid[i][j - 1] + grid[i - 1][j]
 
+# Bottom RT corner of grid contains the most routes.
 total_paths += grid[size - 1][size - 1]
-
-# ----- done ----- #
 
 print(total_paths)

@@ -6,19 +6,20 @@
 
 from num2words import num2words
 
+# ----- global variables
 length = 1000
 words = []
+total_letters = 0
+# -----
 
+# Don't add zero to list of numbers.
 for i in range(length):
-    # we're not counting zero so we need to start our words at one
     words.append(num2words(i + 1))
 
-# Remove spaces and dashes, they cannot be counted.
+# Spaces and dashes cannot be counted.
 for i in range(length):
     words[i] = words[i].replace(' ', '')
     words[i] = words[i].replace('-', '')
-
-total_letters = 0
 
 for i in words:
     total_letters += len(i)

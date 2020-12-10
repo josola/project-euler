@@ -4,34 +4,34 @@
 #
 # Jordan Sola 2020 - MIT License
 
-# global variables
-num = 999999
+# ----- global variables
+start = 999999
 highest_term = 0
 highest_starting_num = 0
+# -----
 
-while num != 1:
+while start != 1:
 
-    # current term and starting number need to be seperate
-    term = num
-    
+    # Start term is its own iterator, needs a second one for current term.
+    current_term = start
     term_count = 0
     
-    while term != 1:
+    while current_term != 1:
 
-        # collatz formula
-        if term % 2 == 0:
-            term = term / 2
+        # This is the Collatz formula.
+        if current_term % 2 == 0:
+            current_term = current_term / 2
         else:
-            term = (3 * term + 1) / 2
+            current_term = (3 * current_term + 1) / 2
 
         term_count += 1
     
-    # highest term and highest starting point need to be tracked
+    # A highest term and starting point are the end goal.
     if term_count >= highest_term:
         highest_term = term_count
-        highest_starting_num = num
+        highest_starting_num = start
 
-    num -= 1
+    start -= 1
 
 print(highest_term)
 print(highest_starting_num)
