@@ -2,9 +2,6 @@
 # main.py
 # Project Euler Problem 14
 #
-# Which starting number, under one million, produces the
-# longest Collatz chain?
-#
 # Jordan Sola 2020 - MIT License
 
 # global variables

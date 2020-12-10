@@ -2,7 +2,7 @@
 # main.py
 # Project Euler Problem 17
 #
-# Jordan Sola ®2020 - MIT License
+# Jordan Sola 2020 - MIT License
 
 from num2words import num2words
 

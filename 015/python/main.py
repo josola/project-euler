@@ -3,10 +3,6 @@
 # Project Euler Problem 15
 #
 # Jordan Sola 2020 - MIT License
-#
-# Starting in the top left corner of a 20x20 grid, and only
-# being able to move to the right and down, how many routes
-# are contained within the grid?
 
 # ----- global variables ----- #
 
