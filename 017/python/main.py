@@ -1,7 +1,6 @@
 #
 # main.py
-# If all the numbers from 1 to 1000 (one thousand) inclusive
-# were written out in words, how many letters would be used?
+# Project Euler Problem 17
 #
 # Jordan Sola ®2020 - MIT License
 
