@@ -1,6 +1,6 @@
 #
 # main.py
-# Project Euler Problem 15
+# Project Euler - Problem 15
 #
 # Jordan Sola 2020 - MIT License
 
