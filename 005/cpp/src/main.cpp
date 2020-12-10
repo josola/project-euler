@@ -1,6 +1,6 @@
 //
 // main.cpp
-// Project Euler Problem 5
+// Project Euler - Problem 5
 //
 // Jordan Sola - MIT License
 

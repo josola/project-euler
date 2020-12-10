@@ -1,6 +1,6 @@
 //
 // main.cpp
-// Project Euler Problem 2
+// Project Euler - Problem 2
 //
 // Jordan Sola 2020 - MIT License
 
