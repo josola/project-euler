@@ -1,19 +1,24 @@
+//
+// Checks if a given number is prime.
+
 #include "prime.h"
 
-int IsPrime(int n)
+bool IsPrime(int num)
 {
-    if (n <= 1)
+    // Zero and one cannot be prime.
+    if (num == 0 || num == 1)
     {
-        return 0;
+        return false;
     }
   
-    for (int i = 2; i < n; i++)
+    // Numbers that divide cleanly cannot be prime.
+    for (int i = 2; i < num; i++)
     {
-        if (n % i == 0)
+        if (num % i == 0)
         {
-            return 0;
+            return false;
         }
     }
     
-    return 1;
+    return true;
 }

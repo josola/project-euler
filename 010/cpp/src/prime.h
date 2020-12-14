@@ -7,6 +7,6 @@
 #ifndef PRIME_h
 #define PRIME_h
 
-int IsPrime(int n);
+bool IsPrime(int n);
 
 #endif // !PRIME_h

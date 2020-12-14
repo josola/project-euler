@@ -4,24 +4,28 @@
 //
 // Jordan Sola 2020 - MIT License
 
-#include <stdio.h>
+#include <iostream>
 #include "prime.h"
+
+using std::cout;
+using std::endl;
 
 int main()
 {
+    // ----- global variables
     int max = 2000000;
-
-    unsigned long int prime_sum = 0;
+    long int sum = 0;
+    // -----
 
     for (int i = 1; i < max; i++)
     {
         if (IsPrime(i))
         {
-            prime_sum += i;
+            sum += i;
         }
     }
 
-    printf("Summation of primes below %d: %lu\n", max, prime_sum);
+    cout << sum << endl;
 
     return 0;
 }

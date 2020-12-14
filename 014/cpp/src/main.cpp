@@ -8,32 +8,39 @@
 #include "collatz.h"
 
 using std::cout;
+using std::endl;
 
 int main()
 {
-    long int n = 999168;
-
+    // ----- global variables
+    long int start = 999999;
     int highest_term = 0;
     long int highest_start = 0;
+    // -----
 
-    while (n != 1)
+    while (start != 1)
     {
-        long int o = n;
+        // Start is its own iterator, need a seperate iterator.
+        long int current_term = start;
         int terms = 0;
 
-        while (o != 1)
+        // Perform Collatz algorithm.
+        while (current_term != 1)
         {
-            o = Collatz(o);
+            current_term = Collatz(current_term);
             terms++;
         };
 
+        // Highest term and start are the end goal.
         if (terms >= highest_term)
         {
             highest_term = terms;
-            highest_start = n;
+            highest_start = start;
         }
-        n--;
+
+        start--;
     }
-    cout << highest_term << '\n'
-         << highest_start << '\n';
+
+    cout << highest_term << endl
+         << highest_start << endl;
 }

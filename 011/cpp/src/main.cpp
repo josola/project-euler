@@ -9,181 +9,116 @@
 #include <algorithm>
 #include <numeric>
 
+using std::accumulate;
 using std::cin;
 using std::cout;
-using std::vector;
+using std::endl;
 using std::max_element;
-using std::accumulate;
 using std::multiplies;
+using std::vector;
 
 int main()
 {
-    bool program_running = true;
-    while (program_running)
+    // ----- global variables
+    int height = 0;
+    int *width = &height;
+    vector<vector<int>> grid;
+    vector<vector<int>> current_grid;
+    vector<int> products;
+    int highest_product = 0;
+    // -----
+
+    // ----- Get grid as standard input.
+    // Grid height is input limit.
+    cout << "Grid height:\n";
+    cin >> height;
+
+    cout << "Grid input:" << endl;
+
+    for (int i = 0; i < height; i++)
     {
-        cout << "Welcome\n"
-             << '\n'
-             << "This program calculates the highest product\n"
-             << "within four adjacent numbers in any even sized\n"
-             << "grid with a minimum highet and width of four units.\n"
-             << '\n'
-             << "Would you like to continue?\n"
-             << "1 - Yes, continue.\n"
-             << "0 - No, exit.\n"
-             << '\n'
-             << "Please enter your choice:\n";
-
-        bool choice;
-        cin >> choice;
-
-        if (choice)
+        vector<int> row;
+        for (int j = 0; j < *width; j++)
         {
-            if (cin.fail())
-            {
-                cin.clear();
-            }
-            cout << '\n';
+            int hold = 0;
+            cin >> hold;
+            row.push_back(hold);
         }
-        else
+        grid.push_back(row);
+    }
+    // -----
+
+    cout << '\n';
+
+    // ----- Track highest product in all orientations within grid.
+    for (int i = 0; i <= height - 4; i++)
+    {
+        for (int j = 0; j <= *width - 4; j++)
         {
-            program_running = false;
-            cout << "You have chosen to exit this program. Goodbye.\n";
-            return 0;
-        }
-
-        int height = 0;
-        bool even_height = false;
-        while (!even_height)
-        {
-            cout << "Please enter the height of your grid:\n";
-
-            cin >> height;
-
-            if (height >= 4 && (height % 4 == 0))
+            // ---- Highest horizontal product.
+            for (int k = 0; k < 4; k++)
             {
-                cout << '\n';
-                even_height = true;
-            }
-            else
-            {
-                cout << "The height of your grid must be\n"
-                     << "four or above and must be evenly\n"
-                     << "divisible by four.\n"
-                     << '\n';
-                even_height = false;
-            }
-        }
-
-        cout << "Please input your grid.\n"
-             << '\n'
-             << "Input:\n";
-
-        int width = height;
-
-        vector<vector<int> > container;
-
-        for (int i = 0; i < height; i++)
-        {
-            vector<int> row;
-            for (int j = 0; j < width; j++)
-            {
-                int hold = 0;
-                cin >> hold;
-                row.push_back(hold);
-            }
-            container.push_back(row);
-        }
-
-        cout << '\n';
-
-        vector<vector<int> > current_grid;
-
-        vector<int> products;
-
-        for (int i = 0; i <= height - 4; i++)
-        {
-            for (int j = 0; j <= width - 4; j++)
-            {
-                for (int k = 0; k < 4; k++)
+                vector<int> row;
+                for (int l = 0; l < 4; l++)
                 {
-                    vector<int> row;
-                    for (int l = 0; l < 4; l++)
-                    {
-                        row.push_back(container[k + i][l + j]);
-                    }
-                    current_grid.push_back(row);
+                    row.push_back(grid[k + i][l + j]);
+                }
+                current_grid.push_back(row);
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                int horizontal_product = accumulate(current_grid[i].begin(), current_grid[i].end(), 1, multiplies<int>());
+                products.push_back(horizontal_product);
+            }
+            // -----
+
+            // ----- Highest vertical product.
+            for (int i = 0; i < 4; i++)
+            {
+                int vertical_product = 1;
+
+                for (int j = 0; j < 4; j++)
+                {
+                    vertical_product *= current_grid[j][i];
                 }
 
-                for (int i = 0; i < 4; i++)
-                {
-                    int horizontal_product = accumulate(current_grid[i].begin(), current_grid[i].end(), 1, multiplies<int>());
-                    products.push_back(horizontal_product);
-                }
-
-                for (int i = 0; i < 4; i++)
-                {
-                    int vertical_product = 1;
-
-                    for (int j = 0; j < 4; j++)
-                    {
-                        vertical_product *= current_grid[j][i];
-                    }
-
-                    products.push_back(vertical_product);
-                }
-
-                unsigned long int diagonal_a_product = 1;
-
-                for (int i = 0; i < 4; i++)
-                {
-                    diagonal_a_product *= current_grid[i][i];
-                }
-
-                products.push_back(diagonal_a_product);
-
-                unsigned long int diagonal_b_product = 1;
-
-                int pos = 0;
-                for (int i = 4 - 1; i >= 0; i--)
-                {
-                    diagonal_b_product *= current_grid[i][pos];
-                    pos++;
-                }
-
-                products.push_back(diagonal_b_product);
-
-                current_grid.erase(current_grid.begin(), current_grid.end());
+                products.push_back(vertical_product);
             }
-        }
+            // -----
 
-        int highest_product = *max_element(products.begin(), products.end());
+            // ----- Highest diagonal products.
+            unsigned long int diagonal_a_product = 1;
 
-        cout << "The highest product within four\n"
-             << "adjacent numbers within your gird.\n"
-             << '\n'
-             << "Product = "
-             << highest_product << '\n'
-             << '\n'
-             << "Would you like to process another grid?\n"
-             << "1 - Yes, again.\n"
-             << "0 - No, exit program.\n"
-             << '\n'
-             << "Please input your choice:\n";
+            for (int i = 0; i < 4; i++)
+            {
+                diagonal_a_product *= current_grid[i][i];
+            }
 
-        cin >> choice;
+            products.push_back(diagonal_a_product);
 
-        if (choice)
-        {
-            cout << '\n';
-            program_running = true;
-        }
-        else
-        {
-            program_running = false;
-            cout << '\n'
-                 << "You have chosen to exit this program. Goodbye.\n";
+            unsigned long int diagonal_b_product = 1;
+
+            int pos = 0;
+            for (int i = 4 - 1; i >= 0; i--)
+            {
+                diagonal_b_product *= current_grid[i][pos];
+                pos++;
+            }
+
+            products.push_back(diagonal_b_product);
+            // -----
+
+            // Clean up current grid for next iteration.
+            current_grid.erase(current_grid.begin(), current_grid.end());
         }
     }
+    // -----
+
+    // Highest product within all orientations is the goal.
+    highest_product = *max_element(products.begin(), products.end());
+
+    cout << "Product = " << highest_product << endl;
 
     return 0;
 }

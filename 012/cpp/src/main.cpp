@@ -9,18 +9,21 @@
 #include <iostream>
 
 using std::cout;
+using std::endl;
 
 int main()
 {
+    // ----- global variables
     int number = 1;
     int i = 1;
+    // -----
     
     while (DivisorCount(number) < 500) {
         number = TriangularGenerator(i);
         i++;
     }
     
-    cout << number << '\n';
+    cout << number << endl;
     
     return 0;
 }
