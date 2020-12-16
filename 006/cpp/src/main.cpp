@@ -4,7 +4,10 @@
 //
 // Jordan Sola 2020 - MIT License
 
-#include <stdio.h>
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 int main()
 {
@@ -31,7 +34,7 @@ int main()
 
     int sum_of_naturals_and_squares = naturals_squared - sum_of_squares;
 
-    printf("%d\n", sum_of_naturals_and_squares);
+     cout << sum_of_naturals_and_squares << endl;
 
     return 0;
 }

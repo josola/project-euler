@@ -11,13 +11,11 @@ using std::endl;
 
 int main()
 {
-    // ----- global variables
-    unsigned int next_term;
-    unsigned int term1 = 0;
-    unsigned int term2 = 1;
-    unsigned int total = 0;
-    const unsigned int limit = 4000000;
-    // -----
+    int next_term;
+    int term1 = 0;
+    int term2 = 1;
+    int total = 0;
+    const int limit = 4000000;
 
     while (total < limit)
     {

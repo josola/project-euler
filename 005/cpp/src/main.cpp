@@ -4,7 +4,10 @@
 //
 // Jordan Sola - MIT License
 
-#include <stdio.h>
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 int main()
 {
@@ -26,7 +29,7 @@ int main()
         }
     }
 
-    printf("%d%s", minimum, " is the smallest number that can be divided evenly from 1 to 20");
+   cout << minimum << " is the smallest number that can be divided evenly from 1 to 20" << endl;
 
     return 0;
 }

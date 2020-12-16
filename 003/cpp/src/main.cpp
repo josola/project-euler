@@ -11,9 +11,9 @@ using std::endl;
 
 int main()
 {
-    long long unsigned int num = 600851475143;
+    long long int num = 600851475143;
 
-    for (long unsigned int i = 2; i < num; i++)
+    for (long int i = 2; i < num; i++)
     {
         // Smaller factors are eliminated, making num prime.
         if (num % i == 0)

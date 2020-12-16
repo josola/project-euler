@@ -4,8 +4,11 @@
 //
 // Jordan Sola 2020 - MIT License
 
-#include <stdio.h>
+#include <iostream>
 #include "prime.h"
+
+using std::cout;
+using std::endl;
 
 int main()
 {
@@ -24,7 +27,7 @@ int main()
             prime_count++;
         }
 
-        printf("%d %d\n", prime_count, target_prime);
+        cout << prime_count << ' ' << target_prime << endl;
     }
 
     return 0;
