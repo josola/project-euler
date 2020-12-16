@@ -15,6 +15,7 @@ int main()
 
     for (long unsigned int i = 2; i < num; i++)
     {
+        // Smaller factors are eliminated, making num prime.
         if (num % i == 0)
         {
             num /= i;

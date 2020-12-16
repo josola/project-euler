@@ -8,12 +8,14 @@
 
 int main()
 {
+    // ----- global variables
     int minimum = 20;
     int n = 20;
+    // -----
 
     while (n > 0)
     {
-        if ((minimum % n) == 0)
+        if (minimum % n == 0)
         {
             n--;
         }

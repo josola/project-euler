@@ -11,14 +11,13 @@ using std::endl;
 
 int main()
 {
+    // ----- global variables
     unsigned int next_term;
-
     unsigned int term1 = 0;
     unsigned int term2 = 1;
-
     unsigned int total = 0;
-
     const unsigned int limit = 4000000;
+    // -----
 
     while (total < limit)
     {
@@ -27,6 +26,7 @@ int main()
         term1 = term2;
         term2 = next_term;
 
+        // Only even Fibonacci numbers get tracked.
         if (next_term % 2 == 0)
         {
             total += next_term;
