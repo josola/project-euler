@@ -11,17 +11,23 @@ using std::endl;
 
 int main()
 {
-    int total = 0;
+    int limit = 1000;
+    int sum = 0;
 
-    for (int i = 0; i < 1000; i++)
+    // ----- multiples
+    int a = 3;
+    int b = 5;
+    // -----
+
+    for (int i = 0; i < limit; i++)
     {
-        if ((i % 3 == 0) || (i % 5 == 0))
+        if ((i % a == 0) || (i % b == 0))
         {
-            total += i;
+            sum += i;
         }
     }
 
-    cout << total << endl;
+    cout << sum << endl;
 
     return 0;
 }
