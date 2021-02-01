@@ -55,3 +55,8 @@ dkms.conf
 .vscode
 bin
 .DS_Store
+\support
+
+# C# files
+\obj
+*.csproj
