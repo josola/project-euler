@@ -1,13 +1,5 @@
-//
-// problem_1.c
+// problem_001.c
 // Project Euler - Problem 1
-//
-// Jordan Sola 2021 - MIT License
-
-/*
-Given a limit, find the sum of determined
-factors using natural numbers up to the limit.
-*/
 
 #include "stdio.h"
 
@@ -19,7 +11,7 @@ int main()
     // C doesn't allow const integers as array size.
     int size = sizeof(factors)/sizeof(*factors);
 
-    int limit = 1000;
+    const int limit = 1000;
     int sum = 0;
 
     for (int i = 0; i < limit; i++)
@@ -38,13 +30,10 @@ int main()
             {
                 continue;
             }
-            
         }
-        
     }
 
     printf("%d", sum);
 
     return 0;
-
 }
