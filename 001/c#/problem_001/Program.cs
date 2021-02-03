@@ -1,4 +1,4 @@
-﻿// problem_001.cs
+﻿// Program.cs
 // Project Euler - Problem 1
 
 using System;
