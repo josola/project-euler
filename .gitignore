@@ -53,9 +53,9 @@ dkms.conf
 
 # Misc
 .vscode
-bin
 .DS_Store
 \support
+*.exe
 
 # C# files
 \obj
