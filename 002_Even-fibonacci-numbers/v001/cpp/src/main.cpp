@@ -24,8 +24,7 @@ int main()
         term_a = term_b;
         term_b = next_term;
 
-        // Only even Fibonacci numbers are tracked.
-        if (next_term % 2 == 0)
+        if (next_term % 2 == 0) // Only even Fibonacci numbers are tracked.
         {
             total += next_term;
         }
