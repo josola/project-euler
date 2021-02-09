@@ -12,8 +12,7 @@ using std::vector;
 
 int main()
 {
-    // Factor count customization.
-    vector<int> factors = { 3, 5 };
+    vector<int> factors = { 3, 5 }; // Factor count customization.
 
     const int limit = 1000;
     int sum = 0;
@@ -25,7 +24,6 @@ int main()
             if (i % factor == 0)
             {
                 sum += i;
-
                 // Counts multiple factors if
                 // you don't break out here.
                 break;
