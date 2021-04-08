@@ -58,6 +58,9 @@ dkms.conf
 \bin
 *.exe
 
-# C# files
+# Solution files
 \obj
 *.csproj
+*.sqlite
+/.vs
+/Project-Euler-sln
