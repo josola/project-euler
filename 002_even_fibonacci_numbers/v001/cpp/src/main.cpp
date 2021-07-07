@@ -17,20 +17,14 @@ int main()
     int total = 0;
     const int limit = 4000000;
 
-    while (total < limit)
-    {
+    while (total < limit) {
         next_term = term_a + term_b;
 
         term_a = term_b;
         term_b = next_term;
 
-        if (next_term % 2 == 0) // Only even Fibonacci numbers are tracked.
-        {
+        if (next_term % 2 == 0) { // Only even Fibonacci numbers are tracked.
             total += next_term;
-        }
-        else
-        {
-            continue;
         }
     }
 
