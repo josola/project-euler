@@ -1,5 +1,5 @@
 # Multiples of 3 and 5
-# Naive Algorithm
+# Obvious Algorithm
 # (c) Jordan Sola 2021
 # Written by Jordan Sola 2021
 
