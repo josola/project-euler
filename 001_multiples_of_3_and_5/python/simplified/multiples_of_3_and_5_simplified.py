@@ -5,10 +5,10 @@
 
 # Answer: 233168
 
-LIMIT = 1000
+limit = 1000
 multiples_accumulation = 0
 
-for num in range(3, LIMIT):
+for num in range(3, limit):
     if num % 3 == 0 or num % 5 == 0:
         multiples_accumulation += num
 
