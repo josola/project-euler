@@ -4,31 +4,33 @@
 
 ```
 project
-| 
-└───problem
-|   |
-|   └───docs
-|   |   |   documentation
-|   |
-|   └───python
-|   |   └───src
-|   |   |   |   python_source
-|   |   |
-|   |   └───docs
-|   |       |   python_documentation
-|   |
-|   └───cpp
-|       └───docs
-|       |   |   documentation
-|       |
-|       └───src
-|       |   |   cpp_source
-|       |
-|       └───bin
-|           |   binaries
 |
 └───docs
 |   |   project_documentation
+|
+└───problems
+|   |
+|   └───problem
+|   |   |
+|   |   └───docs
+|   |   |   |   documentation
+|   |   |
+|   |   └───python
+|   |   |   └───src
+|   |   |   |   |   python_source
+|   |   |   |
+|   |   |   └───docs
+|   |   |       |   python_documentation
+|   |   |
+|   |   └───cpp
+|   |       └───docs
+|   |       |   |   documentation
+|   |       |
+|   |       └───src
+|   |       |   |   cpp_source
+|   |       |
+|   |       └───bin
+|   |           |   binaries
 |
 |   .gitignore
 |   LICENSE
