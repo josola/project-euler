@@ -1,5 +1,5 @@
-# Multiples of 3 and 5
-# Naive Algorithm
+# problems/001_multiples_of_3_and_5/python/gauss_summation/gauss_summation_simplified.py
+# Multiples of 3 and 5 naive algorithm.
 # (c) Jordan Sola 2021
 # Written by Jordan Sola 2021
 

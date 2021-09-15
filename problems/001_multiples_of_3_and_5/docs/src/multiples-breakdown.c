@@ -1,7 +1,9 @@
-// multiples-breakdown.c
-//
-// Provides a breakdown of the multiples of 3 or 5,
-// just 3, just 5, and multiples totals.
+/* problems/001_multiples_of_3_and_5/docs/src/multiples-breakdown.c
+ * Provides a breakdown of the multiples of 3 or 5,
+ * just 3, just 5, and multiples totals.
+ * (c) Jordan Sola 2020-2021
+ * Written by Jordan Sola
+ */
 
 #include "stdio.h"
 #include "locale.h"

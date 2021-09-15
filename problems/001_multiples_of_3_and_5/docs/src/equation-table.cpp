@@ -1,29 +1,23 @@
-// equation-table.cpp
-//
-// Handmade Solutions - Project Euler Problem 1
-// Prints the problems to be copied into the handmade documentation.
+/* problems/001_multiples_of_3_and_5/docs/src/equation-table.cpp
+ * Prints the problems to be copied into the handmade documentation.
+ * (c) 2020-2021 Jordan Sola
+ * Written by Jordan Sola */
 
 #include <iostream>
 #include <string>
 #include <iomanip>
 
-using std::cout;
-using std::endl;
-using std::fixed;
-using std::setprecision;
-using std::string;
-
 int main()
 {
-    string check_mark = "\u2713";
-    string cancel = "\u2718";
-    string *output_symbol = NULL;
+    std::string check_mark = "\u2713";
+    std::string cancel = "\u2718";
+    std::string *output_symbol = NULL;
 
     const int limit = 1000;
 
     // Table header.
-    cout << "| # | Divide by 3 | Divide by 5 | Multiple |" << endl;
-    cout << "| :---: | :---: | :---: | :---: |" << endl;
+    std::cout << "| # | Divide by 3 | Divide by 5 | Multiple |" << std::endl;
+    std::cout << "| :---: | :---: | :---: | :---: |" << std::endl;
 
     // Table contents.
 
@@ -41,22 +35,22 @@ int main()
 
         if (3 % i == 0)
         {
-            cout << "| " << i << " |" << " 3 / " << i << " = " << 3 / i << " |";
+            std::cout << "| " << i << " |" << " 3 / " << i << " = " << 3 / i << " |";
         }
         else
         {
-            cout << setprecision(1) << fixed
+            std::cout << std::setprecision(1) << std::fixed
                  << "| " << i << " |" << " 3 / " << i << " = " << 3.0 / (double)i << " |";
         }
 
         if (5 % i == 0)
         {
-            cout << " 5 / " << i << " = " << 5 / i << " | " << *output_symbol << " |" << endl;
+            std::cout << " 5 / " << i << " = " << 5 / i << " | " << *output_symbol << " |" << std::endl;
         }
         else
         {
-            cout << setprecision(1) << fixed
-                 << "5 / " << i << " = " << 5.0 / (double)i << " | " << *output_symbol << " |" << endl;
+            std::cout << std::setprecision(1) << std::fixed
+                 << "5 / " << i << " = " << 5.0 / (double)i << " | " << *output_symbol << " |" << std::endl;
         }
     }
 
@@ -77,22 +71,22 @@ int main()
 
         if (3 % i == 0)
         {
-            cout << "| " << i << " | " << i << " / 3" << " = " << i / 3 << " |";
+            std::cout << "| " << i << " | " << i << " / 3" << " = " << i / 3 << " |";
         }
         else
         {
-            cout << setprecision(1) << fixed
+            std::cout << std::setprecision(1) << std::fixed
                  << "| " << i << " | " << i << " / 3" << " = " << (double)i / 3.0 << " |";
         }
 
         if (5 % i == 0)
         {
-            cout << " 5 / " << i << " = " << 5 / i << " | " << *output_symbol << " |" << endl;
+            std::cout << " 5 / " << i << " = " << 5 / i << " | " << *output_symbol << " |" << std::endl;
         }
         else
         {
-            cout << setprecision(1) << fixed
-                 << " 5 / " << i << " = " << 5.0 / (double)i << " | " << *output_symbol << " |" << endl;
+            std::cout << std::setprecision(1) << std::fixed
+                 << " 5 / " << i << " = " << 5.0 / (double)i << " | " << *output_symbol << " |" << std::endl;
         }
     }
 
@@ -113,22 +107,22 @@ int main()
 
         if (i % 3 == 0)
         {
-            cout << "| " << i << " | " << i << " / 3 = " << i / 3;
+            std::cout << "| " << i << " | " << i << " / 3 = " << i / 3;
         }
         else
         {
-            cout << setprecision(1) << fixed
+            std::cout << std::setprecision(1) << std::fixed
                  << "| " << i << " | " << i << " / 3 = " << (double)i / 3.0;
         }
 
         if (i % 5 == 0)
         {
-            cout << " | " << i << " / 5 = " << i / 5 << " | " << *output_symbol << " |" << endl;
+            std::cout << " | " << i << " / 5 = " << i / 5 << " | " << *output_symbol << " |" << std::endl;
         }
         else
         {
-            cout << setprecision(1) << fixed
-                 << " | " << i << " / 5 = " << (double)i / 5.0 << " | " << *output_symbol << " |" << endl;
+            std::cout << std::setprecision(1) << std::fixed
+                 << " | " << i << " / 5 = " << (double)i / 5.0 << " | " << *output_symbol << " |" << std::endl;
         }
     }
 

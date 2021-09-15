@@ -1,4 +1,4 @@
-# Multiples of 3 and 5
+# problems/001_multiples_of_3_and_5/python/gauss_summation/gauss_summation_obvious.py
 # Guass Summation Algorithm Obvious
 # (c) Jordan Sola 2021
 # Written by Jordan Sola 2021

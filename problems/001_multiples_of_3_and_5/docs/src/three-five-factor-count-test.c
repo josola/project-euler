@@ -1,6 +1,8 @@
-// three-five-factor-count-test.c
-//
-// Tests if three and five have the same multiples.
+/* problems/001_multiples_of_3_and_5/docs/src/three-five-factor-count-test.c
+ * Tests if three and five have the same multiples.
+ * (c) Jordan Sola 2020-2021
+ * Written by Jordan Sola
+ */
 
 #include "stdio.h"
 

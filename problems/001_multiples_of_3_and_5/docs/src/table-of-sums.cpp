@@ -1,7 +1,9 @@
-// table-of-sums.cpp
-//
-// Generates a table showing the summation
-// of all the multiples of 3 or 5.
+/* problems/001_multiples_of_3_and_5/docs/src/table-of-sums.cpp
+ * Generates a table showing the summation
+ * of all the multiples of 3 or 5.
+ * (c) Jordan Sola 2020-2021
+ * Written by Jordan Sola
+ */
 
 #include <iostream>
 #include <vector>
