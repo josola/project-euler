@@ -3,7 +3,6 @@
  * Problem 14 - Longest Collatz sequence */
 
 #include <iostream>
-#include "collatz.h"
 
 using std::cout;
 using std::endl;
@@ -41,4 +40,17 @@ int main()
 
     cout << highest_term << endl
          << highest_start << endl;
+}
+
+long int Collatz(long int n)
+{
+    if (n % 2 == 0)
+    {
+        n = n / 2;
+    }
+    else
+    {
+        n = (3 * n + 1)/2;
+    }
+    return n;
 }

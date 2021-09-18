@@ -4,7 +4,6 @@
  * Solution - v001 */
 
 #include <iostream>
-#include "prime.h"
 
 using std::cout;
 using std::endl;
@@ -27,4 +26,24 @@ int main()
     cout << sum << endl;
 
     return 0;
+}
+
+bool IsPrime(int num)
+{
+    // Zero and one cannot be prime.
+    if (num == 0 || num == 1)
+    {
+        return false;
+    }
+  
+    // Numbers that divide cleanly cannot be prime.
+    for (int i = 2; i < num; i++)
+    {
+        if (num % i == 0)
+        {
+            return false;
+        }
+    }
+    
+    return true;
 }

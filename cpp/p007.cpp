@@ -4,7 +4,6 @@
  * Solution - v001 */
 
 #include <iostream>
-#include "prime.h"
 
 using std::cout;
 using std::endl;
@@ -30,4 +29,24 @@ int main()
     }
 
     return 0;
+}
+
+int IsPrime(int n)
+{
+    // Can't be prime, no need to calculate.
+    if (n <= 1)
+    {
+        return 0;
+    }
+
+    // Positive divisors halt execution, number is not prime.
+    for (int i = 2; i < n; i++)
+    {
+        if (n % i == 0)
+        {
+            return 0;
+        }
+    }
+    
+    return 1;
 }
