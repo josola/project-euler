@@ -1,7 +1,8 @@
-/* collatz.cpp
+/* 
  * Project Euler
  * Problem 15 - Lattice paths
- * Solution - v001 */
+ * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ */
 
 #include <iostream>
 

@@ -1,7 +1,8 @@
-/* main.cpp
+/* 
  * Project Euler
  * Problem 7 - 10001st prime
- * Solution - v001 */
+ * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ */
 
 #include <iostream>
 

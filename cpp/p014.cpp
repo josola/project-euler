@@ -1,6 +1,7 @@
-/* main.cpp
+/* 
  * Project Euler
- * Problem 14 - Longest Collatz sequence */
+ * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ */
 
 #include <iostream>
 

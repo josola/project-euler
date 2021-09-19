@@ -1,8 +1,7 @@
-/* src\main.cpp
+/* 
+ * Project Euler
  * Problem 17 - Number-letter-counts
- * 
- * (c) 2021 Jordan Sola
- * Written by Jordan Sola
+ * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
  */
 
 int main()

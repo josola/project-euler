@@ -1,47 +1,24 @@
 /* 
  * Project Euler
  * Problem 2 - Even Fibonacci numbers
- * 
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
  */
 
-#include <iostream>
-
+#include "stdio.h"
 
 int main() {
 
-	// Setup
+	int a = 2;
+	int b = 8;
+	int sum = 0;
 
-	const int sequence_start = 0;
-
-	int term_a = sequence_start;
-	int term_b = 1;
-
-	int next_term = 0;
-
-	int total = 0;
-	const int limit = 4000000;
-
-	// Logic
-
-	while (total < limit) {
-
-		next_term = term_a + term_b;
-
-		term_a = term_b;
-		term_b = next_term;
-
-		if (next_term % 2 == 0)
-			total += next_term;
-
+	while (a < 4000000) {
+		sum += a;
+		int temp = b;
+		b = 4 * b + a;
+		a = temp;
 	}
-
-	// Result
-
-	std::cout << total << std::endl;
-
-	// Exit
-
+	
+	printf("%i\n", sum);
 	return 0;
-
 }
