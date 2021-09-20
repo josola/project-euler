@@ -62,5 +62,9 @@ dkms.conf
 \obj
 *.csproj
 *.sqlite
-/.vs
-/Project-Euler-sln
+\.vs
+\Project-Euler-sln
+
+# Xcode
+\xcode_projectEuler
+*.pbxproj
