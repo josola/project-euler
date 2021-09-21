@@ -5,6 +5,7 @@
  */
 
 #include "stdio.h"
+#include "runtime.hpp"
 
 int main() {
 
@@ -16,18 +17,19 @@ int main() {
 	 * dividing the num by its composite.
 	 */
 	
-
-	for (long int i = 2; i < num; i++) {
-		if (num % i == 0)
-			num /= i;
+	{
+		bm::runtime timer;
+		for (long int i = 2; i < num; i++) {
+			if (num % i == 0)
+				num /= i;
+		}
 	}
-
 	printf("%lli\n", num);
 	
 	return 0;
 }
 
 /*
- * Runtime (Apple M1): 26µs (0.026ms)
+ * Runtime (Apple M1): 26,500ns (26.5µs) (0.03ms)
  * Complexity: O(log n)
  */
