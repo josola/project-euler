@@ -24,6 +24,7 @@ int main() {
 	 */
 	
 	int sum = 0;
+
 	for (int i = 0; i < 3; i++)
 		sum += a[i] * (n[i] * (n[i] + n_plus[i]) / 2);
 	
@@ -33,6 +34,6 @@ int main() {
 }
 
 /*
- * Runtime: near-instantaneous
+ * Runtime (Apple M1): 1µs (0.001ms)
  * Complexity: O(i) constant
  */
