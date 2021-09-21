@@ -4,45 +4,46 @@
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
  */
 
-#include <iostream>
-
-using std::cout;
-using std::endl;
+#include "stdio.h"
 
 int main()
 {
-    int palindrome = 0;
 
-    for (int i = 100; i < 999; i++)
-    {
-        for (int j = 100; j < 999; j++)
-        {
-            // Numbers that end with zero cannot be palindromes.
-            if ((i * j) % 10 != 0)
-            {
-                int product = i * j;
-                int temp_product = product;
-                int reverse = 0;
+	int palindrome = 0;
 
-                // Digits need to be removed from number
-                // that is being reversed.
-                while (temp_product != 0)
-                {
-                    reverse = reverse * 10 + temp_product % 10;
-                    temp_product /= 10;
-                }
+	/*
+	 * The largest palindrome between two three digit numbers is six digits
+	 * long. Six digit numbers have a factor of eleven. We can start our inner
+	 * loop at 990, the highest three digit number with a factor of eleven.
+	 */
 
-                // Track current largest. Iteration limit
-                // will determine stopping point.
-                if ((reverse == product) && (reverse > palindrome))
-                {
-                    palindrome = product;
-                }
-            }
-        }
-    }
+	for (int i = 999; i > 100; i--) {
 
-    cout << palindrome << endl;
+		for (int j = 990; j > 100; j -= 11) {
 
-    return 0;
+			if (palindrome > (i * j))
+				break;
+
+			else {
+				int product = i * j;
+				int reverse = 0;
+				while (product != 0) {
+					reverse = reverse * 10 + product % 10;
+					product /= 10;
+				}
+
+				if (reverse == (i * j))
+					palindrome = i * j;
+			}
+		}
+	}
+
+	printf("%i\n", palindrome);
+
+	return 0;
 }
+
+/*
+ * Runtime (Apple M1): 4167ns (4.17µs)
+ * Complexity: O(n * m)
+ */
