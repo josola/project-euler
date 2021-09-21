@@ -23,16 +23,16 @@ int main() {
 	int term = 3;
 
 	while (sum < limit) {
-		sum += (pow(phi, term) - pow((1 - phi), term)) / sqrt(5);
+		sum += static_cast<int>((pow(phi, term) - pow((1 - phi), term)) / sqrt(5));
 		term += 3;
 	}
-
+	
 	printf("%i\n", sum);
 
 	return 0;
 }
 
 /*
- * Execution time: 10µs (0.01ms)
+ * Runtime (Apple M1): 4µs (0.004ms)
  * Complexity: O(log n)
  */
