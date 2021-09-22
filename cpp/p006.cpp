@@ -5,36 +5,26 @@
  */
 
 #include <iostream>
+#include <cmath>
 
-using std::cout;
-using std::endl;
+int main() {
 
-int main()
-{
-    // ----- global variables
-    int limit = 100;
-    // -----
+	const int limit = 100;
+	
+	/*
+	 * - We find this by using Gauss's series formula.
+	 * - Square Sum Formula: m = ((n)(n + 1) / 2)^2
+	 * - Sum Square Formula: m = (n)(n + 1)(2n + 1) / 6
+	 */
+	
+	long long int difference = (pow(limit * (limit + 1) / 2, 2)) - (limit * (limit + 1) * ((2 * limit) + 1) / 6);
+	
+	std::cout << difference << std::endl;
 
-    // ----- Sum of squares.
-    int sum_of_squares = 0;
-    for (int i = 1; i < limit + 1; i++)
-    {
-        sum_of_squares += i * i;
-    }
-    // -----
-
-    // ----- Sum of naturals squared.
-    int sum_of_naturals = 0;
-    for (int i = 1; i < limit + 1; i++)
-    {
-        sum_of_naturals += i;
-    }
-    int naturals_squared = sum_of_naturals * sum_of_naturals;
-    // -----
-
-    int sum_of_naturals_and_squares = naturals_squared - sum_of_squares;
-
-     cout << sum_of_naturals_and_squares << endl;
-
-    return 0;
+	return 0;
 }
+
+/*
+ * Runtime (Apple M1): 42ns (0.04µs)
+ * Complexity: O(1)
+ */
