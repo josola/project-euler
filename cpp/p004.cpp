@@ -44,6 +44,6 @@ int main()
 }
 
 /*
- * Runtime (Apple M1): 4167ns (4.17µs)
+ * Runtime (Apple M1): 4'167ns (4.17µs)
  * Complexity: O(n * m)
  */
