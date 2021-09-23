@@ -1,23 +1,28 @@
-# problems/001_multiples_of_3_and_5/python/gauss_summation/gauss_summation_simplified.py
-# Guass Summation Algorithm Simplified
-# (c) Jordan Sola 2021
+# Project Euler
+# Problem 1 - Multiples of 3 and 5
+# (c) Jordan Sola 2021. All rights reserved. (MIT License)
 # Written by Jordan Sola 2021
 
-# Answer: 233168
+LIMIT = 1000 - 1
 
-n = 1000 - 1
+a = [3, 5, -15]
+n = [LIMIT // a[0], LIMIT // a[1], int(LIMIT / a[2])]
+n_plus = [1, 1, -1]
+sum = 0
 
-a = 3
-b = 5
-c = -15
+# - Gauss Summation Formula: sum = a(n(n + 1) / 2).
+#   a = factor (3, 5, -15)
+#   n = limit (999) / factor (3, 5, -15)
+# - We need to remove 15 as it is a factor of numbers that have already
+#   been counted as factors of 3 and 5.
 
-d = [a, b, c]
-m = [n // a, n // b, int(n / c)]
-f = [1, 1, -1]
+def compute(sum):
+	for factor in range(0, len(a)):
+		sum += a[factor] * (n[factor] * (n[factor] + n_plus[factor]) // 2)
+	return sum
 
-total = 0 
+if __name__ == "__main__":
+	print(compute(sum))
 
-for factor in range(len(m)):
-    total += d[factor] * (m[factor] * (m[factor] + f[factor]) // 2)
-
-print(total)
+# Runtime (Apple M1): 341ns
+# Complexity: O(1)
