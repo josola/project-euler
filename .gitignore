@@ -52,19 +52,7 @@ Mkfile.old
 dkms.conf
 
 # Misc
-.vscode
 .DS_Store
-\support
-\bin
-*.exe
-
-# Solution files
-\obj
-*.csproj
-*.sqlite
-\.vs
-\Project-Euler-sln
-
-# Xcode
-\xcode_projectEuler
-*.pbxproj
+/.vscode
+cpp/bin
+cpp/xcode
