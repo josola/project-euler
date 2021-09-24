@@ -5,7 +5,6 @@
  */
 
 #include "stdio.h"
-#include "runtime.hpp"
 
 int main() {
 
@@ -17,13 +16,11 @@ int main() {
 	 * dividing the num by its composite.
 	 */
 	
-	{
-		bm::runtime timer;
-		for (long int i = 2; i < num; i++) {
-			if (num % i == 0)
-				num /= i;
-		}
+	for (long int i = 2; i < num; i++) {
+		if (num % i == 0)
+			num /= i;
 	}
+	
 	printf("%lli\n", num);
 	
 	return 0;

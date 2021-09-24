@@ -8,7 +8,6 @@
 #include <cmath>
 
 #include "stdio.h"
-#include "runtime.hpp"
 
 int main() {
 
@@ -22,13 +21,9 @@ int main() {
 	
 	int sum = 0;
 	int term = 3;
-
-	{
-		bm::runtime timer;
-		while (sum < limit) {
-			sum += static_cast<int>((pow(phi, term) - pow((1 - phi), term)) / sqrt(5));
-			term += 3;
-		}
+	while (sum < limit) {
+		sum += static_cast<int>((pow(phi, term) - pow((1 - phi), term)) / sqrt(5));
+		term += 3;
 	}
 	
 	printf("%i\n", sum);

@@ -7,8 +7,6 @@
 #include <numeric>
 #include <iostream>
 
-#include "stdio.h"
-
 int main() {
 	
 	const int limit = 20;

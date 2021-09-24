@@ -6,7 +6,6 @@
  */
 
 #include "stdio.h"
-#include "runtime.hpp"
 
 int main() {
 	
@@ -26,11 +25,8 @@ int main() {
 	
 	int sum = 0;
 
-	{
-		bm::runtime timer;
-		for (int i = 0; i < 3; i++)
-			sum += a[i] * (n[i] * (n[i] + n_plus[i]) / 2);
-	}
+	for (int i = 0; i < 3; i++)
+		sum += a[i] * (n[i] * (n[i] + n_plus[i]) / 2);
 	
 	printf("%i\n", sum);
 	
