@@ -13,7 +13,7 @@ int main() {
 	int prime = 3;
 	
 	while (count < limit) {
-		
+		// Skip even numbers, they cannot be prime
 		prime += 2;
 		bool is_prime = true;
 		
@@ -21,9 +21,9 @@ int main() {
 			continue;
 		
 		else {
-			
+			// Optimized primality test for numbers above 25
 			for (int i = 5; i * i <= prime; i += 6) {
-				if (prime % 3 == 0 || prime % i == 0 || prime % (i + 2) == 0)
+				if (prime % i == 0 || prime % (i + 2) == 0)
 					is_prime = false;
 			}
 		}
@@ -39,5 +39,5 @@ int main() {
 
 /*
  * Runtime (Apple M1): 2'379'208ns (2'379.21µs) (2.38ms)
- * Complexity:
+ * Complexity: O(n)
  */
