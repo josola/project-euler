@@ -4,52 +4,44 @@
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
  */
 
-#include <iostream>
 #include <cmath>
 
-using std::cout;
-using std::endl;
-using std::pow;
+#include "stdio.h"
 
-int main()
-{
-    // ----- global variables
-    int a = 0;
-    int b = 0;
-    int c = 0;
-    int target = 1000;
-    bool found = 0;
-    // -----
-
-    for (a = 1; a < target; a++)
-    {
-        for (b = a; b < target; b++)
-        {
-            // If you start c at the target, the triplet
-            // will add up to the target.
-            c = target - a - b;
-
-            // ----- Makes current triplet easier to see.
-            int first = pow(a, 2);
-            int second = pow(b, 2);
-            int third = pow(c, 2);
-            // -----
-
-            // Check for pythagorean triplet.
-            if (first + second == third)
-            {
-                found = true;
-                break;
-            }
-        }
-        if (found)
-        {
-            break;
-        }
-    }
-
-    cout << "Triplet: " << a << ", " << b << ", " << c << endl; 
-    cout << "Product: " << a * b * c << endl;
-
-    return 0;
+int main() {
+	
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int target = 1000;
+	
+	bool found = 0;
+	for (a = 1; a < target; a++) {
+		
+		for (b = a; b < target; b++) {
+			
+			c = target - a - b;
+			
+			int first = pow(a, 2);
+			int second = pow(b, 2);
+			int third = pow(c, 2);
+			
+			if (first + second == third) {
+				found = true;
+				break;
+			}
+		}
+		
+		if (found)
+			break;
+	}
+	
+	printf("%i\n", a * b * c);
+	
+	return 0;
 }
+
+/*
+ * Runtime (Apple M1): 126'916ns (126.92µs) (0.13ms)
+ * Complexity: O(n^2)
+ */
