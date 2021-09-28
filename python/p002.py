@@ -1,35 +1,25 @@
-# Even Fibonacci Numbers
-# Naive Algorithm
-# (c) 2021 Jordan Sola
-# Written by Jordan Sola
+# Project Euler
+# Problem 2 - Even Fibonacci numbers
+# (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+# Written by Jordan Sola 202-2021
 
-# Answer: 4613732
+import math
 
-def GetFibonacciSequence(LIMIT):
-    sequence = [1, 2]
-    for num in range(2, LIMIT):
-        term = sequence[num - 2] + sequence[num - 1]
-        if term <= LIMIT:
-            sequence.append(term)
-        else:
-            break
-    return sequence
+def compute():
 
-def GetEvenElements(sequence):
-    even_elements = []
-    for elem in sequence:
-        if elem % 2 == 0:
-            even_elements.append(elem)
-    return even_elements
+	PHI = (1 + math.sqrt(5)) / 2
+	LIMIT = 4000000 // 3
 
-def Accumulate(sequence):
-    sum = 0
-    for num in sequence:
-        sum += num
-    return sum
+	# - nth fibonacci ferm formula: nth = [Phi^n – (phi)^n] / Sqrt[5]
+	# - Every third term in a fibonacci sequence is even.
 
-LIMIT = 4000000
-fibonacci_sequence = GetFibonacciSequence(LIMIT)
-even_fibonacci_terms = GetEvenElements(fibonacci_sequence)
-solution = Accumulate(even_fibonacci_terms)
-print(solution)
+	sum = 0
+	term = 3
+	while sum < LIMIT:
+		sum += int((math.pow(PHI, term) - math.pow(1 - PHI, term)) / math.sqrt(5))
+		term += 3
+
+	return sum
+
+if __name__ == "__main__":
+	print(compute())
