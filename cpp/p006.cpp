@@ -8,7 +8,7 @@
 #include <cmath>
 
 int main() {
-
+	
 	const int limit = 100;
 	
 	/*
@@ -20,7 +20,7 @@ int main() {
 	long long int difference = (pow(limit * (limit + 1) / 2, 2)) - (limit * (limit + 1) * ((2 * limit) + 1) / 6);
 	
 	std::cout << difference << std::endl;
-
+	
 	return 0;
 }
 

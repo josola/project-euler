@@ -20,12 +20,12 @@ int main() {
 	 */
 	
 	long long int result = limit - (limit - 1);
-
+	
 	for (int i = 2; i < limit + 1; i++)
 		result = abs(result * i) / std::gcd(result, i);
 	
 	std::cout << result << std::endl;
-
+	
 	return 0;
 }
 

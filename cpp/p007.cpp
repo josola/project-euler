@@ -25,6 +25,7 @@ int main() {
 			for (int i = 5; i * i <= prime; i += 6) {
 				if (prime % i == 0 || prime % (i + 2) == 0)
 					is_prime = false;
+				continue;
 			}
 		}
 		

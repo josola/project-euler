@@ -7,9 +7,9 @@
 #include "stdio.h"
 
 int main() {
-
+	
 	long long int num = 600851475143;
-
+	
 	/*
 	 * Any prime number that is greater than a composite number cannot be the
 	 * largest prime, we elimenate primes greater than a constant by

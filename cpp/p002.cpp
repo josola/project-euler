@@ -10,7 +10,7 @@
 #include "stdio.h"
 
 int main() {
-
+	
 	const double phi = (1 + sqrt(5)) / 2;
 	const int limit = 4'000'000 / 3;
 	
@@ -27,7 +27,7 @@ int main() {
 	}
 	
 	printf("%i\n", sum);
-
+	
 	return 0;
 }
 
