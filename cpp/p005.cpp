@@ -5,7 +5,8 @@
  */
 
 #include <numeric>
-#include <iostream>
+
+#include "stdio.h"
 
 int main() {
 	
@@ -24,7 +25,7 @@ int main() {
 	for (int i = 2; i < limit + 1; i++)
 		result = abs(result * i) / std::gcd(result, i);
 	
-	std::cout << result << std::endl;
+	printf("%lli\n", result);
 	
 	return 0;
 }

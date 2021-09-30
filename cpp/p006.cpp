@@ -4,8 +4,9 @@
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
  */
 
-#include <iostream>
 #include <cmath>
+
+#include "stdio.h"
 
 int main() {
 	
@@ -19,7 +20,7 @@ int main() {
 	
 	long long int difference = (pow(limit * (limit + 1) / 2, 2)) - (limit * (limit + 1) * ((2 * limit) + 1) / 6);
 	
-	std::cout << difference << std::endl;
+	printf("%lli\n", difference);
 	
 	return 0;
 }
