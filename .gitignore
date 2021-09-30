@@ -56,3 +56,4 @@ dkms.conf
 /.vscode
 cpp/bin
 cpp/xcode
+/visual_studio
