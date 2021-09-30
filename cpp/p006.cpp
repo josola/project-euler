@@ -4,11 +4,12 @@
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
  */
 
-#include <iostream>
 #include <cmath>
 
-int main() {
+#include "stdio.h"
 
+int main() {
+	
 	const int limit = 100;
 	
 	/*
@@ -19,12 +20,12 @@ int main() {
 	
 	long long int difference = (pow(limit * (limit + 1) / 2, 2)) - (limit * (limit + 1) * ((2 * limit) + 1) / 6);
 	
-	std::cout << difference << std::endl;
-
+	printf("%lli\n", difference);
+	
 	return 0;
 }
 
 /*
- * Runtime (Apple M1): 42ns (0.04µs)
+ * Runtime (Apple M1): 42ns
  * Complexity: O(1)
  */

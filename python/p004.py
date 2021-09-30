@@ -1,27 +1,37 @@
-# Largest Palindrome Product
-# Prject Euler Problem 4
-# (c) Jordan Sola 2021
+# Project Euler
+# Problem 4 - Largest palindrome product
+# (c) Jordan Sola 2021. All rights reserved. (MIT License)
 # Written by Jordan Sola 2021
 
-# Answer: 906609
+def compute():
 
-LIMIT_A = 999
-LIMIT_B = 999
+	palindrome = 0
 
-palindrome = 0
+	# The largest palindrome between two three digit numbers is six digits
+	# long. Six digit numbers have a factor of eleven. We can start our inner
+	# loop at 990, the highest three digit number with a factor of eleven.
 
-# Stop at 100, can't count double digit numbers.
-for a in range(LIMIT_A, 100, -1):
+	for i in range(999, 100, -1):
 
-    for b in range(LIMIT_B, 100, -1):
+		j = 990
+		while j > 100:
 
-        # String conversion is used to check for palindrome.
-        product = a * b
-        str_product = str(product)
+			product = i * j
+			if palindrome > product:
+				break
 
-        if str_product == str_product[::-1]:
-            # Need greatest palindrome of two numbers.
-            if product > palindrome:
-                palindrome = product
+			else:
+				reverse = 0
+				while product != 0:
+					reverse = reverse * 10 + product % 10
+					product //= 10
 
-print(palindrome)
+				if reverse == (i * j):
+					palindrome = (i * j)
+
+			j -= 11
+
+	return palindrome
+
+if __name__ == "__main__":
+	print(compute())

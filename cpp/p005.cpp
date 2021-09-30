@@ -5,7 +5,8 @@
  */
 
 #include <numeric>
-#include <iostream>
+
+#include "stdio.h"
 
 int main() {
 	
@@ -20,16 +21,16 @@ int main() {
 	 */
 	
 	long long int result = limit - (limit - 1);
-
+	
 	for (int i = 2; i < limit + 1; i++)
 		result = abs(result * i) / std::gcd(result, i);
 	
-	std::cout << result << std::endl;
-
+	printf("%lli\n", result);
+	
 	return 0;
 }
 
 /*
- * Runtime (Apple M1): 250ns (0.25µs)
+ * Runtime (Apple M1): 250ns
  * Complexity: O(n)
  */

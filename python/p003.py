@@ -1,35 +1,25 @@
-# Largest Prime Factor
-# Trial Division
-# (c) 2021 Jordan Sola
-# Written by Jordan Sola 2021
+# Project Euler
+# Problem 3 - Largest prime factor
+# (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+# Written by Jordan Sola 202-2021
 
-# Answer: 6857
+def compute():
 
-LIMIT = 600851475143
+	num = 600851475143
 
-def TrialDivision(NUM):
-    itr = 2
-    square_root = int(NUM ** 0.5)
-    prime = True
+	# Any prime number that is greater than a composite number cannot be the
+	# largest prime, we elimenate primes greater than a constant by
+	# dividing the num by its composite.
 
-    while (itr <= square_root):
-        if (NUM % itr == 0):
-            prime = False
-            break
-        itr += 1
+	i = 3
+	while i < num:
 
-    return prime
+		if num % i == 0:
+			num //= i
 
-largest_prime_factor = 0
-num = 2
+		i += 2
 
-# 1 cannot be prime, num must start at 2
-while num <= LIMIT:
-    if TrialDivision(num):
-        if LIMIT % num == 0:
-            LIMIT //= num
-            largest_prime_factor = num
+	return num
 
-    num += 1
-
-print(largest_prime_factor)
+if __name__ == "__main__":
+	print(compute())

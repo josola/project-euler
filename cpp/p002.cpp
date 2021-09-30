@@ -10,7 +10,7 @@
 #include "stdio.h"
 
 int main() {
-
+	
 	const double phi = (1 + sqrt(5)) / 2;
 	const int limit = 4'000'000 / 3;
 	
@@ -27,11 +27,11 @@ int main() {
 	}
 	
 	printf("%i\n", sum);
-
+	
 	return 0;
 }
 
 /*
- * Runtime (Apple M1): 4'334ns (4.33µs)
+ * Runtime (Apple M1): 4.33µs
  * Complexity: O(log n)
  */

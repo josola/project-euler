@@ -25,6 +25,7 @@ int main() {
 			for (int i = 5; i * i <= prime; i += 6) {
 				if (prime % i == 0 || prime % (i + 2) == 0)
 					is_prime = false;
+				continue;
 			}
 		}
 		
@@ -38,6 +39,6 @@ int main() {
 }
 
 /*
- * Runtime (Apple M1): 2'379'208ns (2'379.21µs) (2.38ms)
+ * Runtime (Apple M1): 2.38ms
  * Complexity: O(n)
  */
