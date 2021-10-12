@@ -5,15 +5,16 @@
  * Written by Jordan Sola 2020-2021
  */
 
+#include <array>
+
 #include "stdio.h"
 
-int main() {
+
+int compute(const int limit) {
 	
-	const int limit = 1000 - 1;
-	
-	int a[3] = {3, 5, -15};
-	int n[3] = {(limit / a[0]), (limit / a[1]), (limit / a[2])};
-	int n_plus[3] = {1, 1, -1};
+	std::array<int, 3> a = {3, 5, -15};
+	std::array<int, 3> n = {(limit / a[0]), (limit / a[1]), (limit / a[2])};
+	std::array<int, 3> n_plus = {1, 1, -1};
 	
 	/*
 	 * - Gauss Summation Formula: sum = a(n(n + 1) / 2).
@@ -24,16 +25,17 @@ int main() {
 	 */
 	
 	int sum = 0;
-	
 	for (int i = 0; i < 3; i++)
 		sum += a[i] * (n[i] * (n[i] + n_plus[i]) / 2);
-	
-	printf("%i\n", sum);
-	
-	return 0;
+
+	return sum;
+
 }
 
-/*
- * Runtime (Apple M1): 42ns
- * Complexity: O(1)
- */
+int main() {
+
+	printf("%i\n", compute(1'000 - 1));
+
+	return 0;
+
+}
