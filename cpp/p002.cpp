@@ -6,13 +6,11 @@
  */
 
 #include <cmath>
+#include <iostream>
 
-#include "stdio.h"
+int compute(const int limit) {
 
-int main() {
-	
 	const double phi = (1 + sqrt(5)) / 2;
-	const int limit = 4'000'000 / 3;
 	
 	/*
 	 * - nth fibonacci ferm formula: nth = [Phi^n – (phi)^n] / Sqrt[5]
@@ -21,17 +19,18 @@ int main() {
 	
 	int sum = 0;
 	int term = 3;
-	while (sum < limit) {
+	while (sum < (limit / 3)) {
 		sum += static_cast<int>((pow(phi, term) - pow((1 - phi), term)) / sqrt(5));
 		term += 3;
 	}
-	
-	printf("%i\n", sum);
-	
-	return 0;
+
+	return sum;
+
 }
 
-/*
- * Runtime (Apple M1): 4.33µs
- * Complexity: O(log n)
- */
+int main() {
+	
+	std::cout << compute(4'000'000) << std::endl;
+	return 0;
+
+}

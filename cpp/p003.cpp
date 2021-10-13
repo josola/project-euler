@@ -4,29 +4,30 @@
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
  */
 
-#include "stdio.h"
+#include <iostream>
 
-int main() {
-	
-	long long int num = 600851475143;
-	
+long long int compute(const long long int num) {
+
+	long long int output = num;
+
 	/*
 	 * Any prime number that is greater than a composite number cannot be the
 	 * largest prime, we elimenate primes greater than a constant by
 	 * dividing the num by its composite.
 	 */
 	
-	for (long int i = 3; i < num; i += 2) {
-		if (num % i == 0)
-			num /= i;
+	for (long int i = 3; i < output; i += 2) {
+		if (output % i == 0)
+			output /= i;
 	}
-	
-	printf("%lli\n", num);
-	
-	return 0;
+
+	return output;
+
 }
 
-/*
- * Runtime (Apple M1): 13.25µs
- * Complexity: O(log n)
- */
+int main() {
+	
+	std::cout << compute(600'851'475'143) << std::endl;
+	return 0;
+
+}

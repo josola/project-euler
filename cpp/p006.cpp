@@ -5,24 +5,25 @@
  */
 
 #include <cmath>
+#include <iostream>
 
-#include "stdio.h"
+int compute(const int limit) {
 
-int main() {
-	
-	const int limit = 100;
-	
 	/*
 	 * - We find this by using Gauss's series formula.
 	 * - Square Sum Formula: m = ((n)(n + 1) / 2)^2
 	 * - Sum Square Formula: m = (n)(n + 1)(2n + 1) / 6
 	 */
 	
-	long long int difference = (pow(limit * (limit + 1) / 2, 2)) - (limit * (limit + 1) * ((2 * limit) + 1) / 6);
+	return (pow(limit * (limit + 1) / 2, 2)) - (limit * (limit + 1) * ((2 * limit) + 1) / 6);
+
+}
+
+int main() {
 	
-	printf("%lli\n", difference);
-	
+	std::cout << compute(100) << std::endl;
 	return 0;
+
 }
 
 /*

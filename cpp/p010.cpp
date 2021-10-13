@@ -5,13 +5,10 @@
  */
 
 #include <vector>
+#include <iostream>
 
-#include "stdio.h"
+long long int compute(const int limit) {
 
-int main() {
-	
-	const int limit = 2'000'000;
-	
 	/*
 	 * - Uses Sieve of Eratosthenes to eliminate composite numbers
 	 *   up to the limit.
@@ -36,13 +33,14 @@ int main() {
 			sum += i;
 		}
 	}
-	
-	printf("%lli\n", sum);
-	
-	return 0;
+
+	return sum;
+
 }
 
-/*
- * Runtime (Apple M1): 3.29ms
- * Complexity: O(n)
- */
+int main() {
+	
+	std::cout << compute(2'000'000) << std::endl;
+	return 0;
+
+}

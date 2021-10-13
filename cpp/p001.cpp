@@ -7,8 +7,7 @@
 
 #include <array>
 
-#include "stdio.h"
-
+#include "benchmark/benchmark.h"
 
 int compute(const int limit) {
 	
@@ -32,10 +31,11 @@ int compute(const int limit) {
 
 }
 
-int main() {
-
-	printf("%i\n", compute(1'000 - 1));
-
-	return 0;
-
+static void p001_bench(benchmark::State& state) {
+	for (auto _ : state) {
+		benchmark::DoNotOptimize(compute(state.range(0)));
+	}
 }
+
+BENCHMARK(p001_bench)->RangeMultiplier(25)->Range(1000, 1000<<10)->Complexity();
+BENCHMARK_MAIN();

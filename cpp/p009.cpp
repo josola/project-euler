@@ -5,15 +5,13 @@
  */
 
 #include <cmath>
+#include <iostream>
 
-#include "stdio.h"
+int compute(const int target) {
 
-int main() {
-	
 	int a = 0;
 	int b = 0;
 	int c = 0;
-	int target = 1000;
 	
 	bool found = 0;
 	for (a = 1; a < target; a++) {
@@ -35,13 +33,14 @@ int main() {
 		if (found)
 			break;
 	}
-	
-	printf("%i\n", a * b * c);
-	
-	return 0;
+
+	return a * b * c;
+
 }
 
-/*
- * Runtime (Apple M1): 126.92µs
- * Complexity: O(n^2)
- */
+int main() {
+	
+	std::cout << compute(1'000) << std::endl;
+	return 0;
+
+}

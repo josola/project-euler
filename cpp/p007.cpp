@@ -4,11 +4,10 @@
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
  */
 
-#include "stdio.h"
+#include <iostream>
 
-int main() {
-	
-	const int limit = 10'001;
+int compute(const int limit) {
+
 	int count = 2;
 	int prime = 3;
 	
@@ -32,13 +31,13 @@ int main() {
 		if (is_prime)
 			count++;
 	}
+
+	return prime;
+
+} 
+
+int main() {
 	
-	printf("%i\n", prime);
-	
+	std::cout << compute(10'001) << std::endl;
 	return 0;
 }
-
-/*
- * Runtime (Apple M1): 2.38ms
- * Complexity: O(n)
- */

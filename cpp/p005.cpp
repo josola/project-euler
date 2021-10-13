@@ -5,12 +5,9 @@
  */
 
 #include <numeric>
+#include <iostream>
 
-#include "stdio.h"
-
-int main() {
-	
-	const int limit = 20;
+long long int compute(const int limit) {
 	
 	/*
 	 * - We're looking for the least common multiple (LCM) of the input set.
@@ -24,13 +21,14 @@ int main() {
 	
 	for (int i = 2; i < limit + 1; i++)
 		result = abs(result * i) / std::gcd(result, i);
-	
-	printf("%lli\n", result);
-	
-	return 0;
+
+	return result;
+
 }
 
-/*
- * Runtime (Apple M1): 250ns
- * Complexity: O(n)
- */
+int main() {
+	
+	std::cout << compute(20) << std::endl;
+	return 0;
+
+}

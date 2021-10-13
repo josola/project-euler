@@ -5,10 +5,9 @@
  */
 
 #include <cmath>
+#include <iostream>
 
-#include "stdio.h"
-
-int main() {
+long int compute() {
 
 	int term = 1;
 	long int triangular = 0;
@@ -45,13 +44,14 @@ int main() {
 		}
 		
 	}
-	
-	printf("%li\n", triangular);
-	
-	return 0;
+
+	return triangular;
+
 }
 
-/*
- * Runttime (Apple M1):
- * Complexity: O(log n)
- */
+int main() {
+
+	std::cout << compute() << std::endl;
+	return 0;
+
+}
