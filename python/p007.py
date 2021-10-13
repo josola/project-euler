@@ -3,9 +3,7 @@
 # (c) Jordan Sola 2021. All rights reserved. (MIT License)
 # Written by Jordan Sola 2021
 
-def compute():
-
-	LIMIT = 10001
+def compute(LIMIT):
 
 	count = 2
 	prime = 3
@@ -35,4 +33,4 @@ def compute():
 	return prime
 
 if __name__ == "__main__":
-	print(compute())
+	print(compute(10001))

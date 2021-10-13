@@ -3,23 +3,23 @@
 # (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
 # Written by Jordan Sola 202-2021
 
-def compute():
+def compute(NUM):
 
-	num = 600851475143
+	output = NUM
 
 	# Any prime number that is greater than a composite number cannot be the
 	# largest prime, we elimenate primes greater than a constant by
 	# dividing the num by its composite.
 
 	i = 3
-	while i < num:
+	while i < output:
 
-		if num % i == 0:
-			num //= i
+		if output % i == 0:
+			output //= i
 
 		i += 2
 
-	return num
+	return output
 
 if __name__ == "__main__":
-	print(compute())
+	print(compute(600851475143))

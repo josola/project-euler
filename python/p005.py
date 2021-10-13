@@ -5,9 +5,7 @@
 
 import math
 
-def compute():
-
-	LIMIT = 20
+def compute(LIMIT):
 
 	# - We're looking for the least common multiple (LCM) of the input set.
 	# - We use a formula for the LCM by greatest common factor (GCF).
@@ -23,4 +21,4 @@ def compute():
 	return result
 
 if __name__ == "__main__":
-	print(compute())
+	print(compute(20))

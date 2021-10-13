@@ -3,7 +3,7 @@
 # (c) Jordan Sola 2021. All rights reserved. (MIT License)
 # Written by Jordan Sola 2021
 
-def compute():
+def compute(LIMIT):
 
 	palindrome = 0
 
@@ -11,7 +11,7 @@ def compute():
 	# long. Six digit numbers have a factor of eleven. We can start our inner
 	# loop at 990, the highest three digit number with a factor of eleven.
 
-	for i in range(999, 100, -1):
+	for i in range(LIMIT, 100, -1):
 
 		j = 990
 		while j > 100:
@@ -34,4 +34,4 @@ def compute():
 	return palindrome
 
 if __name__ == "__main__":
-	print(compute())
+	print(compute(999))

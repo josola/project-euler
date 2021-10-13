@@ -5,9 +5,7 @@
 
 import math
 
-def compute():
-
-	LIMIT = 100
+def compute(LIMIT):
 
 	# - We find this by using Gauss's series formula.
 	# - Square Sum Formula: m = ((n)(n + 1) / 2)^2
@@ -18,4 +16,4 @@ def compute():
 	return difference
 
 if __name__ == "__main__":
-	print(compute())
+	print(compute(100))

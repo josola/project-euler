@@ -5,9 +5,7 @@
 
 import math
 
-def compute():
-
-	TARGET = 1000
+def compute(TARGET):
 
 	a = 0
 	b = 0
@@ -34,4 +32,4 @@ def compute():
 	return (a * b * c)
 
 if __name__ == "__main__":
-	print(compute())
+	print(compute(1000))

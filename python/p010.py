@@ -5,9 +5,7 @@
 
 import itertools
 
-def compute():
-
-	LIMIT = 2000000
+def compute(LIMIT):
 
 	# - Uses Sieve of Eratosthenes to eliminate composite numbers
 	#   up to the limit.
@@ -17,6 +15,7 @@ def compute():
 	#   remove all the factors of the current prime.
 
 	prime = [True] * LIMIT
+	
 	i = 2
 	while (i * i) <= LIMIT:
 
@@ -36,4 +35,4 @@ def compute():
 	return sum
 
 if __name__ == "__main__":
-	print(compute())
+	print(compute(2000000))
