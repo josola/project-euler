@@ -32,10 +32,18 @@ int compute(const int limit) {
 }
 
 static void p001_bench(benchmark::State& state) {
-	for (auto _ : state) {
+	for (auto _ : state)
 		benchmark::DoNotOptimize(compute(state.range(0)));
-	}
 }
 
-BENCHMARK(p001_bench)->RangeMultiplier(25)->Range(1000, 1000<<10)->Complexity();
+BENCHMARK(p001_bench)->RangeMultiplier(2)->Range(100, 1000);
 BENCHMARK_MAIN();
+
+// RESULTS
+
+// Run on (8 X 24.1205 MHz CPU s) Apple M1 (ARM64)
+// -------------------------------------------------------------
+// Benchmark                   Time             CPU   Iterations
+// -------------------------------------------------------------
+// p001_bench/1000           2.48 ns          2.48 ns  273868629
+// p001_bench_BigO             O(1)             O(1)

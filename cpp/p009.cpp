@@ -7,6 +7,8 @@
 #include <cmath>
 #include <iostream>
 
+#include "benchmark/benchmark.h"
+
 int compute(const int target) {
 
 	int a = 0;
@@ -28,19 +30,31 @@ int compute(const int target) {
 				found = true;
 				break;
 			}
+
 		}
 		
 		if (found)
 			break;
+		
 	}
 
 	return a * b * c;
 
 }
 
-int main() {
-	
-	std::cout << compute(1'000) << std::endl;
-	return 0;
-
+static void p009_bench(benchmark::State& state) {
+	for (auto _ : state)
+		benchmark::DoNotOptimize(compute(1'000));
 }
+
+BENCHMARK(p009_bench)->Repetitions(10)->Unit(benchmark::kMicrosecond);
+BENCHMARK_MAIN();
+
+// RESULTS
+
+// Run on (8 X 24.1203 MHz CPU s)
+// -----------------------------------------------------------------------
+// Benchmark                             Time             CPU   Iterations
+// -----------------------------------------------------------------------
+// p009_bench/1'000                     134 us           134 us         10
+// p009_bench_BigO                       O(N)             O(N)

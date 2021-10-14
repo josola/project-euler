@@ -6,18 +6,14 @@
 
 #include <iostream>
 
+#include "benchmark/benchmark.h"
+
 int compute(const int limit) {
 
 	int palindrome = 0;
 	
-	/*
-	 * The largest palindrome between two three digit numbers is six digits
-	 * long. Six digit numbers have a factor of eleven. We can start our inner
-	 * loop at 990, the highest three digit number with a factor of eleven.
-	 */
-	
 	for (int i = limit; i > 100; i--) {
-		for (int j = 990; j > 100; j -= 11) {
+		for (int j = limit; j > 100; j--) {
 			
 			if (palindrome > (i * j))
 				break;
@@ -44,10 +40,19 @@ int compute(const int limit) {
 
 }
 
-int main()
-{
-	
-	std::cout << compute(999) << std::endl;
-	return 0;
-
+static void p004_bench(benchmark::State& state) {
+	for (auto _ : state)
+		benchmark::DoNotOptimize(compute(state.range(0)));
 }
+
+BENCHMARK(p004_bench)->RangeMultiplier(2)->Range(999, 7992)->Unit(benchmark::kMicrosecond);
+BENCHMARK_MAIN();
+
+// RESULT
+
+// Run on (8 X 24.1214 MHz CPU s) Apple M1 (ARM64)
+// -----------------------------------------------------------
+// Benchmark                 Time             CPU   Iterations
+// -----------------------------------------------------------
+// p004_bench/99            37.3 us         37.3 us      18745
+// p004_bench_BigO         O(N LogN)       O(N LogN)

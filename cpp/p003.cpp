@@ -6,6 +6,8 @@
 
 #include <iostream>
 
+#include "benchmark/benchmark.h"
+
 long long int compute(const long long int num) {
 
 	long long int output = num;
@@ -16,7 +18,7 @@ long long int compute(const long long int num) {
 	 * dividing the num by its composite.
 	 */
 	
-	for (long int i = 3; i < output; i += 2) {
+	for (long long int i = 3; i < output; i += 2) {
 		if (output % i == 0)
 			output /= i;
 	}
@@ -25,9 +27,19 @@ long long int compute(const long long int num) {
 
 }
 
-int main() {
-	
-	std::cout << compute(600'851'475'143) << std::endl;
-	return 0;
-
+static void p003_bench(benchmark::State& state) {
+	for (auto _ : state)
+		benchmark::DoNotOptimize(compute(state.range(0)));
 }
+
+BENCHMARK(p003_bench)->RangeMultiplier(2)->Range(100'000'000'000, 600'851'475'143)->Unit(benchmark::kMicrosecond);
+BENCHMARK_MAIN();
+
+// RESULTS
+
+// Run on (8 X 24.039 MHz CPU s) Apple M1 (ARM64)
+// ------------------------------------------------------------------
+// Benchmark                        Time             CPU   Iterations
+// ------------------------------------------------------------------
+// p003_bench/600'851'475'143      13.3 us         13.3 us      46997
+// p003_bench_BigO                 O(LogN)         O(LogN)

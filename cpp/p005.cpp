@@ -7,6 +7,8 @@
 #include <numeric>
 #include <iostream>
 
+#include "benchmark/benchmark.h"
+
 long long int compute(const int limit) {
 	
 	/*
@@ -26,9 +28,19 @@ long long int compute(const int limit) {
 
 }
 
-int main() {
-	
-	std::cout << compute(20) << std::endl;
-	return 0;
-
+static void p005_bench(benchmark::State& state) {
+	for (auto _ : state)
+		benchmark::DoNotOptimize(compute(state.range(0)));
 }
+
+BENCHMARK(p005_bench)->RangeMultiplier(2)->Range(20, 160);
+BENCHMARK_MAIN();
+
+// RESULTS
+
+// Run on (8 X 24.1209 MHz CPU s) Apple M1 (ARM64)
+// -----------------------------------------------------------
+// Benchmark                 Time             CPU   Iterations
+// -----------------------------------------------------------
+// p005_bench/20           85.36 ns         85.35 ns   7029312
+// p005_bench_BigO           O(N)             O(N)

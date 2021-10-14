@@ -6,6 +6,8 @@
 
 #include <iostream>
 
+#include "benchmark/benchmark.h"
+
 int compute(const int limit) {
 
 	int count = 2;
@@ -34,10 +36,21 @@ int compute(const int limit) {
 
 	return prime;
 
-} 
-
-int main() {
-	
-	std::cout << compute(10'001) << std::endl;
-	return 0;
 }
+
+static void p007_bench(benchmark::State& state) {
+	for (auto _ : state)
+		benchmark::DoNotOptimize(compute(state.range(0)));
+}
+
+BENCHMARK(p007_bench)->RangeMultiplier(2)->Range(10'001, 80'001)->Unit(benchmark::kMillisecond);
+BENCHMARK_MAIN();
+
+// RESULTS
+
+// Run on (8 X 24.1216 MHz CPU s) Apple M1 (ARM64)
+// -----------------------------------------------------------
+// Benchmark                 Time             CPU   Iterations
+// -----------------------------------------------------------
+// p007_bench/10'001        2.30 ms         2.30 ms        295
+// p007_bench_BigO         O(N logN)       O(N logN)

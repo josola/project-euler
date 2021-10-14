@@ -8,6 +8,8 @@
 #include <cmath>
 #include <iostream>
 
+#include "benchmark/benchmark.h"
+
 int compute(const int limit) {
 
 	const double phi = (1 + sqrt(5)) / 2;
@@ -28,9 +30,19 @@ int compute(const int limit) {
 
 }
 
-int main() {
-	
-	std::cout << compute(4'000'000) << std::endl;
-	return 0;
-
+static void p002_bench(benchmark::State& state) {
+	for (auto _ : state)
+		benchmark::DoNotOptimize(compute(state.range(0)));
 }
+
+BENCHMARK(p002_bench)->RangeMultiplier(2)->Range(1'000'000, 4'000'000);
+BENCHMARK_MAIN();
+
+// RESULTS
+
+// Run on (8 X 24.1205 MHz CPU s) Apple M1 (ARM64)
+// --------------------------------------------------------------
+// Benchmark                    Time             CPU   Iterations
+// --------------------------------------------------------------
+// p002_bench/4000000          197 ns           197 ns    3536675
+// p002_bench_BigO             O(LogN)          O(LogN)  

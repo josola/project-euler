@@ -7,6 +7,8 @@
 #include <cmath>
 #include <iostream>
 
+#include "benchmark/benchmark.h"
+
 int compute(const int limit) {
 
 	/*
@@ -19,14 +21,27 @@ int compute(const int limit) {
 
 }
 
-int main() {
-	
-	std::cout << compute(100) << std::endl;
-	return 0;
+static void p006_bench(benchmark::State& state) {
+
+	int result;
+	for (auto _ : state) {
+		benchmark::DoNotOptimize(result = compute(state.range(0)));
+	}
+
+	// Extra layer of optimization prevention
+	std::ostream cnull(0);
+	cnull << result;
 
 }
 
-/*
- * Runtime (Apple M1): 42ns
- * Complexity: O(1)
- */
+BENCHMARK(p006_bench)->RangeMultiplier(2)->Range(100, 800)->Unit(benchmark::kMillisecond);
+BENCHMARK_MAIN();
+
+// RESULTS
+
+// Run on (8 X 24.029 MHz CPU s) Apple M1 (ARM64)
+// ---------------------------------------------------------
+// Benchmark               Time             CPU   Iterations
+// ---------------------------------------------------------
+// p006_bench/100         1.10 ns         1.10 ns  556010072
+// p006_bench_BigO         O(1)             O(1)

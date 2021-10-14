@@ -7,6 +7,8 @@
 #include <vector>
 #include <iostream>
 
+#include "benchmark/benchmark.h"
+
 long long int compute(const int limit) {
 
 	/*
@@ -19,9 +21,9 @@ long long int compute(const int limit) {
 	 */
 	
 	std::vector<int> prime(limit, true);
-	for (int i = 2; i * i <= limit; i++) {
+	for (long int i = 2; i * i <= limit; i++) {
 		if (prime[i] == true) {
-			for (int j = i * i; j <= limit; j += i) {
+			for (long long int j = i * i; j <= limit; j += i) {
 				prime[j] = false;
 			}
 		}
@@ -38,9 +40,19 @@ long long int compute(const int limit) {
 
 }
 
-int main() {
-	
-	std::cout << compute(2'000'000) << std::endl;
-	return 0;
-
+static void p010_bench(benchmark::State& state) {
+	for (auto _ : state)
+		benchmark::DoNotOptimize(compute(state.range(0)));
 }
+
+BENCHMARK(p010_bench)->RangeMultiplier(2)->Range(2'000'000, 8'000'000)->Unit(benchmark::kMillisecond);
+BENCHMARK_MAIN();
+
+// RESULTS
+
+// Run on (8 X 24.1208 MHz CPU s) Apple M1 (ARM64)
+// -----------------------------------------------------------------------
+// Benchmark                             Time             CPU   Iterations
+// -----------------------------------------------------------------------
+// p010_bench/2'000'000                 2.83 ms         2.83 ms        245
+// p010_bench_BigO                     O(N LogN)       O(N LogN)

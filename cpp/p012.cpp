@@ -7,13 +7,15 @@
 #include <cmath>
 #include <iostream>
 
-long int compute() {
+#include "benchmark/benchmark.h"
+
+long int compute(const int target) {
 
 	int term = 1;
 	long int triangular = 0;
 	
 	int div_count = 0;
-	while (div_count < 500) {
+	while (div_count < target) {
 		
 		term++;
 		div_count = 0;
@@ -49,9 +51,17 @@ long int compute() {
 
 }
 
-int main() {
-
-	std::cout << compute() << std::endl;
-	return 0;
-
+static void p012_bench(benchmark::State& state) {
+	for (auto _ : state)
+		benchmark::DoNotOptimize(compute(state.range(0)));
 }
+
+BENCHMARK(p012_bench)->RangeMultiplier(2)->Range(500, 4'000)->Complexity()->Unit(benchmark::kMillisecond);
+BENCHMARK_MAIN();
+
+// Run on (8 X 24.1214 MHz CPU s) Apple M1 (ARM64)
+// -----------------------------------------------------------------------
+// Benchmark                             Time             CPU   Iterations
+// -----------------------------------------------------------------------
+// p012_bench/500                       37.0 ms         37.0 ms         19
+// P012_bench_BigO                       O(N)             O(N)
