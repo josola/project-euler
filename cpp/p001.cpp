@@ -37,9 +37,13 @@ static void p001_bench(benchmark::State& state) {
 }
 
 BENCHMARK(p001_bench)->RangeMultiplier(2)->Range(100, 1000);
-BENCHMARK_MAIN();
 
-// RESULTS
+int main(int argc, char** argv) {
+	::benchmark::Initialize(&argc, argv);
+	::benchmark::RunSpecifiedBenchmarks();
+}
+
+// Answer: 233168
 
 // Run on (8 X 24.1205 MHz CPU s) Apple M1 (ARM64)
 // -------------------------------------------------------------

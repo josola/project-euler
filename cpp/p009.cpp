@@ -48,9 +48,13 @@ static void p009_bench(benchmark::State& state) {
 }
 
 BENCHMARK(p009_bench)->Repetitions(10)->Unit(benchmark::kMicrosecond);
-BENCHMARK_MAIN();
 
-// RESULTS
+int main(int argc, char** argv) {
+	::benchmark::Initialize(&argc, argv);
+	::benchmark::RunSpecifiedBenchmarks();
+}
+
+// Answer: 31875000
 
 // Run on (8 X 24.1203 MHz CPU s)
 // -----------------------------------------------------------------------

@@ -57,7 +57,13 @@ static void p012_bench(benchmark::State& state) {
 }
 
 BENCHMARK(p012_bench)->RangeMultiplier(2)->Range(500, 4'000)->Complexity()->Unit(benchmark::kMillisecond);
-BENCHMARK_MAIN();
+
+int main(int argc, char** argv) {
+	::benchmark::Initialize(&argc, argv);
+	::benchmark::RunSpecifiedBenchmarks();
+}
+
+// Answer: 76576500
 
 // Run on (8 X 24.1214 MHz CPU s) Apple M1 (ARM64)
 // -----------------------------------------------------------------------

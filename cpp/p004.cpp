@@ -46,9 +46,13 @@ static void p004_bench(benchmark::State& state) {
 }
 
 BENCHMARK(p004_bench)->RangeMultiplier(2)->Range(999, 7992)->Unit(benchmark::kMicrosecond);
-BENCHMARK_MAIN();
 
-// RESULT
+int main(int argc, char** argv) {
+	::benchmark::Initialize(&argc, argv);
+	::benchmark::RunSpecifiedBenchmarks();
+}
+
+// Answer: 906609
 
 // Run on (8 X 24.1214 MHz CPU s) Apple M1 (ARM64)
 // -----------------------------------------------------------
