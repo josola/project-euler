@@ -76,5 +76,5 @@ int main(int argc, char** argv) {
 // -----------------------------------------------------------------------
 // Benchmark                             Time             CPU   Iterations
 // -----------------------------------------------------------------------
-// p008_bench/large_num                 2.35 us         2.35 us     289059
-// p008_bench_BigO                       O(N)             O(N)
+// p008_bench/large_num               2.35 us         2.35 us       289059
+// p008_bench_BigO                       O(N)            O(N)

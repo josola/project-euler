@@ -87,5 +87,5 @@ int main(int argc, char** argv) {
 // -----------------------------------------------------------------------
 // Benchmark                             Time             CPU   Iterations
 // -----------------------------------------------------------------------
-// p011_bench/grid size: 20             1.56 us         1.56 us     414613
-// P011_bench_BigO                       O(N)             O(N)
+// p011_bench/grid size: 20           1.56 us         1.56 us       414613
+// P011_bench_BigO                       O(N)            O(N)
