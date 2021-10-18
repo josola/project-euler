@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
 
 // Answer: 104743
 
-// Run on (8 X 24.1216 MHz CPU s) Apple M1 (ARM64)
+// Run on (8 X 24.1216 MHz CPU s) ARM64
 // -----------------------------------------------------------
 // Benchmark                 Time             CPU   Iterations
 // -----------------------------------------------------------
