@@ -1,10 +1,10 @@
 /* 
  * Project Euler
  * Problem 11 - Largest product in a grid
- * (c) 2 20-2 21 Jordan Sola. All rights reserved. (MIT License)
+ * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2020-2021
  */
 
-#include <iostream>
 #include <vector>
 
 #include "benchmark/benchmark.h"
@@ -13,6 +13,7 @@ long int compute(std::vector<int> grid, const int size) {
 	
 	long int max = 0;
 	const int product_length = 4;
+	
 	for (int i = 0; i < (size * size) - (product_length - 1); i++) {
 		
 		int horizontal = 0;
@@ -74,7 +75,7 @@ static void p011_bench(benchmark::State& state) {
 
 }
 
-BENCHMARK(p011_bench)->Repetitions(10)->Unit(benchmark::kMicrosecond);
+BENCHMARK(p011_bench)->Unit(benchmark::kMicrosecond);
 
 int main(int argc, char** argv) {
 	::benchmark::Initialize(&argc, argv);

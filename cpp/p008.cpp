@@ -2,9 +2,9 @@
  * Project Euler
  * Problem 8 - Largest product in a series
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2020-2021
  */
 
-#include <iostream>
 #include <vector>
 
 #include "benchmark/benchmark.h"
@@ -63,7 +63,7 @@ static void p008_bench(benchmark::State& state) {
 
 }
 
-BENCHMARK(p008_bench)->Repetitions(10)->Unit(benchmark::kMicrosecond);
+BENCHMARK(p008_bench)->Unit(benchmark::kMicrosecond);
 
 int main(int argc, char** argv) {
 	::benchmark::Initialize(&argc, argv);

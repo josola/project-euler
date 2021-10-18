@@ -2,10 +2,10 @@
  * Project Euler
  * Problem 5 - Smallest multiple
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2020-2021
  */
 
 #include <numeric>
-#include <iostream>
 
 #include "benchmark/benchmark.h"
 
@@ -30,10 +30,10 @@ long long int compute(const int limit) {
 
 static void p005_bench(benchmark::State& state) {
 	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(state.range(0)));
+		benchmark::DoNotOptimize(compute(20));
 }
 
-BENCHMARK(p005_bench)->RangeMultiplier(2)->Range(20, 160);
+BENCHMARK(p005_bench);
 
 int main(int argc, char** argv) {
 	::benchmark::Initialize(&argc, argv);

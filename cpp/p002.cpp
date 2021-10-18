@@ -6,7 +6,6 @@
  */
 
 #include <cmath>
-#include <iostream>
 
 #include "benchmark/benchmark.h"
 
@@ -15,7 +14,7 @@ int compute(const int limit) {
 	const double phi = (1 + sqrt(5)) / 2;
 	
 	/*
-	 * - nth fibonacci ferm formula: nth = [Phi^n – (phi)^n] / Sqrt[5]
+	 * - nth fibonacci term formula: nth = [Phi^n – (phi)^n] / Sqrt[5]
 	 * - Every third term in a fibonacci sequence is even.
 	 */
 	
@@ -32,10 +31,10 @@ int compute(const int limit) {
 
 static void p002_bench(benchmark::State& state) {
 	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(state.range(0)));
+		benchmark::DoNotOptimize(compute(4'000'000));
 }
 
-BENCHMARK(p002_bench)->RangeMultiplier(2)->Range(1'000'000, 4'000'000);
+BENCHMARK(p002_bench);
 
 int main(int argc, char** argv) {
 	::benchmark::Initialize(&argc, argv);

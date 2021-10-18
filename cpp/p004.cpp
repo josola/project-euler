@@ -2,9 +2,8 @@
  * Project Euler
  * Problem 4 - Largest palindrome product
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2020-2021
  */
-
-#include <iostream>
 
 #include "benchmark/benchmark.h"
 
@@ -42,10 +41,10 @@ int compute(const int limit) {
 
 static void p004_bench(benchmark::State& state) {
 	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(state.range(0)));
+		benchmark::DoNotOptimize(compute(999));
 }
 
-BENCHMARK(p004_bench)->RangeMultiplier(2)->Range(999, 7992)->Unit(benchmark::kMicrosecond);
+BENCHMARK(p004_bench)->Unit(benchmark::kMicrosecond);
 
 int main(int argc, char** argv) {
 	::benchmark::Initialize(&argc, argv);

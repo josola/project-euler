@@ -2,10 +2,10 @@
  * Project Euler
  * Problem 13 - Large sum
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2020-2021
  */
 
 #include <array>
-#include <iostream>
 
 #include "benchmark/benchmark.h"
 
@@ -16,7 +16,9 @@ long long int compute(std::array<long int, 100> numbers) {
 	for (long int num : numbers)
 		sum += num;
 
-	return sum/1'000;
+	sum /= 1'000;
+
+	return sum;
 
 }
 
@@ -24,8 +26,7 @@ static void p013_bench(benchmark::State& state) {
 	
 	/*
 	 * Only the first ten digits of the sum are required.
-	 * Which cuts out any digit, from the twelth onward,
-	 * from the calculation in each number.
+	 * Which cuts out any digit from the twelfth onward.
 	 */
 
 	std::array<long int, 100> numbers = { 37107287533, 46376937677, 74324986199, 91942213363, 23067588207,
@@ -54,7 +55,7 @@ static void p013_bench(benchmark::State& state) {
 
 }
 
-BENCHMARK(p013_bench)->Repetitions(10);
+BENCHMARK(p013_bench);
 
 int main(int argc, char** argv) {
 	benchmark::Initialize(&argc, argv);

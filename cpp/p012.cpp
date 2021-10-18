@@ -2,10 +2,10 @@
  * Project Euler
  * Problem 12 - Highly divisible triangular number
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2020-2021
  */
 
 #include <cmath>
-#include <iostream>
 
 #include "benchmark/benchmark.h"
 
@@ -34,7 +34,7 @@ long int compute(const int target) {
 		
 		/*
 		 * - We can take the same algorithm problem 3 used to find
-		 *   the largest prme factor and adapt it to find all the
+		 *   the largest prime factor and adapt it to find all the
 		 *   factors belonging to our triangular number.
 		 */
 		
@@ -53,10 +53,10 @@ long int compute(const int target) {
 
 static void p012_bench(benchmark::State& state) {
 	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(state.range(0)));
+		benchmark::DoNotOptimize(compute(500));
 }
 
-BENCHMARK(p012_bench)->RangeMultiplier(2)->Range(500, 4'000)->Complexity()->Unit(benchmark::kMillisecond);
+BENCHMARK(p012_bench)->Unit(benchmark::kMillisecond);
 
 int main(int argc, char** argv) {
 	::benchmark::Initialize(&argc, argv);

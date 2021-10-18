@@ -2,6 +2,7 @@
  * Project Euler
  * Problem 6 - Sum square difference
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2020-2021
  */
 
 #include <cmath>
@@ -17,16 +18,18 @@ int compute(const int limit) {
 	 * - Sum Square Formula: m = (n)(n + 1)(2n + 1) / 6
 	 */
 	
-	return (pow(limit * (limit + 1) / 2, 2)) - (limit * (limit + 1) * ((2 * limit) + 1) / 6);
+	int difference = 0;
+	benchmark::DoNotOptimize(difference = pow(limit * (limit + 1) / 2, 2) - (limit * (limit + 1) * ((2 * limit) + 1) / 6));
+
+	return difference;
 
 }
 
 static void p006_bench(benchmark::State& state) {
 
-	int result;
-	for (auto _ : state) {
-		benchmark::DoNotOptimize(result = compute(state.range(0)));
-	}
+	int result = 0;
+	for (auto _ : state)
+		benchmark::DoNotOptimize(result = compute(100));
 
 	// Extra layer of optimization prevention
 	std::ostream cnull(0);
@@ -34,7 +37,7 @@ static void p006_bench(benchmark::State& state) {
 
 }
 
-BENCHMARK(p006_bench)->RangeMultiplier(2)->Range(100, 800)->Unit(benchmark::kMillisecond);
+BENCHMARK(p006_bench)->Unit(benchmark::kMillisecond);
 
 int main(int argc, char** argv) {
 	::benchmark::Initialize(&argc, argv);

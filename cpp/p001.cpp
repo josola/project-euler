@@ -25,7 +25,7 @@ int compute(const int limit) {
 	
 	int sum = 0;
 	for (int i = 0; i < 3; i++)
-		sum += a[i] * (n[i] * (n[i] + n_plus[i]) / 2);
+		benchmark::DoNotOptimize(sum += a[i] * (n[i] * (n[i] + n_plus[i]) / 2));
 
 	return sum;
 
@@ -33,10 +33,10 @@ int compute(const int limit) {
 
 static void p001_bench(benchmark::State& state) {
 	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(state.range(0)));
+		benchmark::DoNotOptimize(compute(1'000));
 }
 
-BENCHMARK(p001_bench)->RangeMultiplier(2)->Range(100, 1000);
+BENCHMARK(p001_bench);
 
 int main(int argc, char** argv) {
 	::benchmark::Initialize(&argc, argv);
@@ -49,5 +49,5 @@ int main(int argc, char** argv) {
 // -------------------------------------------------------------
 // Benchmark                   Time             CPU   Iterations
 // -------------------------------------------------------------
-// p001_bench/1000          2.48 ns         2.48 ns    273868629
+// p001_bench/1000          0.84 ns         0.84 ns    735286394
 // p001_bench_BigO             O(1)            O(1)

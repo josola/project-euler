@@ -2,6 +2,7 @@
  * Project Euler
  * Problem 14 - Longest Collatz sequence
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2020-2021
  */
 
 #include <iostream>
@@ -48,10 +49,10 @@ int compute(const int limit) {
 
 static void p014_bench(benchmark::State& state) {
 	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(state.range(0)));
+		benchmark::DoNotOptimize(compute(1'000'000));
 }
 
-BENCHMARK(p014_bench)->Arg(1'000'000)->Arg(2'000'000)->Arg(4'000'000)->Arg(8'000'000)->Unit(benchmark::kMillisecond);
+BENCHMARK(p014_bench)->Unit(benchmark::kMillisecond);
 
 int main(int argc, char** argv) {
 	benchmark::Initialize(&argc, argv);

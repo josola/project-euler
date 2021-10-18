@@ -2,10 +2,10 @@
  * Project Euler
  * Problem 10 - Summation of primes
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2020-2021
  */
 
 #include <vector>
-#include <iostream>
 
 #include "benchmark/benchmark.h"
 
@@ -23,17 +23,15 @@ long long int compute(const int limit) {
 	std::vector<int> prime(limit, true);
 	for (long int i = 2; i * i <= limit; i++) {
 		if (prime[i] == true) {
-			for (long long int j = i * i; j <= limit; j += i) {
+			for (long long int j = i * i; j <= limit; j += i)
 				prime[j] = false;
-			}
 		}
 	}
 	
 	long long int sum = 0;
 	for (int i = 2; i <= limit; i++) {
-		if (prime[i] == true) {
+		if (prime[i] == true)
 			sum += i;
-		}
 	}
 
 	return sum;
@@ -42,10 +40,10 @@ long long int compute(const int limit) {
 
 static void p010_bench(benchmark::State& state) {
 	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(state.range(0)));
+		benchmark::DoNotOptimize(compute(2'000'000));
 }
 
-BENCHMARK(p010_bench)->RangeMultiplier(2)->Range(2'000'000, 8'000'000)->Unit(benchmark::kMillisecond);
+BENCHMARK(p010_bench)->Unit(benchmark::kMillisecond);
 
 int main(int argc, char** argv) {
 	::benchmark::Initialize(&argc, argv);

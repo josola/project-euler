@@ -2,10 +2,10 @@
  * Project Euler
  * Problem 9 - Special Pythagorean triplet
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2020-2021
  */
 
 #include <cmath>
-#include <iostream>
 
 #include "benchmark/benchmark.h"
 
@@ -38,7 +38,9 @@ int compute(const int target) {
 		
 	}
 
-	return a * b * c;
+	int product = a * b * c;
+
+	return product;
 
 }
 
@@ -47,7 +49,7 @@ static void p009_bench(benchmark::State& state) {
 		benchmark::DoNotOptimize(compute(1'000));
 }
 
-BENCHMARK(p009_bench)->Repetitions(10)->Unit(benchmark::kMicrosecond);
+BENCHMARK(p009_bench)->Unit(benchmark::kMicrosecond);
 
 int main(int argc, char** argv) {
 	::benchmark::Initialize(&argc, argv);

@@ -2,9 +2,8 @@
  * Project Euler
  * Problem 3 - Largest prime factor
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sol 2020-2021
  */
-
-#include <iostream>
 
 #include "benchmark/benchmark.h"
 
@@ -29,10 +28,10 @@ long long int compute(const long long int num) {
 
 static void p003_bench(benchmark::State& state) {
 	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(state.range(0)));
+		benchmark::DoNotOptimize(compute(600'851'475'143));
 }
 
-BENCHMARK(p003_bench)->RangeMultiplier(2)->Range(100'000'000'000, 600'851'475'143)->Unit(benchmark::kMicrosecond);
+BENCHMARK(p003_bench)->Unit(benchmark::kMicrosecond);
 
 int main(int argc, char** argv) {
 	::benchmark::Initialize(&argc, argv);

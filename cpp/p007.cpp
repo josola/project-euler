@@ -2,9 +2,8 @@
  * Project Euler
  * Problem 7 - 10001st prime
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2020-2021
  */
-
-#include <iostream>
 
 #include "benchmark/benchmark.h"
 
@@ -40,10 +39,10 @@ int compute(const int limit) {
 
 static void p007_bench(benchmark::State& state) {
 	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(state.range(0)));
+		benchmark::DoNotOptimize(compute(10'001));
 }
 
-BENCHMARK(p007_bench)->RangeMultiplier(2)->Range(10'001, 80'001)->Unit(benchmark::kMillisecond);
+BENCHMARK(p007_bench)->Unit(benchmark::kMillisecond);
 
 int main(int argc, char** argv) {
 	::benchmark::Initialize(&argc, argv);
