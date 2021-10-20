@@ -5,7 +5,6 @@
  * Written by Jordan Sola 2020-2021
  */
 
-#include <iostream>
 #include <array>
 
 #include "benchmark/benchmark.h"
@@ -40,9 +39,8 @@ static void p001_bench(benchmark::State& state) {
 BENCHMARK(p001_bench);
 
 int main(int argc, char** argv) {
-	std::cout << compute(1'000) << std::endl;
-	// ::benchmark::Initialize(&argc, argv);
-	// ::benchmark::RunSpecifiedBenchmarks();
+	::benchmark::Initialize(&argc, argv);
+	::benchmark::RunSpecifiedBenchmarks();
 }
 
 // Answer: 233'168
