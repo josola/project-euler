@@ -12,9 +12,9 @@ long long int compute(const long long int num) {
 	long long int output = num;
 
 	/*
-	 * Any prime number that is greater than a composite number cannot be the
-	 * largest prime, we elimenate primes greater than a constant by
-	 * dividing the num by its composite.
+	 * - Any prime number that is greater than a composite number cannot be the
+	 *   largest prime, we elimenate primes greater than a constant by
+	 *   dividing the num by its composite.
 	 */
 	
 	for (long long int i = 3; i < output; i += 2) {
@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
 	::benchmark::RunSpecifiedBenchmarks();
 }
 
-// Answer: 6857
+// Answer: 6'857
 
 // Run on (8 X 24.039 MHz CPU s) ARM64
 // ------------------------------------------------------------------
