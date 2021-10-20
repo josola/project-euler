@@ -9,19 +9,19 @@
 
 #include "benchmark/benchmark.h"
 
-long long int compute(const int limit) {
+long int compute(const int start, const int end) {
 	
 	/*
-	 * - We're looking for the least common multiple (LCM) of the input set.
+	 * - We are looking for the least common multiple (LCM) of the input set.
 	 * - We use a formula for the LCM by greatest common factor (GCF).
-	 * - Formula: LCM(a,b) = |(a×b)|/GCF(a,b)
+	 * - Formula: LCM(a, b) = |(a × b)| / GCF(a, b)
 	 *   a = previous LCM in set, starting at the first term in the set
-	 *   b = term in set
+	 *   b = next term in set
 	 */
 	
-	long long int result = limit - (limit - 1);
+	long int result = start;
 	
-	for (int i = 2; i < limit + 1; i++)
+	for (int i = 2; i < end + 1; i++)
 		result = abs(result * i) / std::gcd(result, i);
 
 	return result;
@@ -30,7 +30,7 @@ long long int compute(const int limit) {
 
 static void p005_bench(benchmark::State& state) {
 	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(20));
+		benchmark::DoNotOptimize(compute(1, 20));
 }
 
 BENCHMARK(p005_bench);
@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
 	::benchmark::RunSpecifiedBenchmarks();
 }
 
-// Answer: 232792560
+// Answer: 232'792'560
 
 // Run on (8 X 24.1209 MHz CPU s) ARM64
 // -----------------------------------------------------------
