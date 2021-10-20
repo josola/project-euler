@@ -56,7 +56,7 @@ int main(int argc, char** argv) {
 	::benchmark::RunSpecifiedBenchmarks();
 }
 
-// Answer: 31875000
+// Answer: 31'875'000
 
 // Run on (8 X 24.1203 MHz CPU s) ARM64
 // -----------------------------------------------------------------------

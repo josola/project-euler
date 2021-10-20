@@ -1,6 +1,6 @@
 /* 
  * Project Euler
- * Problem 7 - 10001st prime
+ * Problem 7 - 10'001st prime
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
  * Written by Jordan Sola 2020-2021
  */
@@ -13,6 +13,7 @@ int compute(const int limit) {
 	int prime = 3;
 	
 	while (count < limit) {
+
 		// Skip even numbers, they cannot be prime
 		prime += 2;
 		bool is_prime = true;
@@ -31,6 +32,7 @@ int compute(const int limit) {
 		
 		if (is_prime)
 			count++;
+
 	}
 
 	return prime;
@@ -49,7 +51,7 @@ int main(int argc, char** argv) {
 	::benchmark::RunSpecifiedBenchmarks();
 }
 
-// Answer: 104743
+// Answer: 104'743
 
 // Run on (8 X 24.1216 MHz CPU s) ARM64
 // -----------------------------------------------------------

@@ -22,8 +22,8 @@ long int compute(const int target) {
 		
 		/*
 		 * - Triangular numbers and arithmetic progressions can be found
-		 *   using the same algorithm.
-		 * - Triangular Number Algorithm: a = n * (n + 1) / 2
+		 *   using the same formula.
+		 * - Triangular number (arithmetic progression): a = n * (n + 1) / 2
 		 *   Where "a" is the triangular number, and "n" is the last number
 		 *   in the arithmetic progression (term).
 		 * - See p001, and p006 for more examples of
@@ -33,7 +33,7 @@ long int compute(const int target) {
 		triangular = term * (term + 1) / 2;
 		
 		/*
-		 * - We can take the same algorithm problem 3 used to find
+		 * - We can take the same algorithm p003 used to find
 		 *   the largest prime factor and adapt it to find all the
 		 *   factors belonging to our triangular number.
 		 */
@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
 	::benchmark::RunSpecifiedBenchmarks();
 }
 
-// Answer: 76576500
+// Answer: 76'576'500
 
 // Run on (8 X 24.1214 MHz CPU s) ARM64
 // -----------------------------------------------------------------------

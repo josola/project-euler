@@ -9,9 +9,8 @@
 
 #include "benchmark/benchmark.h"
 
-long int compute(std::vector<int> large_num) {
+long int compute(std::vector<int> large_num, const int product_size) {
 
-	const int product_size = 13;
 	long int highest_product = 0;
 	
 	for (int i = 0; i < large_num.size() - product_size; i++) {
@@ -37,6 +36,7 @@ long int compute(std::vector<int> large_num) {
 
 static void p008_bench(benchmark::State& state) {
 
+	const int product_size = 13;
 	std::vector<int> large_num = { 7, 3, 1, 6, 7, 1, 7, 6, 5, 3, 1, 3, 3, 0, 6, 2, 4, 9, 1, 9, 2, 2, 5, 1, 1, 9, 6, 7, 4, 4, 2, 6, 5, 7, 4, 7, 4, 2, 3, 5, 5, 3, 4, 9, 1, 9, 4, 9, 3, 4,
 								   9, 6, 9, 8, 3, 5, 2, 0, 3, 1, 2, 7, 7, 4, 5, 0, 6, 3, 2, 6, 2, 3, 9, 5, 7, 8, 3, 1, 8, 0, 1, 6, 9, 8, 4, 8, 0, 1, 8, 6, 9, 4, 7, 8, 8, 5, 1, 8, 4, 3,
 								   8, 5, 8, 6, 1, 5, 6, 0, 7, 8, 9, 1, 1, 2, 9, 4, 9, 4, 9, 5, 4, 5, 9, 5, 0, 1, 7, 3, 7, 9, 5, 8, 3, 3, 1, 9, 5, 2, 8, 5, 3, 2, 0, 8, 8, 0, 5, 5, 1, 1,
@@ -59,7 +59,7 @@ static void p008_bench(benchmark::State& state) {
 								   7, 1, 6, 3, 6, 2, 6, 9, 5, 6, 1, 8, 8, 2, 6, 7, 0, 4, 2, 8, 2, 5, 2, 4, 8, 3, 6, 0, 0, 8, 2, 3, 2, 5, 7, 5, 3, 0, 4, 2, 0, 7, 5, 2, 9, 6, 3, 4, 5, 0 };
 
 	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(large_num));
+		benchmark::DoNotOptimize(compute(large_num, product_size));
 
 }
 
@@ -70,7 +70,7 @@ int main(int argc, char** argv) {
 	::benchmark::RunSpecifiedBenchmarks();
 }
 
-// Answer: 23514624000
+// Answer: 23'514'624'000
 
 // Run on (8 X 24.121 MHz CPU s) ARM64
 // -----------------------------------------------------------------------

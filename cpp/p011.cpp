@@ -9,11 +9,16 @@
 
 #include "benchmark/benchmark.h"
 
-long int compute(std::vector<int> grid, const int size) {
+long int compute(std::vector<int> grid, const int size, const int product_length) {
 	
 	long int max = 0;
-	const int product_length = 4;
 	
+	/*
+	 * - We cheat the complexity a little by flattening
+	 *   out the 2D grid into a linear array. This allows
+	 *   us to easily optimize each product calculation.
+	 */
+
 	for (int i = 0; i < (size * size) - (product_length - 1); i++) {
 		
 		int horizontal = 0;
@@ -48,7 +53,8 @@ long int compute(std::vector<int> grid, const int size) {
 
 static void p011_bench(benchmark::State& state) {
 
-	int size = 20;
+	const int size = 20;
+	const int product_length = 4;
 	std::vector<int> grid = {  8,  2, 22, 97, 38, 15,  0, 40,  0, 75,  4,  5,  7, 78, 52, 12, 50, 77, 91,  8,
 		                      49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48,  4, 56, 62,  0,
 		                      81, 49, 31, 73, 55, 79, 14, 29, 93, 71, 40, 67, 53, 88, 30,  3, 49, 13, 36, 65,
@@ -71,7 +77,7 @@ static void p011_bench(benchmark::State& state) {
 		                       1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52,  1, 89, 19, 67, 48 };
 
 	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(grid, size));
+		benchmark::DoNotOptimize(compute(grid, size, product_length));
 
 }
 
@@ -82,7 +88,7 @@ int main(int argc, char** argv) {
 	::benchmark::RunSpecifiedBenchmarks();
 }
 
-// Answer: 70600674
+// Answer: 70'600'674
 
 // Run on (8 X 24.121 MHz CPU s) ARM64
 // -----------------------------------------------------------------------

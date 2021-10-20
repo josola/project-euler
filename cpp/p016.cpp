@@ -15,6 +15,8 @@ int compute(const int base, const int exponent) {
 	std::string product = std::to_string(pow(base, exponent));
 
 	/*
+	 * - To get individual digits in any length number,
+	 *   the number must be converted to an ASCII string.
 	 * - To get the integer equivalent of an ASCII character, you
 	 *   subtract the character by '0', or its ASCII value of 48.
 	 * - For example, the ASCII value of '1' is 49.
@@ -42,7 +44,7 @@ int main(int argc, char** argv) {
 	benchmark::RunSpecifiedBenchmarks();
 }
 
-// Answer: 1366
+// Answer: 1'366
 
 // Run on (8 X 24.121 MHz CPU s) ARM64
 // -----------------------------------------------------------------------

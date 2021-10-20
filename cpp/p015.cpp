@@ -14,9 +14,9 @@ long int compute(const int width, const int height) {
 	long int grid[height + 1][width + 1];
 
 	/*
-	 * - In a grid setting, each cell has as many
-	 *   paths through it as the sum of the cell
-	 *   directly above and the cell directly behind.
+	 * - In a grid setting, each cell has as many paths
+	 *   through it as the sum of the cell directly above
+	 *   it and the cell directly behind it.
 	 */
 
 	for (int i = 0; i < width + 1; i++)
@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
 	benchmark::RunSpecifiedBenchmarks();
 }
 
-// Answer: 137846528820
+// Answer: 137'846'528'820
 
 // Run on (8 X 24.1203 MHz CPU s) ARM64
 // -----------------------------------------------------------------------

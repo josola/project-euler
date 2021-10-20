@@ -12,8 +12,8 @@
 long long int compute(const int limit) {
 
 	/*
-	 * - Uses Sieve of Eratosthenes to eliminate composite numbers
-	 *   up to the limit.
+	 * - Uses Sieve of Eratosthenes to eliminate composite
+	 *   numbers up to the limit.
 	 * - The sieve tracks previously marked primes without increasing
 	 *   the computation time unnecessarily. This allows the sieve to
 	 *   jump ahead to the square of the current prime and
@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
 	::benchmark::RunSpecifiedBenchmarks();
 }
 
-// Answer: 142913828922
+// Answer: 142'913'828'922
 
 // Run on (8 X 24.1208 MHz CPU s) ARM64
 // -----------------------------------------------------------------------

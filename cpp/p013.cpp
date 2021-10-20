@@ -25,8 +25,8 @@ long long int compute(std::array<long int, 100> numbers) {
 static void p013_bench(benchmark::State& state) {
 	
 	/*
-	 * Only the first ten digits of the sum are required.
-	 * Which cuts out any digit from the twelfth onward.
+	 * - Only the first ten digits of the sum are required.
+	 *   Which cuts out any digit from the twelfth onward.
 	 */
 
 	std::array<long int, 100> numbers = { 37107287533, 46376937677, 74324986199, 91942213363, 23067588207,
@@ -62,7 +62,7 @@ int main(int argc, char** argv) {
 	benchmark::RunSpecifiedBenchmarks();
 }
 
-// Answer: 5537376230
+// Answer: 5'537'376'230
 
 // Run on (8 X 24.121 MHz CPU s) ARM64
 // -----------------------------------------------------------------------

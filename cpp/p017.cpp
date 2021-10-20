@@ -2,80 +2,62 @@
  * Project Euler
  * Problem 17 - Number-letter-counts
  * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2021
  */
 
-int main()
-{
-    /*
-    What do I want to do?
-    
-    -   Find the sum of all the characters in the set of text
-        representations for each number in a finite set of numbers.
+#include <string>
+#include <array>
 
-    What are my requirements?
+#include "benchmark/benchmark.h"
 
-    -   The set of numbers is 1 - 1,000.
-    -   Do not count spaces or hyphens.
-    -   The use of "and" is required. */
+int compute(const int start, const int end) {
 
-    /*
-    Start with the root, the set of numbers 1 - 1,000.
-    
-    ?   Do I need to take them in as integers, then convert
-        them to their string counterparts? - No!
+	std::array<std::string, 20> ones = { "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+										 "ten", "eleven", "twelve", "thirteen", "forteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
+	std::array<std::string, 9> tens = { "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
+	std::array<std::string, 5> thousands = { "hundred", "thousand", "million", "billion", "trillion"  };
 
-        *   The jumps in relevant logic, that this method
-            will entail, requires a lot of mental overhead.
-        *   It would be easier to understand what's going
-            on if each step could be represented in your logic chain.
-            
-    ?   Can I copy each digit of the number into an array?
-    
-        *   That's an extra step, which adds to the
-            complexity of this solution, but this step
-            keeps logic separate.
-        *   You can determine the place of each digit by
-            using the digit's index within the array.
-        *   You can determine the text equivelent of each
-            digit by matching the the string that is
-            located at the index equal to that digit's
-            value within the digit text array.
+	int total = 0;
+	for (int i = start; i <= end; i++) {
+		if (i <= 19) {
+			total += ones[i].size();
+		}
+		if (i >= 20 && i <= 99) {
+			int local = i;
+			int one = local % 10;
+			local /= 10;
+			int ten = local % 10;
+			total += tens[ten].size() + ones[one].size();
+		} 
+		if (i >= 100 && i <= 999) {
+			int local = i;
+			int one = local % 10;
+			local /= 10;
+			int ten = local % 10;
+			local /= 10;
+			int hundred = local % 10;
+			total += ones[hundred].size() + 7 + tens[ten].size() + ones[one].size();
+		}
+	}
 
-        ?/a   How do I know when to add "and"?
+	total += 11;
 
-            *   "and" must be added to numbers
-                that are greater than one-hundred
-                and are less than nine-hundred and ninety-nine.
+	return total;
 
-            ?/aa  How do I translate this to a system that doesn't
-                recognize the value of a number?
-
-                *   I'm starting at the largest place value
-                    each time I move to a new set iteration.
-                *   I am tracking the size of each number's
-                    set of digits. Which allows assigning
-                    indexes to each digit in the number.
-                *   I can access the current element's
-                    place value by using the size of the
-                    number array, minus the current element
-                    index, as the index of the places array.
-            
-            /ab How do I deal with "teen" numbers and "ty" numbers?
-
-                *   They will have their own text array.
-                *   "teen" and "ty" numbers will always be
-                    in the same place within each number.
-                    "ty" apply to numbers greater than nineteen
-                    and less than one-hundred.
-                    "teen" apply to numbers greater than twelve
-                    but less than twenty.
-
-    !   We need three arrays of strings.
-
-        1   An array of "ones": {"one", "two", "three", ... , "thirteen", etc.}
-        2   An array of "tens": {"twenty", "thirty", "forty", etc.}
-        3   An array of "places": {"hundred", "thousand", "million", etc}
-    */
-
-    return 0;
 }
+
+static void p017_bench(benchmark::State& state) {
+	for (auto _ : state)
+		compute(1, 1'000);
+}
+
+BENCHMARK(p017_bench);
+
+int main(int argc, char** argv) {
+	benchmark::Initialize(&argc, argv);
+	benchmark::RunSpecifiedBenchmarks();
+}
+
+// Answer: 21124
+
+// 

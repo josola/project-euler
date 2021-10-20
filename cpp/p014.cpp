@@ -15,9 +15,9 @@ int compute(const int limit) {
 	int max_length = 0;
 	
 	/*
-	 * Every number in the bottom half of n has the same
-	 * reverse map in 2n, so we can start our sequence
-	 * at (limit / 2) + 1.
+	 * - Every number in the bottom half of n has the same
+	 *   reverse map in 2n, so we can start our sequence
+	 *   at (limit / 2) + 1 to cut out half the calculations.
 	 */
 
 	for (int i = (limit / 2) + 1; i < limit; i++) {
@@ -59,7 +59,7 @@ int main(int argc, char** argv) {
 	benchmark::RunSpecifiedBenchmarks();
 }
 
-// Answer: 837799
+// Answer: 837'799
 
 // Run on (8 X 24.0449 MHz CPU s) ARM64
 // -----------------------------------------------------------------------
