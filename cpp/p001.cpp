@@ -5,6 +5,7 @@
  * Written by Jordan Sola 2020-2021
  */
 
+#include <iostream>
 #include <array>
 
 #include "benchmark/benchmark.h"
@@ -12,7 +13,7 @@
 int compute(const int limit) {
 	
 	std::array<int, 3> a = {3, 5, -15};
-	std::array<int, 3> n = {(limit / a[0]), (limit / a[1]), (limit / a[2])};
+	std::array<int, 3> n = {((limit - 1) / a[0]), ((limit - 1) / a[1]), ((limit - 1) / a[2])};
 	std::array<int, 3> n_plus = {1, 1, -1};
 	
 	/*
@@ -39,11 +40,12 @@ static void p001_bench(benchmark::State& state) {
 BENCHMARK(p001_bench);
 
 int main(int argc, char** argv) {
-	::benchmark::Initialize(&argc, argv);
-	::benchmark::RunSpecifiedBenchmarks();
+	std::cout << compute(1'000) << std::endl;
+	// ::benchmark::Initialize(&argc, argv);
+	// ::benchmark::RunSpecifiedBenchmarks();
 }
 
-// Answer: 233168
+// Answer: 233'168
 
 // Run on (8 X 24.1205 MHz CPU s) ARM64
 // -------------------------------------------------------------
