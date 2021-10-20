@@ -13,7 +13,7 @@
 int compute(const int limit) {
 
 	/*
-	 * - We find this by using Gauss's series formula.
+	 * - We find this by using Gauss's Series formula.
 	 * - Square Sum Formula: m = ((n)(n + 1) / 2)^2
 	 * - Sum Square Formula: m = (n)(n + 1)(2n + 1) / 6
 	 */
@@ -44,7 +44,7 @@ int main(int argc, char** argv) {
 	::benchmark::RunSpecifiedBenchmarks();
 }
 
-// Answer: 25164150
+// Answer: 25'164'150
 
 // Run on (8 X 24.029 MHz CPU s) ARM64
 // ---------------------------------------------------------
