@@ -15,7 +15,6 @@ int compute(const int start, const int end) {
 	std::array<std::string, 20> ones_place = { "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "forteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
 	std::array<std::string, 10> tens_place = { "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
 	std::string hundreds_place = "hundred";
-	std::string thousands_place = "thousand";
 
 	int total = 0;
 
@@ -27,11 +26,13 @@ int compute(const int start, const int end) {
 			word = ones_place[i];
 		else if (i >= 20 && i < 100)
 			word = tens_place[i / 10] + ones_place[i % 10];
-		else if (i >= 100 && (i % 100) / 10 < 2 && i != end)
+		else if (i >= 100 && (i % 100) / 10 == 0 && i % 10 == 0 && i < 1'000)
+			word = ones_place[i / 100] + hundreds_place;
+		else if (i >= 100 && (i % 100) / 10 < 2 && i < 1'000)
 			word = ones_place[i / 100] + hundreds_place + "and" + ones_place[i % 100];
-		else if (i >= 100 && i < end)
+		else if (i >= 120 && i < 1'000)
 			word = ones_place[i / 100] + hundreds_place + "and" + tens_place[(i % 100) / 10] + ones_place[i % 10];
-		else if (i == end)
+		else if (i == 1'000)
 			word = "onethousand";
 
 		total += word.size();

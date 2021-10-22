@@ -33,7 +33,7 @@ long int compute(std::vector<int> grid, const int size, const int product_length
 		int diagonal_b = 0;
 		if (i <= ((size * size) - 1) - (size * (product_length - 1)) - (product_length - 1)) {
 			diagonal_a = grid[i] * grid[i + (size + 1)] * grid[i + ((size * 2) + 2)] * grid[i + ((size * 3) + 3)];
-			diagonal_b = grid[i + (product_length - 1)] * grid[i + (size + (product_length - 2))] * grid[i + ((size * 2) + (product_length - 3))] * grid[i + ((size * 3))];
+			diagonal_b = grid[i + (product_length - 1)] * grid[i + (size + (product_length - 2))] * grid[i + ((size * 2) + (product_length - 3))] * grid[i + (size * 3)];
 		}
 		
 		if (horizontal != 0 && horizontal > max)

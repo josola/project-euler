@@ -18,7 +18,6 @@ long int compute(std::vector<int> large_num, const int product_size) {
 		long int current_product = 0;
 		
 		for (int j = 0; j < 13; j++) {
-			
 			if (j == 0)
 				current_product = large_num[j + i];
 			else

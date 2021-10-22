@@ -5,12 +5,16 @@
  * Written by Jordan Sola 2020-2021
  */
 
-#include <cmath>
-
 #include "benchmark/benchmark.h"
 
 long int compute(const int width, const int height) {
 	
+	/*
+	 * - We are counting the number of paths that live on
+	 *   the edge of each cell in the grid,  so we need to
+	 *   add one element to each row and column.
+	 */
+
 	long int grid[height + 1][width + 1];
 
 	/*
