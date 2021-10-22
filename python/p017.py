@@ -1,26 +1,40 @@
-# main.py
 # Project Euler
-# Problem 17 - Number letter counts
-# Algorithm - v001
+# Problem 17 - Number-letter-counts
+# (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+# Written by Jordan Sola 2021
 
-from num2words import num2words
+def compute(START, END):
 
-# ----- global variables
-length = 1000
-words = []
-total_letters = 0
-# -----
+	ones_place = [ "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "forteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" ]
+	tens_place = [ "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" ]
+	hundreds_place = "hundred"
 
-# Don't add zero to list of numbers.
-for i in range(length):
-    words.append(num2words(i + 1))
+	total = 0
+	for i in range(START, END + 1, 1):
 
-# Spaces and dashes cannot be counted.
-for i in range(length):
-    words[i] = words[i].replace(' ', '')
-    words[i] = words[i].replace('-', '')
+		word = ""
 
-for i in words:
-    total_letters += len(i)
+		if i < 20:
+			word = ones_place[i]
+		elif i >= 20 and i < 100:
+			word = tens_place[i // 10] + ones_place[i % 10]
+		elif i >= 100 and (i % 100) // 10 == 0 and i % 10 == 0 and i < 1000:
+			word = ones_place[i // 100] + hundreds_place
+		elif i >= 100 and (i % 100) // 10 < 2 and i < 1000:
+			word = ones_place[i // 100] + hundreds_place + "and" + ones_place[i % 100]
+		elif i >= 120 and i < 1000:
+			word = ones_place[i // 100] + hundreds_place + "and" + tens_place[(i % 100) // 10] + ones_place[i % 10]
+		elif i == 1000:
+			word = "onethousand"
 
-print(total_letters)
+		total += len(word)
+
+	return total
+
+if __name__ == "__main__":
+	print(compute(1, 1000))
+
+# Answer: 21124
+
+# Asymptotic complexity: O(N)
+# (24.121 MHz CPU) ARMv8-A64 (64 bit): 1000 loops, best of 5: 315 usec per loop

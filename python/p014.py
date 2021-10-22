@@ -1,36 +1,41 @@
-# main.py
 # Project Euler
 # Problem 14 - Longest Collatz sequence
-# Algorithm - v001
+# (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+# Written by Jordan Sola 2020-2021
 
-# ----- global variables
-start = 999999
-highest_term = 0
-highest_starting_num = 0
-# -----
+def compute(LIMIT):
 
-while start != 1:
+	max_start = 0
+	max_length = 0
 
-    # Start term is its own iterator, needs a second one for current term.
-    current_term = start
-    term_count = 0
-    
-    while current_term != 1:
+	# - Every number in the bottom half of n has the same
+	#   reverse map in 2n, so we can start our sequence
+	#   at (limit / 2) + 1 to cut out half the calculations.
 
-        # This is the Collatz formula.
-        if current_term % 2 == 0:
-            current_term = current_term / 2
-        else:
-            current_term = (3 * current_term + 1) / 2
+	for i in range((LIMIT // 2 + 1), LIMIT):
 
-        term_count += 1
-    
-    # A highest term and starting point are the end goal.
-    if term_count >= highest_term:
-        highest_term = term_count
-        highest_starting_num = start
+		start = i
+		length = 0
 
-    start -= 1
+		while start != 1:
 
-print(highest_term)
-print(highest_starting_num)
+			if start % 2 == 0:
+				start //= 2
+			elif start % 2 != 0:
+				start = (3 * start) + 1
+
+			length += 1
+
+		if length > max_length:
+			max_length = length
+			max_start = i
+
+	return max_start
+
+if __name__ == "__main__":
+	print(compute(1000000))
+
+# Answer: 837799
+
+# Asymptotic complexity: O(N)
+# (24.121 MHz CPU) ARMv8-A64 (64 bit): 1 loop, best of 5: 5.29 sec per loop
