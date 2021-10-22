@@ -1,7 +1,7 @@
-# Project Euler
-# Problem 9 - Special Pythagorean triplet
-# (c) Jordan Sola 2021. All rights reserved. (MIT License)
-# Written by Jordan Sola 2021
+ # Project Euler
+ # Problem 9 - Special Pythagorean triplet
+ # (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ # Written by Jordan Sola 2020-2021
 
 import math
 
@@ -29,7 +29,14 @@ def compute(TARGET):
 		if found:
 			break
 
-	return (a * b * c)
+	product = a * b * c
+
+	return product
 
 if __name__ == "__main__":
 	print(compute(1000))
+
+# Answer: 31875000
+
+# Asymptotic complexity: O(N)
+# (24.121 MHz CPU) ARMv8-A64 (64 bit): 5 loops, best of 5: 49.7 msec per loop

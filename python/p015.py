@@ -1,45 +1,43 @@
-# main.py
 # Project Euler
 # Problem 15 - Lattice paths
-# Algorithm - v001
+# (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+# Written by Jordan Sola 2020-2021
 
-# ----- global variables
-rows = []
-grid = []
-size = 21
-total_paths = 0
-# -----
+def compute(WIDTH, HEIGHT):
 
-# Start with a grid full of zeros.
-for i in range(size):
+	# - We are counting the number of paths that live on
+	#   the edge of each cell in the grid,  so we need to
+	#   add one element to each row and column.
 
-    row = []
+	grid = []
+	columns = []
 
-    for j in range(size):
+	for i in range(0, WIDTH + 1):
+		columns.append(0)
+	for i in range(0, HEIGHT + 1):
+		grid.append(columns)
 
-        row.append(0)
+	# - In a grid setting, each cell has as many paths
+	#   through it as the sum of the cell directly above
+	#   it and the cell directly behind it.
 
-    grid.append(row)
+	for i in range(0, WIDTH + 1):
+		grid[0][i] = 1
+	for i in range(0, HEIGHT + 1):
+		grid[i][0] = 1
 
+	for i in range(1, HEIGHT + 1):
+		for j in range(1, WIDTH + 1):
+			grid[i][j] = grid[i - 1][j] + grid[i][j - 1]
 
-# LT column and top row need to be ones.
-for i in range(len(grid[0])):
-    grid[0][i] = 1
+	path_count = grid[HEIGHT][WIDTH]
 
-for i in grid:
-    i[0] = 1
+	return path_count
 
-# This gets us the number of routes into each grid point.
-for i in range(size):
-    for j in range(len(grid[i])):
-        if i == 0:
-            break
-        elif j == 0:
-            continue
-        else:
-            grid[i][j] = grid[i][j - 1] + grid[i - 1][j]
+if __name__ == "__main__":
+	print(compute(20, 20))
 
-# Bottom RT corner of grid contains the most routes.
-total_paths += grid[size - 1][size - 1]
+# Answer: 137846528820
 
-print(total_paths)
+# Asymptotic complexity: O(N)
+# (24.121 MHz CPU) ARMv8-A64 (64 bit): 5000 loops, best of 5: 42.1 usec per loop

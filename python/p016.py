@@ -1,28 +1,27 @@
-# main.py
 # Project Euler
 # Problem 16 - Power digit sum
-# Algorithm - v001
+# (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+# Written by Jordan Sola 2021
 
 import math
 
-# ----- global variables
-base = 2
-exponent = 1000
-str_result = []
-sum = 0
-# -----
+def compute(BASE, EXPONENT):
 
-# math.pow returns a double, needs to be a string.
-result = str(int(math.pow(base, exponent)))
+	# - To get individual digits in any length number,
+	#   the number must be converted to an ASCII string.
 
-# String needs to be split into characters.
-for i in result:
-    str_result.append(i)
+	product = str(int(math.pow(BASE, EXPONENT)))
 
-# Characters in array need to be integers.
-num_arr = [int(i, base=16) for i in str_result]
+	sum = 0
+	for i in map(int, product):
+		sum += i
 
-for i in num_arr:
-    sum += i
+	return sum
 
-print(sum)
+if __name__ == "__main__":
+	print(compute(2, 1000))
+
+# Answer: 1366
+
+# Asymptotic complexity: O(N)
+# (24.121 MHz CPU) ARMv8-A64 (64 bit): 10000 loops, best of 5: 24.2 usec per loop

@@ -1,14 +1,12 @@
-# Project Euler
-# Problem 10 - Summation of Primes
-# (c) Jordan Sola 2021. All rights reserved. (MIT License)
-# Written by Jordan Sola 2021
-
-import itertools
+ # Project Euler
+ # Problem 10 - Summation of primes
+ # (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ # Written by Jordan Sola 2020-2021
 
 def compute(LIMIT):
 
-	# - Uses Sieve of Eratosthenes to eliminate composite numbers
-	#   up to the limit.
+	# - Uses Sieve of Eratosthenes to eliminate composite
+	#   numbers up to the limit.
 	# - The sieve tracks previously marked primes without increasing
 	#   the computation time unnecessarily. This allows the sieve to
 	#   jump ahead to the square of the current prime and
@@ -36,3 +34,8 @@ def compute(LIMIT):
 
 if __name__ == "__main__":
 	print(compute(2000000))
+
+# Answer: 142'913'828'922
+
+# Asymptotic complexity: O(N LogN)
+# (24.121 MHz CPU) ARMv8-A64 (64 bit): 1 loop, best of 5: 314 msec per loop

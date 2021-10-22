@@ -9,7 +9,7 @@ def compute(LIMIT):
 
 	PHI = (1 + math.sqrt(5)) / 2
 
-	# - nth fibonacci ferm formula: nth = [Phi^n – (phi)^n] / Sqrt[5]
+	# - nth fibonacci term formula: nth = [Phi^n – (phi)^n] / Sqrt[5]
 	# - Every third term in a fibonacci sequence is even.
 
 	sum = 0
@@ -22,3 +22,8 @@ def compute(LIMIT):
 
 if __name__ == "__main__":
 	print(compute(4000000))
+
+# Answer: 4613732
+
+# Asymptotic complexity: O(LogN)
+# (24.121 MHz CPU) ARMv8-A64 (64 bit): 100000 loops, best of 5: 3.75 usec per loop

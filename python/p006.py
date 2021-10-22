@@ -7,7 +7,7 @@ import math
 
 def compute(LIMIT):
 
-	# - We find this by using Gauss's series formula.
+	# - We find this by using Gauss's Series formula.
 	# - Square Sum Formula: m = ((n)(n + 1) / 2)^2
 	# - Sum Square Formula: m = (n)(n + 1)(2n + 1) / 6
 
@@ -17,3 +17,8 @@ def compute(LIMIT):
 
 if __name__ == "__main__":
 	print(compute(100))
+
+# Answer: 25164150
+
+# Asymptotic complexity: O(1)
+# (24.121 MHz CPU) ARMv8-A64 (64 bit): 1000000 loops, best of 5: 294 nsec per loop

@@ -34,3 +34,8 @@ def compute(LIMIT):
 
 if __name__ == "__main__":
 	print(compute(10001))
+
+# Answer: 104743
+
+# Asymptotic complexity: O(N LogN)
+# (24.121 MHz CPU) ARMv8-A64 (64 bit): 2 loops, best of 5: 112 msec per loop

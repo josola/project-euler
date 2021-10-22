@@ -1,31 +1,11 @@
 # Project Euler
 # Problem 8 - Largest product in a series
-# (c) Jordan Sola 2021. All rights reserved. (MIT License)
-# Written by Jordan Sola 2021
+# (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+# Written by Jordan Sola 2020-2021
 
-def compute(large_num):
+def compute():
 
-	highest_product = 0
-
-	for i in range(988):
-
-		current_product = 0
-
-		for j in range(13):
-
-			if j == 0:
-				current_product = large_num[j + i]
-			else:
-				current_product *= large_num[j + i]
-
-		if current_product > highest_product:
-			highest_product = current_product
-
-	return highest_product
-
-
-if __name__ == "__main__":
-
+	PRODUCT_SIZE = 13
 	large_num = [ 7, 3, 1, 6, 7, 1, 7, 6, 5, 3, 1, 3, 3, 0, 6, 2, 4, 9, 1, 9, 2, 2, 5, 1, 1, 9, 6, 7, 4, 4, 2, 6, 5, 7, 4, 7, 4, 2, 3, 5, 5, 3, 4, 9, 1, 9, 4, 9, 3, 4,
 		          9, 6, 9, 8, 3, 5, 2, 0, 3, 1, 2, 7, 7, 4, 5, 0, 6, 3, 2, 6, 2, 3, 9, 5, 7, 8, 3, 1, 8, 0, 1, 6, 9, 8, 4, 8, 0, 1, 8, 6, 9, 4, 7, 8, 8, 5, 1, 8, 4, 3,
 		          8, 5, 8, 6, 1, 5, 6, 0, 7, 8, 9, 1, 1, 2, 9, 4, 9, 4, 9, 5, 4, 5, 9, 5, 0, 1, 7, 3, 7, 9, 5, 8, 3, 3, 1, 9, 5, 2, 8, 5, 3, 2, 0, 8, 8, 0, 5, 5, 1, 1,
@@ -47,4 +27,28 @@ if __name__ == "__main__":
 		          0, 5, 8, 8, 6, 1, 1, 6, 4, 6, 7, 1, 0, 9, 4, 0, 5, 0, 7, 7, 5, 4, 1, 0, 0, 2, 2, 5, 6, 9, 8, 3, 1, 5, 5, 2, 0, 0, 0, 5, 5, 9, 3, 5, 7, 2, 9, 7, 2, 5,
 		          7, 1, 6, 3, 6, 2, 6, 9, 5, 6, 1, 8, 8, 2, 6, 7, 0, 4, 2, 8, 2, 5, 2, 4, 8, 3, 6, 0, 0, 8, 2, 3, 2, 5, 7, 5, 3, 0, 4, 2, 0, 7, 5, 2, 9, 6, 3, 4, 5, 0 ]
 
-	print(compute(large_num))
+	highest_product = 0
+
+	for i in range((len(large_num) - PRODUCT_SIZE)):
+
+		current_product = 0
+
+		for j in range(PRODUCT_SIZE):
+			if j == 0:
+				current_product = large_num[j + i]
+			else:
+				current_product *= large_num[j + i]
+
+		if current_product > highest_product:
+			highest_product = current_product
+
+	return highest_product
+
+
+if __name__ == "__main__":
+	print(compute())
+
+# Answer: 23514624000
+
+# Asymptotic complexity: O(N)
+# (24.121 MHz CPU) ARMv8-A64 (64 bit): 500 loops, best of 5: 816 usec per loop
