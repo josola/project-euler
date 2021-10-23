@@ -3,9 +3,6 @@
  # (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
  # Written by Jordan Sola 2020-2021
 
-from typing import Sized
-
-
 def compute():
 
 	SIZE = 20
