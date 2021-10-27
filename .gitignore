@@ -57,4 +57,8 @@ dkms.conf
 cpp/bin
 cpp/xcode
 /visual_studio
+<<<<<<< HEAD
+python/__pycache__
+=======
 c/bin
+>>>>>>> 56635fa5b1369c84a9c2e1c3c2298a77619ea45c
