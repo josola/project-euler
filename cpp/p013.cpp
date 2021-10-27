@@ -9,21 +9,8 @@
 
 #include "benchmark/benchmark.h"
 
-long long int compute(std::array<long int, 100> numbers) {
+long long int compute() {
 
-	long long int sum = 0;
-
-	for (long int num : numbers)
-		sum += num;
-
-	sum /= 1'000;
-
-	return sum;
-
-}
-
-static void p013_bench(benchmark::State& state) {
-	
 	/*
 	 * - Only the first ten digits of the sum are required.
 	 *   Which cuts out any digit from the twelfth onward.
@@ -49,10 +36,21 @@ static void p013_bench(benchmark::State& state) {
 										  64913982680, 16730939319, 94809377245, 78639167021, 15368713711,
 										  40789923115, 44889911501, 41503128880, 81234880673, 82616570773,
 										  22918802058, 77158542502, 72107838435, 20849603980, 53503534226 };
-	
-	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(numbers));
 
+	long long int sum = 0;
+
+	for (long int num : numbers)
+		sum += num;
+
+	sum /= 1'000;
+
+	return sum;
+
+}
+
+static void p013_bench(benchmark::State& state) {
+	for (auto _ : state)
+		benchmark::DoNotOptimize(compute());
 }
 
 BENCHMARK(p013_bench);

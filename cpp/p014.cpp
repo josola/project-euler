@@ -5,8 +5,6 @@
  * Written by Jordan Sola 2020-2021
  */
 
-#include <iostream>
-
 #include "benchmark/benchmark.h"
 
 int compute(const int limit) {

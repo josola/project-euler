@@ -3,9 +3,6 @@
  # (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
  # Written by Jordan Sola 2020-2021
 
-from typing import Sized
-
-
 def compute():
 
 	SIZE = 20
@@ -70,6 +67,10 @@ if __name__ == "__main__":
 # Answer: 70600674
 
 # Asymptotic complexity: O(N)
+<<<<<<< HEAD
 
 # M1           (3.2 GHz CPU) ARMv8-A64 (64 bit): 1000 loops, best of 5: 395 usec per loop
 # Ryzen 5 2600 (3.4 GHz CPU) x86-64 (64 bit): 500 loops, best of 5: 710 usec per loop
+=======
+# M1 (3.2 GHz CPU) ARMv8-A64 (64 bit): 1000 loops, best of 5: 395 usec per loop
+>>>>>>> 56635fa5b1369c84a9c2e1c3c2298a77619ea45c

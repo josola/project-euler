@@ -38,6 +38,10 @@ if __name__ == "__main__":
 # Answer: 142'913'828'922
 
 # Asymptotic complexity: O(N LogN)
+<<<<<<< HEAD
 
 # M1           (3.2 GHz CPU) ARMv8-A64 (64 bit): 1 loop, best of 5: 314 msec per loop
 # Ryzen 5 2600 (3.4 GHz CPU) x86-64 (64 bit): 1 loop, best of 5: 438 msec per loop
+=======
+# M1 (3.2 GHz CPU) ARMv8-A64 (64 bit): 1 loop, best of 5: 314 msec per loop
+>>>>>>> 56635fa5b1369c84a9c2e1c3c2298a77619ea45c
