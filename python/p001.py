@@ -27,4 +27,6 @@ if __name__ == "__main__":
 # Answer: 233168
 
 # Asymptotic complexity: O(1)
-# (24.121 MHz CPU) ARMv8-A64 (64 bit): 500000 loops, best of 5: 764 nsec per loop
+
+# M1           (3.2 GHz CPU) ARMv8-A64 (64 bit): 500000 loops, best of 5: 764 nsec per loop
+# Ryzen 5 2600 (3.4 GHz CPU) x86-64 (64 bit): 200000 loops, best of 5: 1.35 usec per loop
