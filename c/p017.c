@@ -40,4 +40,3 @@ int main()
 // Answer: 21124
 
 // Asymptotic complexity: O(N)
-// M1 (3.2 GHz) ARMv8-A64 (64 bit):
