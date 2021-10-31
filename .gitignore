@@ -60,3 +60,6 @@ cpp/xcode
 python/__pycache__
 go/bin
 c/bin
+package.json
+package-lock.json
+/node_modules
