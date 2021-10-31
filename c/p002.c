@@ -8,25 +8,27 @@
 #include "math.h"
 #include "stdio.h"
 
-int compute(const int limit)
-{
+int compute(const int limit) {
+
 	const double phi = (1 + sqrt(5)) / 2;
+
 	/*
-	 * - nth fibonacci term formula: nth = (phi^n – (1 - phi)^n) / sqrt[5]
-	 * - Every third term in a fibonacci sequence is even.
-	 */
+		- nth fibonacci term formula: nth = (phi^n – (1 - phi)^n) / sqrt[5]
+		- Every third term in a fibonacci sequence is even.
+	*/
+
 	int sum = 0;
 	int term = 3;
-	while (sum < (limit / 3))
-	{
+	while (sum < (limit / 3)) {
 		sum += (pow(phi, term) - pow((1 - phi), term)) / sqrt(5);
 		term += 3;
 	}
+
 	return sum;
+
 }
 
-int main()
-{
+int main() {
 	printf("%i\n", compute(4000000));
 	return 0;
 }

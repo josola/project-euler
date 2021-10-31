@@ -7,34 +7,36 @@
 
 #include "stdio.h"
 
-int compute(const int limit)
-{
+int compute(const int limit) {
+
 	int palindrome = 0;
-	for (int i = limit; i > 100; i--)
-	{
-		for (int j = limit; j > 100; j--)
-		{
+	for (int i = limit; i > 100; i--) {
+
+		for (int j = limit; j > 100; j--) {
+
 			if (palindrome > (i * j))
 				break;
-			else
-			{
+			else {
+
 				int product = i * j;
 				int reverse = 0;
-				while (product != 0)
-				{
+				while (product != 0) {
 					reverse = reverse * 10 + product % 10;
 					product /= 10;
 				}
+
 				if (reverse == (i * j))
 					palindrome = i * j;
+
 			}
 		}
 	}
+
 	return palindrome;
+
 }
 
-int main()
-{
+int main() {
 	printf("%i\n", compute(999));
 	return 0;
 }
