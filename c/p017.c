@@ -29,7 +29,7 @@ int compute(const int start, const int end) {
 			total += ones[i / 100] + hundred + 3 + tens[(i % 100) / 10] + ones[i % 10];
 		else if (i == 1000)
 			total += 11;
-			
+		
 	}
 	
 	return total;

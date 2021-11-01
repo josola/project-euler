@@ -6,16 +6,16 @@
 import math
 
 def compute(BASE, EXPONENT):
-
+	
 	# - To get individual digits in any length number,
 	#   the number must be converted to an ASCII string.
-
+	
 	product = str(int(math.pow(BASE, EXPONENT)))
-
+	
 	sum = 0
 	for i in map(int, product):
 		sum += i
-
+	
 	return sum
 
 if __name__ == "__main__":

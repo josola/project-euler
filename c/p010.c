@@ -9,7 +9,7 @@
 #include "stdio.h"
 
 long long int compute(const int limit) {
-
+	
 	/*
 		- Uses Sieve of Eratosthenes to eliminate composite
 		  numbers up to the limit.
@@ -18,24 +18,24 @@ long long int compute(const int limit) {
 		  jump ahead to the square of the current prime and
 		  remove all the factors of the current prime.
 	*/
-
+	
 	bool prime[limit];
 	for (int i = 0; i < limit; i++)
 		prime[i] = true;
-
+	
 	for (long int i = 2; i * i <= limit; i++) {
 		if (prime[i] == true) {
 			for (long long int j = i * i; j <= limit; j += i)
 				prime[j] = false;
 		}
 	}
-
+	
 	long long int sum = 0;
 	for (int i = 2; i <= limit; i++) {
 		if (prime[i] == true)
 			sum += i;
 	}
-
+	
 	return sum;
 	
 }

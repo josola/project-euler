@@ -10,7 +10,7 @@
 #include "benchmark/benchmark.h"
 
 int compute(const int target) {
-
+	
 	int a = 0;
 	int b = 0;
 	int c = 0;
@@ -30,18 +30,18 @@ int compute(const int target) {
 				found = true;
 				break;
 			}
-
+			
 		}
 		
 		if (found)
 			break;
 		
 	}
-
+	
 	int product = a * b * c;
-
+	
 	return product;
-
+	
 }
 
 static void p009_bench(benchmark::State& state) {
@@ -52,8 +52,8 @@ static void p009_bench(benchmark::State& state) {
 BENCHMARK(p009_bench)->Unit(benchmark::kMicrosecond);
 
 int main(int argc, char** argv) {
-	::benchmark::Initialize(&argc, argv);
-	::benchmark::RunSpecifiedBenchmarks();
+	benchmark::Initialize(&argc, argv);
+	benchmark::RunSpecifiedBenchmarks();
 }
 
 // Answer: 31'875'000

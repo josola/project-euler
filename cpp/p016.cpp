@@ -11,9 +11,9 @@
 #include "benchmark/benchmark.h"
 
 int compute(const int base, const int exponent) {
-
+	
 	std::string product = std::to_string(pow(base, exponent));
-
+	
 	/*
 	 * - To get individual digits in any length number,
 	 *   the number must be converted to an ASCII string.
@@ -22,14 +22,14 @@ int compute(const int base, const int exponent) {
 	 * - For example, the ASCII value of '1' is 49.
 	 *   '1' - '0' = 1 or 49 - 48 = 1
 	 */
-
+	
 	int sum = 0;
 	for (char &num : product)
 		if (num != '.' && num != '0')
 			sum += num - '0';
-
+	
 	return sum;
-
+	
 }
 
 static void p016_bench(benchmark::State& state) {

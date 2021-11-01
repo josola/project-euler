@@ -8,9 +8,9 @@
 #include "benchmark/benchmark.h"
 
 long long int compute(const long long int num) {
-
+	
 	long long int output = num;
-
+	
 	/*
 	 * - Any prime number that is greater than a composite number cannot be the
 	 *   largest prime, we elimenate primes greater than a constant by
@@ -21,9 +21,9 @@ long long int compute(const long long int num) {
 		if (output % i == 0)
 			output /= i;
 	}
-
+	
 	return output;
-
+	
 }
 
 static void p003_bench(benchmark::State& state) {
@@ -34,8 +34,8 @@ static void p003_bench(benchmark::State& state) {
 BENCHMARK(p003_bench)->Unit(benchmark::kMicrosecond);
 
 int main(int argc, char** argv) {
-	::benchmark::Initialize(&argc, argv);
-	::benchmark::RunSpecifiedBenchmarks();
+	benchmark::Initialize(&argc, argv);
+	benchmark::RunSpecifiedBenchmarks();
 }
 
 // Answer: 6'857

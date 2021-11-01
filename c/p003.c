@@ -16,7 +16,7 @@ long long int compute(const long long int num) {
 		  largest prime, we elimenate primes greater than a constant by
 		  dividing the num by its composite.
 	*/
-
+	
 	for (long long int i = 3; i < output; i += 2) {
 		if (output % i == 0)
 			output /= i;

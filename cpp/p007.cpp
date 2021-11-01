@@ -8,12 +8,12 @@
 #include "benchmark/benchmark.h"
 
 int compute(const int limit) {
-
+	
 	int count = 2;
 	int prime = 3;
 	
 	while (count < limit) {
-
+		
 		// Skip even numbers, they cannot be prime
 		prime += 2;
 		bool is_prime = true;
@@ -32,11 +32,11 @@ int compute(const int limit) {
 		
 		if (is_prime)
 			count++;
-
+		
 	}
-
+	
 	return prime;
-
+	
 }
 
 static void p007_bench(benchmark::State& state) {
@@ -47,8 +47,8 @@ static void p007_bench(benchmark::State& state) {
 BENCHMARK(p007_bench)->Unit(benchmark::kMillisecond);
 
 int main(int argc, char** argv) {
-	::benchmark::Initialize(&argc, argv);
-	::benchmark::RunSpecifiedBenchmarks();
+	benchmark::Initialize(&argc, argv);
+	benchmark::RunSpecifiedBenchmarks();
 }
 
 // Answer: 104'743

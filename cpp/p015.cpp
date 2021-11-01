@@ -8,7 +8,7 @@
 #include "benchmark/benchmark.h"
 
 long int compute(const int width, const int height) {
-	
+
 	/*
 	 * - We are counting the number of paths that live on
 	 *   the edge of each cell in the grid,  so we need to

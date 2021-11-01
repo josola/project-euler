@@ -8,7 +8,7 @@
 #include "benchmark/benchmark.h"
 
 int compute(const int limit) {
-
+	
 	int max_start = 0;
 	int max_length = 0;
 	
@@ -17,21 +17,21 @@ int compute(const int limit) {
 	 *   reverse map in 2n, so we can start our sequence
 	 *   at (limit / 2) + 1 to cut out half the calculations.
 	 */
-
+	
 	for (int i = (limit / 2) + 1; i < limit; i++) {
 		
 		long long int start = i;
 		int length = 0;
-
+		
 		while (start != 1) {
-
+			
 			if (start % 2 == 0)
 				start /= 2;
 			else if (start % 2 != 0)
 				start = (3 * start) + 1;
-
+			
 			length++;
-
+			
 		}
 		
 		if (length > max_length) {
@@ -40,9 +40,9 @@ int compute(const int limit) {
 		}
 		
 	}
-
+	
 	return max_start;
-
+	
 }
 
 static void p014_bench(benchmark::State& state) {

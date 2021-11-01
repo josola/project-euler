@@ -11,17 +11,17 @@
 #include "benchmark/benchmark.h"
 
 int compute(const int start, const int end) {
-
+	
 	std::array<std::string, 20> ones_place = { "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "forteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
 	std::array<std::string, 10> tens_place = { "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
 	std::string hundreds_place = "hundred";
-
+	
 	int total = 0;
-
+	
 	for (int i = start; i <= end; i++) {
-
+		
 		std::string word = "";
-
+		
 		if (i < 20)
 			word = ones_place[i];
 		else if (i >= 20 && i < 100)
@@ -34,13 +34,13 @@ int compute(const int start, const int end) {
 			word = ones_place[i / 100] + hundreds_place + "and" + tens_place[(i % 100) / 10] + ones_place[i % 10];
 		else if (i == 1'000)
 			word = "onethousand";
-
+		
 		total += word.size();
-
+		
 	}
-
+	
 	return total;
-
+	
 }
 
 static void p017_bench(benchmark::State& state) {

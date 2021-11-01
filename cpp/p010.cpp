@@ -10,7 +10,7 @@
 #include "benchmark/benchmark.h"
 
 long long int compute(const int limit) {
-
+	
 	/*
 	 * - Uses Sieve of Eratosthenes to eliminate composite
 	 *   numbers up to the limit.
@@ -33,9 +33,9 @@ long long int compute(const int limit) {
 		if (prime[i] == true)
 			sum += i;
 	}
-
+	
 	return sum;
-
+	
 }
 
 static void p010_bench(benchmark::State& state) {
@@ -46,8 +46,8 @@ static void p010_bench(benchmark::State& state) {
 BENCHMARK(p010_bench)->Unit(benchmark::kMillisecond);
 
 int main(int argc, char** argv) {
-	::benchmark::Initialize(&argc, argv);
-	::benchmark::RunSpecifiedBenchmarks();
+	benchmark::Initialize(&argc, argv);
+	benchmark::RunSpecifiedBenchmarks();
 }
 
 // Answer: 142'913'828'922

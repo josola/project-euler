@@ -6,16 +6,16 @@
 import math
 
 def compute(TARGET):
-
+	
 	term = 1
 	triangular = 0
-
+	
 	div_count = 0
 	while div_count < TARGET:
-
+		
 		term += 1
 		div_count = 0
-
+		
 		# - Triangular numbers and arithmetic progressions can be found
 		#   using the same formula.
 		# - Triangular number (arithmetic progression): a = n * (n + 1) / 2
@@ -23,18 +23,18 @@ def compute(TARGET):
 		#   in the arithmetic progression (term).
 		# - See p001, and p006 for more examples of
 		#   the arithmetic progression formula.
-
+		
 		triangular = term * (term + 1) // 2
-
+		
 		# - We can take the same algorithm p003 used to find
 		#   the largest prime factor and adapt it to find all the
 		#   factors belonging to our triangular number.
-
+		
 		root = int(math.sqrt(triangular))
 		for i in range(1, root + 1, 1):
 			if triangular % i == 0:
 				div_count += 2
-
+	
 	return triangular
 
 if __name__ == "__main__":

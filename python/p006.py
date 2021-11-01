@@ -6,13 +6,13 @@
 import math
 
 def compute(LIMIT):
-
+	
 	# - We find this by using Gauss's Series formula.
 	# - Square Sum Formula: m = ((n)(n + 1) / 2)^2
 	# - Sum Square Formula: m = (n)(n + 1)(2n + 1) / 6
-
+	
 	difference = int((math.pow(LIMIT * (LIMIT + 1) // 2, 2)) - (LIMIT * (LIMIT + 1) * ((2 * LIMIT) + 1) // 6))
-
+	
 	return difference
 
 if __name__ == "__main__":

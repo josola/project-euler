@@ -10,7 +10,7 @@
 #include "benchmark/benchmark.h"
 
 long int compute(const int target) {
-
+	
 	int term = 1;
 	long int triangular = 0;
 	
@@ -46,9 +46,9 @@ long int compute(const int target) {
 		}
 		
 	}
-
+	
 	return triangular;
-
+	
 }
 
 static void p012_bench(benchmark::State& state) {
@@ -59,8 +59,8 @@ static void p012_bench(benchmark::State& state) {
 BENCHMARK(p012_bench)->Unit(benchmark::kMillisecond);
 
 int main(int argc, char** argv) {
-	::benchmark::Initialize(&argc, argv);
-	::benchmark::RunSpecifiedBenchmarks();
+	benchmark::Initialize(&argc, argv);
+	benchmark::RunSpecifiedBenchmarks();
 }
 
 // Answer: 76'576'500

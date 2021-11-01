@@ -11,7 +11,7 @@
 #include "benchmark/benchmark.h"
 
 int compute(const int limit) {
-
+	
 	/*
 	 * - We find this by using Gauss's Series formula.
 	 * - Square Sum Formula: m = ((n)(n + 1) / 2)^2
@@ -20,28 +20,28 @@ int compute(const int limit) {
 	
 	int difference = 0;
 	benchmark::DoNotOptimize(difference = pow(limit * (limit + 1) / 2, 2) - (limit * (limit + 1) * ((2 * limit) + 1) / 6));
-
+	
 	return difference;
-
+	
 }
 
 static void p006_bench(benchmark::State& state) {
-
+	
 	int result = 0;
 	for (auto _ : state)
 		benchmark::DoNotOptimize(result = compute(100));
-
+	
 	// Extra layer of optimization prevention
 	std::ostream cnull(0);
 	cnull << result;
-
+	
 }
 
 BENCHMARK(p006_bench)->Unit(benchmark::kMillisecond);
 
 int main(int argc, char** argv) {
-	::benchmark::Initialize(&argc, argv);
-	::benchmark::RunSpecifiedBenchmarks();
+	benchmark::Initialize(&argc, argv);
+	benchmark::RunSpecifiedBenchmarks();
 }
 
 // Answer: 25'164'150

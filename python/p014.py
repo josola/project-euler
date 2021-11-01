@@ -4,32 +4,32 @@
 # Written by Jordan Sola 2020-2021
 
 def compute(LIMIT):
-
+	
 	max_start = 0
 	max_length = 0
-
+	
 	# - Every number in the bottom half of n has the same
 	#   reverse map in 2n, so we can start our sequence
 	#   at (limit / 2) + 1 to cut out half the calculations.
-
+	
 	for i in range((LIMIT // 2 + 1), LIMIT):
-
+		
 		start = i
 		length = 0
-
+		
 		while start != 1:
-
+			
 			if start % 2 == 0:
 				start //= 2
 			elif start % 2 != 0:
 				start = (3 * start) + 1
-
+			
 			length += 1
-
+		
 		if length > max_length:
 			max_length = length
 			max_start = i
-
+	
 	return max_start
 
 if __name__ == "__main__":

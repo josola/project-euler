@@ -11,7 +11,7 @@
 #include "benchmark/benchmark.h"
 
 int compute() {
-
+	
 	std::vector<std::vector<int> > set = { {75},
 										   {95, 64} ,
 										   {17, 47, 82},
@@ -27,22 +27,22 @@ int compute() {
 										   {91, 71, 52, 38, 17, 14, 91, 43, 58, 50, 27, 29, 48},
 										   {63, 66,  4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31},
 										   { 4, 62, 98, 27, 23,  9, 70, 98, 73, 93, 38, 53, 60,  4, 23} };
-
+	
 	/*
 	 * - Adding the maximum value from the adjacent leafs in a
 	 *   tree, leading up to the root of the tree, gives us the
 	 *   absolute max sum from all paths at the root node.
 	 */
-
+	
 	for (int row = set.size() - 1; row >= 0; row--) {
 		for (int col = 0; col < row; col++)
 			set[row - 1][col] += std::max(set[row][col], set[row][col + 1]);
 	}
-
+	
 	int largest_path = set[0][0];
-
+	
 	return largest_path;
-
+	
 }
 
 static void p018_bench(benchmark::State& state) {

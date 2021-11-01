@@ -6,18 +6,18 @@
 import math
 
 def compute(START, LIMIT):
-
+	
 	# - We are looking for the least common multiple (LCM) of the input set.
 	# - We use a formula for the LCM by greatest common factor (GCF).
 	# - Formula: LCM(a, b) = |(a × b)| / GCF(a, b)
 	#   a = previous LCM in set, starting at the first term in the set
 	#   b = next term in set
-
+	
 	result = START
-
+	
 	for i in range(2, LIMIT + 1):
 		result = abs(result * i) // math.gcd(result, i)
-
+	
 	return result
 
 if __name__ == "__main__":

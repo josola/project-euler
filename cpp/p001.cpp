@@ -26,9 +26,9 @@ int compute(const int limit) {
 	int sum = 0;
 	for (int i = 0; i < 3; i++)
 		benchmark::DoNotOptimize(sum += a[i] * (n[i] * (n[i] + n_plus[i]) / 2));
-
+	
 	return sum;
-
+	
 }
 
 static void p001_bench(benchmark::State& state) {
@@ -39,8 +39,8 @@ static void p001_bench(benchmark::State& state) {
 BENCHMARK(p001_bench);
 
 int main(int argc, char** argv) {
-	::benchmark::Initialize(&argc, argv);
-	::benchmark::RunSpecifiedBenchmarks();
+	benchmark::Initialize(&argc, argv);
+	benchmark::RunSpecifiedBenchmarks();
 }
 
 // Answer: 233'168

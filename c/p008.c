@@ -8,10 +8,10 @@
 #include "stdio.h"
 
 long int compute(int num[], const int num_size, const int prod_size) {
-
+	
 	long int highest_product = 0;
 	for (int i = 0; i < num_size - prod_size; i++) {
-
+		
 		long int current_product = 0;
 		for (int j = 0; j < 13; j++){
 			if (j == 0)
@@ -19,14 +19,14 @@ long int compute(int num[], const int num_size, const int prod_size) {
 			else
 				current_product *= num[j + i];
 		}
-
+		
 		if (current_product > highest_product)
 			highest_product = current_product;
-
+		
 	}
-
+	
 	return highest_product;
-
+	
 }
 
 int main() {
@@ -57,7 +57,7 @@ int main() {
 	printf("%li\n", compute(large_num, num_size, product_size));
 
 	return 0;
-	
+
 }
 
 // Answer: 23514624000

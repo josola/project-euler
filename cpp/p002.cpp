@@ -10,7 +10,7 @@
 #include "benchmark/benchmark.h"
 
 int compute(const int limit) {
-
+	
 	const double phi = (1 + sqrt(5)) / 2;
 	
 	/*
@@ -24,9 +24,9 @@ int compute(const int limit) {
 		sum += (pow(phi, term) - pow((1 - phi), term)) / sqrt(5);
 		term += 3;
 	}
-
+	
 	return sum;
-
+	
 }
 
 static void p002_bench(benchmark::State& state) {
@@ -37,8 +37,8 @@ static void p002_bench(benchmark::State& state) {
 BENCHMARK(p002_bench);
 
 int main(int argc, char** argv) {
-	::benchmark::Initialize(&argc, argv);
-	::benchmark::RunSpecifiedBenchmarks();
+	benchmark::Initialize(&argc, argv);
+	benchmark::RunSpecifiedBenchmarks();
 }
 
 // Answer: 4'613'732

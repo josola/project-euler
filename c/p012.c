@@ -28,7 +28,7 @@ long int compute(const int target) {
 			- See p001, and p006 for more examples of
 			  the arithmetic progression formula.
 		*/
-	
+		
 		triangular = term * (term + 1) / 2;
 		
 		/*
@@ -36,7 +36,7 @@ long int compute(const int target) {
 			  the largest prime factor and adapt it to find all the
 			  factors belonging to our triangular number.
 		*/
-	
+		
 		int root = sqrt(triangular);
 		for (int i = 1; i <= root + 1; i++){
 			if (triangular % i == 0) {

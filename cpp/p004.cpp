@@ -8,7 +8,7 @@
 #include "benchmark/benchmark.h"
 
 int compute(const int limit) {
-
+	
 	int palindrome = 0;
 	
 	for (int i = limit; i > 100; i--) {
@@ -18,10 +18,10 @@ int compute(const int limit) {
 				break;
 			
 			else {
-
+				
 				int product = i * j;
 				int reverse = 0;
-
+				
 				while (product != 0) {
 					reverse = reverse * 10 + product % 10;
 					product /= 10;
@@ -29,14 +29,14 @@ int compute(const int limit) {
 				
 				if (reverse == (i * j))
 					palindrome = i * j;
-
+				
 			}
-
+		
 		}
 	}
-
+	
 	return palindrome;
-
+	
 }
 
 static void p004_bench(benchmark::State& state) {
@@ -47,8 +47,8 @@ static void p004_bench(benchmark::State& state) {
 BENCHMARK(p004_bench)->Unit(benchmark::kMicrosecond);
 
 int main(int argc, char** argv) {
-	::benchmark::Initialize(&argc, argv);
-	::benchmark::RunSpecifiedBenchmarks();
+	benchmark::Initialize(&argc, argv);
+	benchmark::RunSpecifiedBenchmarks();
 }
 
 // Answer: 906'609

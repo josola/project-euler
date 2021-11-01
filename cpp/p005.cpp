@@ -23,9 +23,9 @@ long int compute(const int start, const int end) {
 	
 	for (int i = 2; i < end + 1; i++)
 		result = abs(result * i) / std::gcd(result, i);
-
+	
 	return result;
-
+	
 }
 
 static void p005_bench(benchmark::State& state) {
@@ -36,8 +36,8 @@ static void p005_bench(benchmark::State& state) {
 BENCHMARK(p005_bench);
 
 int main(int argc, char** argv) {
-	::benchmark::Initialize(&argc, argv);
-	::benchmark::RunSpecifiedBenchmarks();
+	benchmark::Initialize(&argc, argv);
+	benchmark::RunSpecifiedBenchmarks();
 }
 
 // Answer: 232'792'560

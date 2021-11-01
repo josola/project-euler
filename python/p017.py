@@ -4,16 +4,16 @@
 # Written by Jordan Sola 2021
 
 def compute(START, END):
-
+	
 	ones_place = [ "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "forteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" ]
 	tens_place = [ "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" ]
 	hundreds_place = "hundred"
-
+	
 	total = 0
 	for i in range(START, END + 1, 1):
-
+		
 		word = ""
-
+		
 		if i < 20:
 			word = ones_place[i]
 		elif i >= 20 and i < 100:
@@ -26,9 +26,9 @@ def compute(START, END):
 			word = ones_place[i // 100] + hundreds_place + "and" + tens_place[(i % 100) // 10] + ones_place[i % 10]
 		elif i == 1000:
 			word = "onethousand"
-
+		
 		total += len(word)
-
+	
 	return total
 
 if __name__ == "__main__":
