@@ -39,6 +39,8 @@ def compute():
 if __name__ == "__main__":
 	print(compute())
 
+# Answer: 171
+
 # Asymptotic complexity: O(N)
 
 # M1           (3.2 GHz CPU) ARMv8-A64 (64 bit): 1000 loops, best of 5: 261 usec per loop
