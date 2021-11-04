@@ -6,15 +6,7 @@
 import math
 
 def compute(LIMIT):
-	
-	factorial = math.factorial(LIMIT)
-	
-	sum = 0
-	while factorial != 0:
-		sum += factorial % 10
-		factorial //= 10
-	
-	return sum
+	return sum(int(x) for x in str(math.factorial(LIMIT)))
 
 if __name__ == "__main__":
 	print(compute(100))
@@ -23,4 +15,4 @@ if __name__ == "__main__":
 
 # Asymptotic complexity: O(n)
 
-# M1           (3.2 GHz CPU) ARMv8-A64 (64 bit): 10000 loops, best of 5: 20.3 usec per loop
+# M1           (3.2 GHz CPU) ARMv8-A64 (64 bit): 20000 loops, best of 5: 13.4 usec per loop
