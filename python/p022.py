@@ -45,7 +45,7 @@ def get_content(FILE):
 
 def compute():
 	
-	names = get_content('python/p022_names.txt')
+	names = get_content('p022_names.txt')
 	
 	total = 0
 	pos = 0
