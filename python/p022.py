@@ -3,20 +3,46 @@
 # (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
 # Written by Jordan Sola 2021
 
-def fileContent(DIRECTORY):
+def oust(CHAR, LIST):
+	
+	output = []
+	
+	for item in LIST:
+		output += item.replace(CHAR, '').split()
+	
+	return output
+
+def text(DIRECTORY):
 	
 	content = []
 	
 	with open(DIRECTORY, 'r') as file:
-		for line in file:
-			content += line.replace('\"', '').strip().split(',')
+		content += file
 	
 	return content
 
+def seperate(DELIM, LIST):
+	
+	output = []
+	
+	for item in LIST:
+		output += item.split(DELIM)
+	
+	return output
+
+def prep(FILE_CONTENT):
+	
+	delimeter = ','
+	unwanted = '\"'
+	
+	output = seperate(delimeter, oust(unwanted, FILE_CONTENT))
+	output.sort()
+	
+	return output
+
 def compute():
 	
-	names = fileContent('python/p022_names.txt')
-	names.sort()
+	names = prep(text('python/p022_names.txt'))
 	
 	total = 0
 	pos = 0
@@ -45,6 +71,7 @@ if __name__ == "__main__":
 
 # Answer: 871198282
 
-# Asymptotic complexity:
+# Asymptotic complexity: O(N)
 
 # M1           (3.2 GHz CPU) ARMv8-A64 (64 bit): 50000000 loops, best of 5: 5.45 nsec per loop
+# Ryzen 5 2600 (3.4 GHz CPU) x86-64 (64 bit):
