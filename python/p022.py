@@ -40,9 +40,12 @@ def prep(FILE_CONTENT):
 	
 	return output
 
+def get_content(FILE):
+	return prep(text(FILE))
+
 def compute():
 	
-	names = prep(text('python/p022_names.txt'))
+	names = get_content('python/p022_names.txt')
 	
 	total = 0
 	pos = 0
