@@ -21,3 +21,7 @@ problem 015: 137846528820
 problem 016: 1366
 problem 017: 21124
 problem 018: 1074
+problem 019: 171
+problem 020: 648
+problem 021: 31626
+problem 022: 871198282
