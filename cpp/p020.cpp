@@ -5,7 +5,6 @@
  * Written by Jordan Sola 2021
  */
 
-#include <iostream>
 #include <string>
 
 #include "benchmark/benchmark.h"
