@@ -8,14 +8,16 @@
 #include <iostream>
 #include <string>
 
-int main() {
+#include "benchmark/benchmark.h"
+
+int compute(const int TARGET) {
 	
 	/*
 	Set the upper bound, lower bound, and step amount
 	for the factorial calcuation loop.
 	*/
 	
-	const int CEIL = 100;
+	const int CEIL = TARGET;
 	const int FLOOR = 1;
 	const int INCR = 1;
 	
@@ -62,12 +64,27 @@ int main() {
 		output += str_factorial[i] - '0';
 	}
 	
-	std::cout << output << std::endl;
+	return output;
 	
-	return 0;
-	
+}
+
+static void p020_bench(benchmark::State& state) {
+	for (auto _ : state)
+		benchmark::DoNotOptimize(compute(100));
+}
+
+BENCHMARK(p020_bench)->Unit(benchmark::kMicrosecond);
+
+int main(int argc, char** argv) {
+	benchmark::Initialize(&argc, argv);
+	benchmark::RunSpecifiedBenchmarks();
 }
 
 // Answer: 648
 
-// Asymptotic complexity: O(N)
+// Run on (8 X 24.1216 MHz CPU s)
+// -----------------------------------------------------
+// Benchmark           Time             CPU   Iterations
+// -----------------------------------------------------
+// p020_bench       98.9 us         98.8 us         6043
+// p020_bench_BigO     O(N)            O(N)
