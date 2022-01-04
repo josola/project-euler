@@ -48,9 +48,8 @@ int compute(const int TARGET) {
 		}
 		
 		// Convert string digits from ASCII values to integer representations
-		for (int j = 0; j < product.size(); j++) {
+		for (int j = 0; j < product.size(); j++)
 			product[j] += '0';
-		}
 		
 		str_factorial = product;
 		
@@ -59,9 +58,8 @@ int compute(const int TARGET) {
 	// Add digits of factorial
 	
 	int output = 0;
-	for (int i = str_factorial.size() - 1; i >= 0; i--) {
+	for (int i = str_factorial.size() - 1; i >= 0; i--)
 		output += str_factorial[i] - '0';
-	}
 	
 	return output;
 	
