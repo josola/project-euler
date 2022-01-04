@@ -1,6 +1,6 @@
 # Project Euler
 # Problem 8 - Largest product in a series
-# (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+# (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
 # Written by Jordan Sola 2020-2021
 
 def compute():

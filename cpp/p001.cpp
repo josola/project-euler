@@ -1,7 +1,7 @@
 /*
  * Project Euler
  * Problem 1 - Multiples of 3 or 5
- * (C) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
  * Written by Jordan Sola 2020-2021
  */
 

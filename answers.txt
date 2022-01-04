@@ -1,5 +1,5 @@
 Project Euler numerical answers
-Computed by Jordan Sola 2019-2021
+Computed by Jordan Sola 2019-2022
 
 https://github.com/josola/project_euler
 

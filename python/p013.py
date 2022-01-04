@@ -1,6 +1,6 @@
 # Project Euler
 # Problem 13 - Large sum
-# (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+# (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
 # Written by Jordan Sola 2020-2021
 
 def compute():

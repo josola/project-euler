@@ -1,7 +1,7 @@
 /* 
  * Project Euler
  * Problem 6 - Sum square difference
- * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
  * Written by Jordan Sola 2021
  */
 

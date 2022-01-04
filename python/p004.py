@@ -1,6 +1,6 @@
 # Project Euler
 # Problem 4 - Largest palindrome product
-# (c) Jordan Sola 2021. All rights reserved. (MIT License)
+# (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
 # Written by Jordan Sola 2021
 
 def compute(LIMIT):

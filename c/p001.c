@@ -1,7 +1,7 @@
 /*
  * Project Euler
  * Problem 1 - Multiples of 3 or 5
- * (C) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
  * Written by Jordan Sola 2021
  */
 
@@ -14,11 +14,11 @@ int compute(const int limit) {
 	int n_plus[3] = {1, 1, -1};
 	
 	/*
-		- Gauss Summation Formula: sum = a(n(n + 1) / 2).
-		  a = factor (3, 5, -15)
-		  n = limit (999) / factor (3, 5, -15)
-		- We need to remove 15 as it is a factor of numbers that have already
-		  been counted as factors of 3 and 5.
+	- Gauss Summation Formula: sum = a(n(n + 1) / 2).
+	  a = factor (3, 5, -15)
+	  n = limit (999) / factor (3, 5, -15)
+	- We need to remove 15 as it is a factor of numbers that have already
+	  been counted as factors of 3 and 5.
 	*/
 	
 	int sum = 0;
