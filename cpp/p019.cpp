@@ -12,9 +12,9 @@
 int day(const int day, const int month, int year, std::array<int, 12> month_code) {
 	
 	/*
-	* This algorithm was developed by Tomohiko Sakamoto,
-	* who adapted it from John Conways' DOOMSDAY algorithm.
-	*/
+	 * This algorithm was developed by Tomohiko Sakamoto,
+	 * who adapted it from John Conways' DOOMSDAY algorithm.
+	 */
 	
 	// Compensate for leap year
 	if (month < 3) {
@@ -35,9 +35,9 @@ int compute() {
 	const int target_day_of_month = 1; // Desired day of the month
 	
 	/*
-	* MONTH_CODE is acquired by using the pattern for
-	* month starts found in Tomohiko Sakamoto's algorithm for days.
-	*/
+	 * MONTH_CODE is acquired by using the pattern for
+	 * month starts found in Tomohiko Sakamoto's algorithm for days.
+	 */
 	std::array<int, 12> month_code = { 0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 };
 	
 	int day_date_matches = 0;

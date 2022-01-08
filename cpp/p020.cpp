@@ -12,27 +12,28 @@
 int compute(const int TARGET) {
 	
 	/*
-	Set the upper bound, lower bound, and step amount
-	for the factorial calcuation loop.
-	*/
+	 * Set the upper bound, lower bound, and step amount
+	 * for the factorial calcuation loop.
+	 */
 	
 	const int CEIL = TARGET;
 	const int FLOOR = 1;
 	const int INCR = 1;
 	
 	/*
-	Compute factorial from FLOOR to CIEL using
-	INCR as the step amount.
-	*/
+	 * Compute factorial from FLOOR to CIEL using
+	 * INCR as the step amount. String arithmetic
+	 * is used because we might work with big nums.
+	 */
 	
 	std::string str_factorial = std::to_string(FLOOR);
 	
 	for (int i = FLOOR + INCR; i <= CEIL; i += INCR) {
 		
 		/*
-		Perform string arithmetic on two integers
-		within factorial calculation.
-		*/
+		 * Perform string arithmetic on two integers
+		 * within factorial calculation.
+		 */
 		
 		// Convert iterator and factorial from integer to string
 		std::string str_i = std::to_string(i);
@@ -79,7 +80,7 @@ int main(int argc, char** argv) {
 
 // Answer: 648
 
-// Run on (8 X 24.1216 MHz CPU s)
+// Run on (8 X 24.1216 MHz CPU s) ARM64
 // -----------------------------------------------------
 // Benchmark           Time             CPU   Iterations
 // -----------------------------------------------------
