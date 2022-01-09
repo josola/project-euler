@@ -1,9 +1,7 @@
-/* 
- * Project Euler
+/* Project Euler
  * Problem 13 - Large sum
  * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
- * Written by Jordan Sola 2020-2021
- */
+ * Written by Jordan Sola 2020-2021 */
 
 #include <array>
 
@@ -11,10 +9,8 @@
 
 long long int compute() {
 	
-	/*
-	 * - Only the first ten digits of the sum are required.
-	 *   Which cuts out any digit from the twelfth onward.
-	 */
+	/* - Only the first ten digits of the sum are required.
+	     Which cuts out any digit from the twelfth onward. */
 	
 	std::array<long int, 100> numbers = { 37107287533, 46376937677, 74324986199, 91942213363, 23067588207,
 										  89261670696, 28112879812, 44274228917, 47451445736, 70386486105,
@@ -62,9 +58,9 @@ int main(int argc, char** argv) {
 
 // Answer: 5'537'376'230
 
-// Run on (8 X 24.121 MHz CPU s) ARM64
-// -----------------------------------------------------------------------
-// Benchmark                             Time             CPU   Iterations
-// -----------------------------------------------------------------------
-// p013_bench/repeats:10              22.5 ns         22.5 ns     30239018
-// p013_bench_BigO                       O(N)            O(N)
+/* Run on (8 X 24.121 MHz CPU s) ARM64
+   -------------------------------------------------------------------
+   Benchmark                         Time             CPU   Iterations
+   -------------------------------------------------------------------
+   p013_bench/repeats:10          22.5 ns         22.5 ns     30239018
+   p013_bench_BigO                   O(N)            O(N)              */

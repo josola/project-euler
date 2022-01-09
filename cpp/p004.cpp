@@ -1,18 +1,16 @@
-/* 
- * Project Euler
- * Problem 4 - Largest palindrome product
- * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
- * Written by Jordan Sola 2020-2021
- */
+/* Project Euler
+   Problem 4 - Largest palindrome product
+   (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
+   Written by Jordan Sola 2020-2021 */
 
 #include "benchmark/benchmark.h"
 
-int compute(const int limit) {
+int compute(const int LIMIT) {
 	
 	int palindrome = 0;
 	
-	for (int i = limit; i > 100; i--) {
-		for (int j = limit; j > 100; j--) {
+	for (int i = LIMIT; i > 100; i--) {
+		for (int j = LIMIT; j > 100; j--) {
 			
 			if (palindrome > (i * j))
 				break;
@@ -53,9 +51,9 @@ int main(int argc, char** argv) {
 
 // Answer: 906'609
 
-// Run on (8 X 24.1214 MHz CPU s) ARM64
-// -----------------------------------------------------------
-// Benchmark                 Time             CPU   Iterations
-// -----------------------------------------------------------
-// p004_bench/99          37.3 us         37.3 us        18745
-// p004_bench_BigO      O(N LogN)       O(N LogN)
+/* Run on (8 X 24.1214 MHz CPU s) ARM64
+   -----------------------------------------------------------
+   Benchmark                 Time             CPU   Iterations
+   -----------------------------------------------------------
+   p004_bench/99          37.3 us         37.3 us        18745
+   p004_bench_BigO      O(N LogN)       O(N LogN)              */

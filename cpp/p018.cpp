@@ -1,9 +1,7 @@
-/* 
- * Project Euler
+/* Project Euler
  * Problem 18 - Maximum path sum I
  * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
- * Written by Jordan Sola 2021
- */
+ * Written by Jordan Sola 2021 */
 
 #include <vector>
 #include <algorithm>
@@ -28,11 +26,9 @@ int compute() {
 										   {63, 66,  4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31},
 										   { 4, 62, 98, 27, 23,  9, 70, 98, 73, 93, 38, 53, 60,  4, 23} };
 	
-	/*
-	 * - Adding the maximum value from the adjacent leafs in a
-	 *   tree, leading up to the root of the tree, gives us the
-	 *   absolute max sum from all paths at the root node.
-	 */
+	/* - Adding the maximum value from the adjacent leafs in a
+	     tree, leading up to the root of the tree, gives us the
+	     absolute max sum from all paths at the root node. */
 	
 	for (int row = set.size() - 1; row >= 0; row--) {
 		for (int col = 0; col < row; col++)
@@ -59,9 +55,9 @@ int main(int argc, char** argv) {
 
 // Answer: 1'074
 
-// Run on (8 X 24.1206 MHz CPU s) ARM64
-// -----------------------------------------------------------------------
-// Benchmark                             Time             CPU   Iterations
-// -----------------------------------------------------------------------
-// p018_bench/set                     92.6 ns         92.6 ns      6437551
-// p018_bench_BigO                       O(N)            O(N)
+/* Run on (8 X 24.1206 MHz CPU s) ARM64
+   -----------------------------------------------------------
+   Benchmark                 Time             CPU   Iterations
+   -----------------------------------------------------------
+   p018_bench/set         92.6 ns         92.6 ns      6437551
+   p018_bench_BigO           O(N)            O(N)              */

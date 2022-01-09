@@ -1,16 +1,14 @@
-/* 
- * Project Euler
+/* Project Euler
  * Problem 17 - Number-letter-counts
  * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
- * Written by Jordan Sola 2021
- */
+ * Written by Jordan Sola 2021 */
 
 #include <string>
 #include <array>
 
 #include "benchmark/benchmark.h"
 
-int compute(const int start, const int end) {
+int compute(const int START, const int END) {
 	
 	std::array<std::string, 20> ones_place = { "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "forteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
 	std::array<std::string, 10> tens_place = { "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
@@ -18,7 +16,7 @@ int compute(const int start, const int end) {
 	
 	int total = 0;
 	
-	for (int i = start; i <= end; i++) {
+	for (int i = START; i <= END; i++) {
 		
 		std::string word = "";
 		
@@ -57,9 +55,9 @@ int main(int argc, char** argv) {
 
 // Answer: 21'124
 
-// Run on (8 X 24.122 MHz CPU s) ARM64
-// -----------------------------------------------------------------------
-// Benchmark                             Time             CPU   Iterations
-// -----------------------------------------------------------------------
-// p017_bench/1'000                   51.4 us         51.4 us        10655
-// p017_bench_BigO                       O(N)            O(N)
+/* Run on (8 X 24.122 MHz CPU s) ARM64
+   -----------------------------------------------------------------------
+   Benchmark                             Time             CPU   Iterations
+   -----------------------------------------------------------------------
+   p017_bench/1'000                   51.4 us         51.4 us        10655
+   p017_bench_BigO                       O(N)            O(N)              */
