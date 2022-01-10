@@ -45,4 +45,3 @@ if __name__ == "__main__":
 # Asymptotic complexity: O(N)
 
 # M1           (3.2 GHz CPU) ARMv8-A64 (64 bit): 1 loop, best of 5: 1.79 sec per loop
-# Ryzen 5 2600 (3.4 GHz CPU) x86-64 (64 bit): 1 loop, best of 5: 2.91 sec per loop
