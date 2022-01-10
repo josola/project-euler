@@ -1,33 +1,30 @@
-/* 
- * Project Euler
- * Problem 16 - Power digit sum
- * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
- * Written by Jordan Sola 2021
- */
+/* Project Euler
+   Problem 16 - Power digit sum
+   (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
+   Written by Jordan Sola 2021 */
 
 #include "stdio.h"
 #include "math.h"
 
-int compute(const int base, const int exponent) {
+int compute(const int BASE, const int EXPONENT) {
 	
-	const int num_size = 305;
-	char str[num_size] = {0};
-	float prod = pow(base, exponent);
+	const int NUM_SIZE = 305;
+	char str[NUM_SIZE] = {0};
+	float prod = pow(BASE, EXPONENT);
 	sprintf(str, "%f", prod);
 	
-	/*
-		- To get individual digits in any length number,
-		  the number must be converted to an ASCII string.
-		- To get the integer equivalent of an ASCII character, you
-		  subtract the character by '0', or its ASCII value of 48.
-		- For example, the ASCII value of '1' is 49.
-		  '1' - '0' = 1 or 49 - 48 = 1
-	*/
+	/* - To get individual digits in any length number,
+	     the number must be converted to an ASCII string.
+	   - To get the integer equivalent of an ASCII character, you
+	     subtract the character by '0', or its ASCII value of 48.
+	   - For example, the ASCII value of '1' is 49.
+	     '1' - '0' = 1 or 49 - 48 = 1 */
 	
 	int sum = 0;
-	for (int i = 0; i < num_size; i++)
+	for (int i = 0; i < NUM_SIZE; i++) {
 		if (str[i] != '.' && str[i] != '0')
 			sum += str[i] - '0';
+	}
 	
 	return sum;
 	
@@ -38,6 +35,5 @@ int main() {
 	return 0;
 }
 
-// Answer: 1366
-
-// Asymptotic complexity: O(N)
+/* Answer: 1,366
+   Asymptotic complexity: O(N) */

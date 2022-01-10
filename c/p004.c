@@ -1,18 +1,16 @@
-/* 
- * Project Euler
- * Problem 4 - Largest palindrome product
- * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
- * Written by Jordan Sola 2021
- */
+/* Project Euler
+   Problem 4 - Largest palindrome product
+   (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
+   Written by Jordan Sola 2021 */
 
 #include "stdio.h"
 
-int compute(const int limit) {
+int compute(const int LIMIT) {
 	
 	int palindrome = 0;
-	for (int i = limit; i > 100; i--) {
+	for (int i = LIMIT; i > 100; i--) {
 		
-		for (int j = limit; j > 100; j--) {
+		for (int j = LIMIT; j > 100; j--) {
 			
 			if (palindrome > (i * j))
 				break;
@@ -20,6 +18,7 @@ int compute(const int limit) {
 				
 				int product = i * j;
 				int reverse = 0;
+				
 				while (product != 0) {
 					reverse = reverse * 10 + product % 10;
 					product /= 10;
@@ -29,7 +28,9 @@ int compute(const int limit) {
 					palindrome = i * j;
 				
 			}
+			
 		}
+		
 	}
 	
 	return palindrome;
@@ -41,6 +42,5 @@ int main() {
 	return 0;
 }
 
-// Answer: 906609
-
-// Asymptotic complexity: O(N LogN)
+/* Answer: 906,609
+   Asymptotic complexity: O(N LogN) */

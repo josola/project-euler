@@ -1,16 +1,14 @@
-/* 
- * Project Euler
- * Problem 13 - Large sum
- * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
- * Written by Jordan Sola 2021
- */
+/* Project Euler
+   Problem 13 - Large sum
+   (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
+   Written by Jordan Sola 2021 */
 
 #include "stdio.h"
 
-long long int compute(long int numbers[], const int num_count) {
+long long int compute(long int numbers[], const int NUM_COUNT) {
 	
 	long long int sum = 0;
-	for (long int i = 0; i < num_count; i++)
+	for (long int i = 0; i < NUM_COUNT; i++)
 		sum += numbers[i];
 	
 	sum /= 1000;
@@ -21,13 +19,11 @@ long long int compute(long int numbers[], const int num_count) {
 
 int main() {
 	
-	/*
-		- Only the first ten digits of the sum are required.
-		  Which cuts out any digit from the twelfth onward.
-	*/
+	/* - Only the first ten digits of the sum are required.
+	     Which cuts out any digit from the twelfth onward. */
 	
-	const int number_count = 100;
-	long int numbers[number_count] = {37107287533, 46376937677, 74324986199, 91942213363, 23067588207,
+	const int NUMBER_COUNT = 100;
+	long int numbers[NUMBER_COUNT] = {37107287533, 46376937677, 74324986199, 91942213363, 23067588207,
 									  89261670696, 28112879812, 44274228917, 47451445736, 70386486105,
 									  62176457141, 64906352462, 92575867718, 58203565325, 80181199384,
 									  35398664372, 86515506006, 71693888707, 54370070576, 53282654108,
@@ -48,12 +44,11 @@ int main() {
 									  40789923115, 44889911501, 41503128880, 81234880673, 82616570773,
 									  22918802058, 77158542502, 72107838435, 20849603980, 53503534226};
 	
-	printf("%lli\n", compute(numbers, number_count));
+	printf("%lli\n", compute(numbers, NUMBER_COUNT));
 	
 	return 0;
 	
 }
 
-// Answer: 76576500
-
-// Asymptotic complexity: O(N)
+/* Answer: 76,576,500
+   Asymptotic complexity: O(N) */

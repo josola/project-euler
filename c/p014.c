@@ -1,24 +1,20 @@
-/*
- * Project Euler
- * Problem 14 - Longest Collatz sequence
- * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
- * Written by Jordan Sola 2021
- */
+/* Project Euler
+   Problem 14 - Longest Collatz sequence
+   (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
+   Written by Jordan Sola 2021 */
 
 #include "stdio.h"
 
-int compute(const int limit) {
+int compute(const int LIMIT) {
 	
 	int max_start = 0;
 	int max_length = 0;
 	
-	/*
-		- Every number in the bottom half of n has the same
-		  reverse map in 2n, so we can start our sequence
-		  at (limit / 2) + 1 to cut out half the calculations.
-	*/
+	/* - Every number in the bottom half of n has the same
+	     reverse map in 2n, so we can start our sequence
+	     at (LIMIT / 2) + 1 to cut out half the calculations. */
 	
-	for (int i = (limit / 2) + 1; i < limit; i++) {
+	for (int i = (LIMIT / 2) + 1; i < LIMIT; i++) {
 		
 		long long int start = i;
 		int length = 0;
@@ -50,6 +46,5 @@ int main() {
 	return 0;
 }
 
-// Answer: 837799
-
-// Asymptotic complexity: O(N)
+/* Answer: 837,799
+   Asymptotic complexity: O(N) */
