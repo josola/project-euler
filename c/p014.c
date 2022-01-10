@@ -1,7 +1,7 @@
 /* Project Euler
-   Problem 14 - Longest Collatz sequence
-   (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
-   Written by Jordan Sola 2021 */
+ * Problem 14 - Longest Collatz sequence
+ * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2021 */
 
 #include "stdio.h"
 
