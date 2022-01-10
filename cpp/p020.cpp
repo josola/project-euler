@@ -1,6 +1,6 @@
 /* Project Euler
  * Problem 20 - Factorial digit sum
- * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
  * Written by Jordan Sola 2021 */
 
 #include <string>
