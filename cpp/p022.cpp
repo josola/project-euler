@@ -27,12 +27,10 @@ int compute(std::vector<std::string> names) {
 		
 		for (char ch : name) {
 			
-			if (ch > 90) {
+			if (ch > 90)
 				value += ch - 96;
-			}
-			else {
+			else
 				value += ch - 64;
-			}
 			
 		}
 		

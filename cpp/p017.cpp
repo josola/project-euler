@@ -22,14 +22,19 @@ int compute(const int START, const int END) {
 		
 		if (i < 20)
 			word = ones_place[i];
+		
 		else if (i >= 20 && i < 100)
 			word = tens_place[i / 10] + ones_place[i % 10];
+		
 		else if (i >= 100 && (i % 100) / 10 == 0 && i % 10 == 0 && i < 1'000)
 			word = ones_place[i / 100] + hundreds_place;
+		
 		else if (i >= 100 && (i % 100) / 10 < 2 && i < 1'000)
 			word = ones_place[i / 100] + hundreds_place + "and" + ones_place[i % 100];
+		
 		else if (i >= 120 && i < 1'000)
 			word = ones_place[i / 100] + hundreds_place + "and" + tens_place[(i % 100) / 10] + ones_place[i % 10];
+		
 		else if (i == 1'000)
 			word = "onethousand";
 		

@@ -40,6 +40,8 @@ long int compute() {
 	
 	for (int i = 0; i < (SIZE * SIZE) - (PRODUCT_LENGTH - 1); i++) {
 		
+		// Perform calculations on grid
+		
 		int horizontal = 0;
 		if (i <= ((SIZE * SIZE) - 1) - (PRODUCT_LENGTH - 1))
 			horizontal = grid[i] * grid[i + 1] * grid[i + 2] * grid[i + 3];
@@ -50,17 +52,23 @@ long int compute() {
 		
 		int diagonal_a = 0;
 		int diagonal_b = 0;
+		
 		if (i <= ((SIZE * SIZE) - 1) - (SIZE * (PRODUCT_LENGTH - 1)) - (PRODUCT_LENGTH - 1)) {
 			diagonal_a = grid[i] * grid[i + (SIZE + 1)] * grid[i + ((SIZE * 2) + 2)] * grid[i + ((SIZE * 3) + 3)];
 			diagonal_b = grid[i + (PRODUCT_LENGTH - 1)] * grid[i + (SIZE + (PRODUCT_LENGTH - 2))] * grid[i + ((SIZE * 2) + (PRODUCT_LENGTH - 3))] * grid[i + (SIZE * 3)];
 		}
 		
+		// Check for maximum result
+		
 		if (horizontal != 0 && horizontal > max)
 			max = horizontal;
+		
 		if (vertical != 0 && vertical > max)
 			max = vertical;
+		
 		if (diagonal_a != 0 && diagonal_a > max)
 			max = diagonal_a;
+		
 		if (diagonal_b != 0 && diagonal_b > max)
 			max = diagonal_b;
 		
