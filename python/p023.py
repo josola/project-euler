@@ -52,4 +52,4 @@ if __name__ == '__main__':
 # Answer: 4179871
 # Complexity: ?
 
-# M1           (3.2 GHz CPU) ARMv8-A64 (64 bit): ?
+# M1           (3.2 GHz CPU) ARMv8-A64 (64 bit): 10 loops, best of 3: 10.6 sec per loop
