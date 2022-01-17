@@ -3,10 +3,9 @@
  * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
  * Written by Jordan Sola 2021 */
 
+#include <iostream>
 #include <cmath>
 #include <string>
-
-#include "benchmark/benchmark.h"
 
 int compute(const int BASE, const int EXPONENT) {
 	
@@ -29,16 +28,9 @@ int compute(const int BASE, const int EXPONENT) {
 	
 }
 
-static void p016_bench(benchmark::State& state) {
-	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(2, 1'000));
-}
-
-BENCHMARK(p016_bench)->Unit(benchmark::kMicrosecond);
-
-int main(int argc, char** argv) {
-	benchmark::Initialize(&argc, argv);
-	benchmark::RunSpecifiedBenchmarks();
+int main() {
+	std::cout << compute(2, 1000) << std::endl;
+	return 0;
 }
 
 // Answer: 1'366

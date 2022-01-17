@@ -3,7 +3,7 @@
  * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
  * Written by Jordan Sola 2020-2021 */
 
-#include "benchmark/benchmark.h"
+#include <iostream>
 
 long int compute(const int WIDTH, const int HEIGHT) {
 	
@@ -34,16 +34,9 @@ long int compute(const int WIDTH, const int HEIGHT) {
 	
 }
 
-static void p015_bench(benchmark::State& state) {
-	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(20, 20));
-}
-
-BENCHMARK(p015_bench);
-
-int main(int argc, char** argv) {
-	benchmark::Initialize(&argc, argv);
-	benchmark::RunSpecifiedBenchmarks();
+int main() {
+	std::cout << compute(20, 20) << std::endl;
+	return 0;
 }
 
 // Answer: 137'846'528'820

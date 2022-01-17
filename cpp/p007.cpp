@@ -3,7 +3,7 @@
    (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
    Written by Jordan Sola 2020-2021 */
 
-#include "benchmark/benchmark.h"
+#include <iostream>
 
 int compute(const int LIMIT) {
 	
@@ -40,16 +40,9 @@ int compute(const int LIMIT) {
 	
 }
 
-static void p007_bench(benchmark::State& state) {
-	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(10'001));
-}
-
-BENCHMARK(p007_bench)->Unit(benchmark::kMillisecond);
-
-int main(int argc, char** argv) {
-	benchmark::Initialize(&argc, argv);
-	benchmark::RunSpecifiedBenchmarks();
+int main() {
+	std::cout << compute(10001) << std::endl;
+	return 0;
 }
 
 // Answer: 104'743

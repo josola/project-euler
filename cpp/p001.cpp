@@ -3,9 +3,8 @@
    (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
    Written by Jordan Sola 2020-2021 */
 
+#include <iostream>
 #include <array>
-
-#include "benchmark/benchmark.h"
 
 int compute(const int LIMIT) {
 	
@@ -21,22 +20,15 @@ int compute(const int LIMIT) {
 	
 	int sum = 0;
 	for (int i = 0; i < 3; i++)
-		benchmark::DoNotOptimize(sum += a[i] * (n[i] * (n[i] + n_plus[i]) / 2));
+		sum += a[i] * (n[i] * (n[i] + n_plus[i]) / 2);
 	
 	return sum;
 	
 }
 
-static void p001_bench(benchmark::State& state) {
-	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(1'000));
-}
-
-BENCHMARK(p001_bench);
-
-int main(int argc, char** argv) {
-	benchmark::Initialize(&argc, argv);
-	benchmark::RunSpecifiedBenchmarks();
+int main() {
+	std::cout << compute(1000) << std::endl;
+	return 0;
 }
 
 // Answer: 233'168

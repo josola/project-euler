@@ -3,9 +3,8 @@
  * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
  * Written by Jordan Sola 2021 */
 
+#include <iostream>
 #include <array>
-
-#include "benchmark/benchmark.h"
 
 int day(const int DAY, const int MONTH, int year, std::array<int, 12> month_code) {
 	
@@ -46,16 +45,9 @@ int compute() {
 	
 }
 
-static void p019_bench(benchmark::State& state) {
-	for (auto _ : state)
-		benchmark::DoNotOptimize(compute());
-}
-
-BENCHMARK(p019_bench);
-
-int main(int argc, char** argv) {
-	benchmark::Initialize(&argc, argv);
-	benchmark::RunSpecifiedBenchmarks();
+int main() {
+	std::cout << compute() << std::endl;
+	return 0;
 }
 
 // Answer: 171

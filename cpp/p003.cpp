@@ -3,7 +3,7 @@
    (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
    Written by Jordan Sol 2020-2021 */
 
-#include "benchmark/benchmark.h"
+#include <iostream>
 
 long long int compute(const long long int NUM) {
 	
@@ -22,16 +22,9 @@ long long int compute(const long long int NUM) {
 	
 }
 
-static void p003_bench(benchmark::State& state) {
-	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(600'851'475'143));
-}
-
-BENCHMARK(p003_bench)->Unit(benchmark::kMicrosecond);
-
-int main(int argc, char** argv) {
-	benchmark::Initialize(&argc, argv);
-	benchmark::RunSpecifiedBenchmarks();
+int main() {
+	std::cout << compute(600851475143) << std::endl;
+	return 0;
 }
 
 // Answer: 6'857

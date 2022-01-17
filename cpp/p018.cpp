@@ -3,10 +3,9 @@
  * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
  * Written by Jordan Sola 2021 */
 
+#include <iostream>
 #include <vector>
 #include <algorithm>
-
-#include "benchmark/benchmark.h"
 
 int compute() {
 	
@@ -41,16 +40,9 @@ int compute() {
 	
 }
 
-static void p018_bench(benchmark::State& state) {
-	for (auto _ : state)
-		benchmark::DoNotOptimize(compute());
-}
-
-BENCHMARK(p018_bench);
-
-int main(int argc, char** argv) {
-	benchmark::Initialize(&argc, argv);
-	benchmark::RunSpecifiedBenchmarks();
+int main() {
+	std::cout << compute() << std::endl;
+	return 0;
 }
 
 // Answer: 1'074

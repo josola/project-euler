@@ -3,10 +3,9 @@
  * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
  * Written by Jordan Sola 2021 */
 
+#include <iostream>
 #include <string>
 #include <array>
-
-#include "benchmark/benchmark.h"
 
 int compute(const int START, const int END) {
 	
@@ -46,16 +45,9 @@ int compute(const int START, const int END) {
 	
 }
 
-static void p017_bench(benchmark::State& state) {
-	for (auto _ : state)
-		compute(1, 1'000);
-}
-
-BENCHMARK(p017_bench)->Unit(benchmark::kMicrosecond);
-
-int main(int argc, char** argv) {
-	benchmark::Initialize(&argc, argv);
-	benchmark::RunSpecifiedBenchmarks();
+int main() {
+	std::cout << compute(1, 1000) << std::endl;
+	return 0;
 }
 
 // Answer: 21'124

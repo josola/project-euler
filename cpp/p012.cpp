@@ -3,9 +3,8 @@
  * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
  * Written by Jordan Sola 2020-2021 */
 
+#include <iostream>
 #include <cmath>
-
-#include "benchmark/benchmark.h"
 
 long int compute(const int TARGET) {
 	
@@ -44,16 +43,9 @@ long int compute(const int TARGET) {
 	
 }
 
-static void p012_bench(benchmark::State& state) {
-	for (auto _ : state)
-		benchmark::DoNotOptimize(compute(500));
-}
-
-BENCHMARK(p012_bench)->Unit(benchmark::kMillisecond);
-
-int main(int argc, char** argv) {
-	benchmark::Initialize(&argc, argv);
-	benchmark::RunSpecifiedBenchmarks();
+int main() {
+	std::cout << compute(500) << std::endl;
+	return 0;
 }
 
 // Answer: 76'576'500

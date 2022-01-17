@@ -6,8 +6,6 @@
 #include <cmath>
 #include <iostream>
 
-#include "benchmark/benchmark.h"
-
 int compute(const int LIMIT) {
 	
 	/* - We find this by using Gauss's Series formula.
@@ -15,29 +13,15 @@ int compute(const int LIMIT) {
 	   - Sum Square Formula: m = (n)(n + 1)(2n + 1) / 6 */
 	
 	int difference = 0;
-	benchmark::DoNotOptimize(difference = pow(LIMIT * (LIMIT + 1) / 2, 2) - (LIMIT * (LIMIT + 1) * ((2 * LIMIT) + 1) / 6));
+	difference = pow(LIMIT * (LIMIT + 1) / 2, 2) - (LIMIT * (LIMIT + 1) * ((2 * LIMIT) + 1) / 6);
 	
 	return difference;
 	
 }
 
-static void p006_bench(benchmark::State& state) {
-	
-	int result = 0;
-	for (auto _ : state)
-		benchmark::DoNotOptimize(result = compute(100));
-	
-	// Extra layer of optimization prevention
-	std::ostream cnull(0);
-	cnull << result;
-	
-}
-
-BENCHMARK(p006_bench)->Unit(benchmark::kMillisecond);
-
-int main(int argc, char** argv) {
-	benchmark::Initialize(&argc, argv);
-	benchmark::RunSpecifiedBenchmarks();
+int main() {
+	std::cout << compute(100) << std::endl;
+	return 0;
 }
 
 // Answer: 25'164'150
