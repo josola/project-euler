@@ -1,7 +1,7 @@
 /* Project Euler
- * Problem 5 - Smallest multiple
- * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
- * Written by Jordan Sola 2021 */
+   Problem 5 - Smallest multiple
+   (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
+   Written by Jordan Sola 2021 */
 
 #include "stdio.h"
 #include "stdlib.h"

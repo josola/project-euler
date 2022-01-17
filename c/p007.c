@@ -1,7 +1,7 @@
 /* Project Euler
- * Problem 7 - 10'001st prime
- * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
- * Written by Jordan Sola 2021 */
+   Problem 7 - 10'001st prime
+   (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
+   Written by Jordan Sola 2021 */
 
 #include "stdio.h"
 #include "stdbool.h"

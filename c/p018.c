@@ -1,7 +1,7 @@
 /* Project Euler
- * Problem 18 - Maximum path sum I
- * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
- * Written by Jordan Sola 2021 */
+   Problem 18 - Maximum path sum I
+   (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
+   Written by Jordan Sola 2021 */
 
 #include "stdio.h"
 

@@ -1,7 +1,7 @@
 /* Project Euler
- * Problem 2 - Even Fibonacci numbers
- * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
- * Written by Jordan Sola 2021 */
+   Problem 2 - Even Fibonacci numbers
+   (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
+   Written by Jordan Sola 2021 */
 
 #include "math.h"
 #include "stdio.h"

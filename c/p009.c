@@ -1,7 +1,7 @@
 /* Project Euler
- * Problem 9 - Special Pythagorean triplet
- * (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
- * Written by Jordan Sola 2021 */
+   Problem 9 - Special Pythagorean triplet
+   (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
+   Written by Jordan Sola 2021 */
 
 #include "math.h"
 #include "stdbool.h"
