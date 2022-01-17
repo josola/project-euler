@@ -1,7 +1,7 @@
 /* Project Euler
- * Problem 22 - Names scores
- * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
- * Written by Jordan Sola 2021 */
+   Problem 22 - Names scores
+   (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+   Written by Jordan Sola 2021 */
 
 #include <iostream>
 #include <string>
