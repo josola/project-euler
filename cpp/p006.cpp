@@ -24,11 +24,12 @@ int main() {
 	return 0;
 }
 
-// Answer: 25164150
-
-/* Run on (8 X 24.029 MHz CPU s) ARM64
+/* Answer: 25164150
+   
+   Complexity: O(1)
+   
+   Run on (8 X 24.029 MHz CPU s) ARM64
    ---------------------------------------------------------
    Benchmark               Time             CPU   Iterations
    ---------------------------------------------------------
-   p006_bench/100       1.10 ns         1.10 ns    556010072
-   p006_bench_BigO         O(1)            O(1)              */
+   p006_bench/100       1.10 ns         1.10 ns    556010072 */
