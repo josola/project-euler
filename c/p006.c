@@ -25,4 +25,4 @@ int main() {
 }
 
 /* Answer: 25,164,150
-   Asymptotic complexity: O(i) */
+   Complexity: O(i) */

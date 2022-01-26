@@ -31,4 +31,4 @@ int main() {
 }
 
 /* Answer: 233,168
-   Asymptotic Complexity: O(1) */
+   Complexity: O(1) */

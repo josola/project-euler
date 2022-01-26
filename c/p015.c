@@ -39,4 +39,4 @@ int main() {
 }
 
 /* Answer: 137,846,528,820
-   Asymptotic complexity: O(N) */
+   Complexity: O(N) */

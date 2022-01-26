@@ -43,4 +43,4 @@ int main() {
 }
 
 /* Answer: 906,609
-   Asymptotic complexity: O(N LogN) */
+   Complexity: O(N LogN) */

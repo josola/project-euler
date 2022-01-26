@@ -28,4 +28,4 @@ int main() {
 }
 
 /* Answer: 6,857
-   Asymptotic complexity: O(LogN) */
+   Complexity: O(LogN) */

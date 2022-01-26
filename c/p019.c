@@ -52,4 +52,4 @@ int main() {
 }
 
 /* Answer: 171
-   Asymptotic complexity: O(N) */
+   Complexity: O(N) */
