@@ -23,6 +23,6 @@ if __name__ == "__main__":
 
 # Answer: 1366
 
-# Asymptotic complexity: O(N)
+# Complexity: O(N)
 
 # M1           (3.2 GHz CPU) ARMv8-A64 (64 bit): 10000 loops, best of 5: 24.2 usec per loop
