@@ -1,26 +1,27 @@
 # Project Euler
 # Problem 23 - Non-abundant sums
 # (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
-# Written by Jordan Sola 2021
+# Written by Jordan Sola 2021-2022
 
 def compute(N):
 	
 	# Get prime numbers up to N
-	prime = [1] * (N + 1)
 	
-	# Cut down on range using initial primes
+	set = [1] * (N + 1)
+	
+	# All non-primes are made up of initial primes
 	initial_primes = {2, 3, 5, 7, 9, 11, 13}
 	
 	for p in initial_primes:
 		for i in range(p * p, N + 1, p):
-			if prime[i] == 1:
-				prime[i] = 0
+			if set[i] == 1:
+				set[i] = 0
 	
 	# Produce abundant numbers up to N
 	abundant = []
 	
 	for a in range(1, N + 1):
-		if prime[a] == 0: # Don't check prime numbers
+		if set[a] == 0: # Don't check prime numbers
 			a_sum = 0
 			for i in range(1, a):
 				if a % i == 0:
