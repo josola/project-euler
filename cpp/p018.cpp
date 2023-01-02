@@ -1,14 +1,8 @@
-/* Project Euler
-   Problem 18 - Maximum path sum I
-   (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
-   Written by Jordan Sola 2021 */
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
 
 int compute() {
-	
 	std::vector<std::vector<int> > set = { {75},
 										   {95, 64} ,
 										   {17, 47, 82},
@@ -24,33 +18,15 @@ int compute() {
 										   {91, 71, 52, 38, 17, 14, 91, 43, 58, 50, 27, 29, 48},
 										   {63, 66,  4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31},
 										   { 4, 62, 98, 27, 23,  9, 70, 98, 73, 93, 38, 53, 60,  4, 23} };
-	
-	/* - Adding the maximum value from the adjacent leafs in a
-	     tree, leading up to the root of the tree, gives us the
-	     absolute max sum from all paths at the root node. */
-	
 	for (int row = set.size() - 1; row >= 0; row--) {
 		for (int col = 0; col < row; col++)
 			set[row - 1][col] += std::max(set[row][col], set[row][col + 1]);
 	}
-	
 	int largest_path = set[0][0];
-	
 	return largest_path;
-	
 }
 
 int main() {
 	std::cout << compute() << std::endl;
 	return 0;
 }
-
-/* Answer: 1074
-   
-   Complexity: O(N)
-   
-   Run on (8 X 24.1206 MHz CPU s) ARM64
-   -----------------------------------------------------------
-   Benchmark                 Time             CPU   Iterations
-   -----------------------------------------------------------
-   p018_bench/set         92.6 ns         92.6 ns      6437551 */

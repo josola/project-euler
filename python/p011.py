@@ -1,10 +1,4 @@
-# Project Euler
-# Problem 11 - Largest product in a grid
-# (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
-# Written by Jordan Sola 2020-2021
-
 def compute():
-	
 	SIZE = 20
 	PRODUCT_LENGTH = 4
 	grid = [  8,  2, 22, 97, 38, 15,  0, 40,  0, 75,  4,  5,  7, 78, 52, 12, 50, 77, 91,  8,
@@ -27,29 +21,19 @@ def compute():
 			 20, 69, 36, 41, 72, 30, 23, 88, 34, 62, 99, 69, 82, 67, 59, 85, 74,  4, 36, 16,
 			 20, 73, 35, 29, 78, 31, 90,  1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57,  5, 54,
 			  1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52,  1, 89, 19, 67, 48 ]
-	
 	max = 0
-	
-	# - We cheat the complexity a little by flattening
-	#   out the 2D grid into a linear array. This allows
-	#   us to easily optimize each product calculation.
-	
 	for i in range(0, (SIZE * SIZE) - (PRODUCT_LENGTH - 1)):
-		
 		horizontal = 0
 		if i <= ((SIZE * SIZE) - 1) - (PRODUCT_LENGTH - 1):
 			horizontal = grid[i] * grid[i + 1] * grid[i + 2] * grid[i + 3]
-		
 		vertical = 0
 		if i <= ((SIZE * SIZE) - 1) - (SIZE * (PRODUCT_LENGTH - 1)):
 			vertical = grid[i] * grid[i + SIZE] * grid[i + (SIZE * 2)] * grid[i + (SIZE * 3)]
-		
 		diagonal_a = 0
 		diagonal_b = 0
 		if i <= ((SIZE * SIZE) - 1) - (SIZE * (PRODUCT_LENGTH - 1)) - (PRODUCT_LENGTH - 1):
 			diagonal_a = grid[i] * grid[i + (SIZE + 1)] * grid[i + ((SIZE * 2) + 2)] * grid[i + ((SIZE * 3) + 3)]
 			diagonal_b = grid[i + (PRODUCT_LENGTH - 1)] * grid[i + (SIZE + (PRODUCT_LENGTH - 2))] * grid[i + ((SIZE * 2) + (PRODUCT_LENGTH - 3))] * grid[i + (SIZE * 3)]
-		
 		if horizontal != 0 and horizontal > max:
 			max = horizontal
 		if vertical != 0 and vertical > max:
@@ -58,14 +42,7 @@ def compute():
 			max = diagonal_a
 		if diagonal_b != 0 and diagonal_b > max:
 			max = diagonal_b
-	
 	return max
 
 if __name__ == "__main__":
 	print(compute())
-
-# Answer: 70600674
-
-# Complexity: O(N)
-
-# M1           (3.2 GHz CPU) ARMv8-A64 (64 bit): 1000 loops, best of 5: 395 usec per loop

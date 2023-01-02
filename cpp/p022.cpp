@@ -1,42 +1,23 @@
-/* Project Euler
-   Problem 22 - Names scores
-   (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
-   Written by Jordan Sola 2021 */
-
 #include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
 
 int compute(std::vector<std::string> names) {
-	
 	std::sort(names.begin(), names.end());
-	
 	int total = 0;
 	int pos = 0;
-	
 	for (auto name : names) {
-		
 		pos += 1;
 		int value = 0;
-		
-		/* Converts characters into ASCII values and subtracts
-		   those values down to their respective position in
-		   the english alphabet. */
-		
 		for (char ch : name) {
-			
 			if (ch > 90)
 				value += ch - 96;
 			else
 				value += ch - 64;
-			
 		}
-		
 		total += pos * value;
-		
 	}
-		
 	return total;
 }
 
@@ -46,13 +27,3 @@ int main() {
 	std::cout << compute(names) << std::endl;
 	return 0;
 }
-
-/* Answer: 871198282
-   
-   Complexity: O(N)
-   
-   Run on (8 X 24.1209 MHz CPU s) ARM64
-   -----------------------------------------------------
-   Benchmark           Time             CPU   Iterations
-   -----------------------------------------------------
-   p022_bench        678 us          678 us          780 */

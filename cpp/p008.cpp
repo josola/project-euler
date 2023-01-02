@@ -1,13 +1,7 @@
-/* Project Euler
-   Problem 8 - Largest product in a series
-   (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
-   Written by Jordan Sola 2020-2021 */
-
 #include <iostream>
 #include <vector>
 
 long int compute() {
-	
 	const int PRODUCT_SIZE = 13;
 	std::vector<int> large_num = { 7, 3, 1, 6, 7, 1, 7, 6, 5, 3, 1, 3, 3, 0, 6, 2, 4, 9, 1, 9, 2, 2, 5, 1, 1, 9, 6, 7, 4, 4, 2, 6, 5, 7, 4, 7, 4, 2, 3, 5, 5, 3, 4, 9, 1, 9, 4, 9, 3, 4,
 								   9, 6, 9, 8, 3, 5, 2, 0, 3, 1, 2, 7, 7, 4, 5, 0, 6, 3, 2, 6, 2, 3, 9, 5, 7, 8, 3, 1, 8, 0, 1, 6, 9, 8, 4, 8, 0, 1, 8, 6, 9, 4, 7, 8, 8, 5, 1, 8, 4, 3,
@@ -29,42 +23,22 @@ long int compute() {
 								   8, 4, 5, 8, 0, 1, 5, 6, 1, 6, 6, 0, 9, 7, 9, 1, 9, 1, 3, 3, 8, 7, 5, 4, 9, 9, 2, 0, 0, 5, 2, 4, 0, 6, 3, 6, 8, 9, 9, 1, 2, 5, 6, 0, 7, 1, 7, 6, 0, 6,
 								   0, 5, 8, 8, 6, 1, 1, 6, 4, 6, 7, 1, 0, 9, 4, 0, 5, 0, 7, 7, 5, 4, 1, 0, 0, 2, 2, 5, 6, 9, 8, 3, 1, 5, 5, 2, 0, 0, 0, 5, 5, 9, 3, 5, 7, 2, 9, 7, 2, 5,
 								   7, 1, 6, 3, 6, 2, 6, 9, 5, 6, 1, 8, 8, 2, 6, 7, 0, 4, 2, 8, 2, 5, 2, 4, 8, 3, 6, 0, 0, 8, 2, 3, 2, 5, 7, 5, 3, 0, 4, 2, 0, 7, 5, 2, 9, 6, 3, 4, 5, 0 };
-	
 	long int highest_product = 0;
-	
 	for (int i = 0; i < large_num.size() - PRODUCT_SIZE; i++) {
-		
 		long int current_product = 0;
-		
 		for (int j = 0; j < 13; j++) {
-			
 			if (j == 0)
 				current_product = large_num[j + i];
 			else
 				current_product *= large_num[j + i];
-			
 		}
-		
 		if (current_product > highest_product)
 			highest_product = current_product;
-		
 	}
-	
 	return highest_product;
-	
 }
 
 int main() {
 	std::cout << compute() << std::endl;
 	return 0;
 }
-
-/* Answer: 23514624000
-   
-   Complexity: O(N)
-   
-   Run on (8 X 24.121 MHz CPU s) ARM64
-   ---------------------------------------------------------------
-   Benchmark                     Time             CPU   Iterations
-   ---------------------------------------------------------------
-   p008_bench/large_num       2.35 us         2.35 us       289059 */

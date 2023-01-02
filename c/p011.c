@@ -1,63 +1,35 @@
-/* Project Euler
-   Problem 11 - Largest product in a GRID
-   (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
-   Written by Jordan Sola 2021 */
-
 #include "stdio.h"
 
 long int compute(const int GRID[], const int SIZE, const int PRODUCT_LENGTH) {
-	
 	long int max = 0;
-	
-	/* - We cheat the complexity a little by flattening
-	     out the 2D GRID into a linear array. This allows
-	     us to easily optimize each product calculation. */
-	
 	for (int i = 0; i < (SIZE * SIZE) - (PRODUCT_LENGTH - 1); i++) {
-		
-		// Perform calculations on grid
-		
 		int horizontal = 0;
 		if (i <= ((SIZE * SIZE) - 1) - (PRODUCT_LENGTH - 1))
 			horizontal = GRID[i] * GRID[i + 1] * GRID[i + 2] * GRID[i + 3];
-		
 		int vertical = 0;
 		if (i <= (SIZE * SIZE - 1) - (SIZE * (PRODUCT_LENGTH - 1)))
 			vertical = GRID[i] * GRID[i + SIZE] * GRID[i + (SIZE * 2)] * GRID[i + (SIZE * 3)];
-		
 		int diagonal_a = 0;
 		int diagonal_b = 0;
-		
 		if (i <= ((SIZE * SIZE) - 1) - (SIZE * (PRODUCT_LENGTH - 1)) - (PRODUCT_LENGTH - 1)) {
 			diagonal_a = GRID[i] * GRID[i + (SIZE + 1)] * GRID[i + ((SIZE * 2) + 2)] * GRID[i + ((SIZE * 3) + 3)];
 			diagonal_b = GRID[i + (PRODUCT_LENGTH - 1)] * GRID[i + (SIZE + (PRODUCT_LENGTH - 2))] * GRID[i + ((SIZE * 2) + (PRODUCT_LENGTH - 3))] * GRID[i + (SIZE * 3)];
 		}
-		
-		// Check for maximum result
-		
 		if (horizontal != 0 && horizontal > max)
 			max = horizontal;
-		
 		if (vertical != 0 && vertical > max)
 			max = vertical;
-		
 		if (diagonal_a != 0 && diagonal_a > max)
 			max = diagonal_a;
-		
 		if (diagonal_b != 0 && diagonal_b > max)
 			max = diagonal_b;
-		
 	}
-	
 	return max;
-	
 }
 
 int main() {
-
 	const int SIZE = 20;
 	const int PRODUCT_LENGTH = 4;
-	
 	int GRID[400] = {  8,  2, 22, 97, 38, 15,  0, 40,  0, 75,  4,  5,  7, 78, 52, 12, 50, 77, 91,  8,
 					  49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48,  4, 56, 62,  0,
 					  81, 49, 31, 73, 55, 79, 14, 29, 93, 71, 40, 67, 53, 88, 30,  3, 49, 13, 36, 65,
@@ -78,12 +50,6 @@ int main() {
 					  20, 69, 36, 41, 72, 30, 23, 88, 34, 62, 99, 69, 82, 67, 59, 85, 74,  4, 36, 16,
 					  20, 73, 35, 29, 78, 31, 90,  1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57,  5, 54,
 					   1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52,  1, 89, 19, 67, 48 };
-
 	printf("%li\n", compute(GRID, SIZE, PRODUCT_LENGTH));
-
 	return 0;
-
 }
-
-/* Answer: 70,600,674
-   Complexity: O(N) */

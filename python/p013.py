@@ -1,13 +1,4 @@
-# Project Euler
-# Problem 13 - Large sum
-# (c) 2020-2022 Jordan Sola. All rights reserved. (MIT License)
-# Written by Jordan Sola 2020-2021
-
 def compute():
-	
-	# - Only the first ten digits of the sum are required.
-	#   Which cuts out any digit from the twelfth onward.
-	
 	numbers = [ 37107287533, 46376937677, 74324986199, 91942213363, 23067588207,
 				89261670696, 28112879812, 44274228917, 47451445736, 70386486105,
 				62176457141, 64906352462, 92575867718, 58203565325, 80181199384,
@@ -28,20 +19,11 @@ def compute():
 				64913982680, 16730939319, 94809377245, 78639167021, 15368713711,
 				40789923115, 44889911501, 41503128880, 81234880673, 82616570773,
 				22918802058, 77158542502, 72107838435, 20849603980, 53503534226 ]
-	
 	sum = 0
 	for num in numbers:
 		sum += num
-	
 	sum //= 1000
-	
 	return sum
 
 if __name__ == "__main__":
 	print(compute())
-
-# Answer: 5537376230
-
-# Complexity: O(N)
-
-# M1           (3.2 GHz CPU) ARMv8-A64 (64 bit): 100000 loops, best of 5: 2.65 usec per loop
