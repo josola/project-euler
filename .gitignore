@@ -1,67 +1,20 @@
-# Prerequisites
-*.d
-
-# Object files
+# Ignore compiled object files for C and C++
 *.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
 *.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+*.exe
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Ignore Python compiled bytecode files
+*.pyc
+__pycache__/
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Ignore build directories
+build/
+bin/
 
-# Misc
-.DS_Store
-/.vscode
-cpp/bin
-cpp/xcode
-/visual_studio
-python/__pycache__
-go/bin
-c/bin
-package.json
-package-lock.json
-/node_modules
-*.txt
+# Ignore text editor and IDE specific files
+.vscode/
 *.swp
+*.swo
+*.swn
+*~
+.DS_Store
